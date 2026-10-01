@@ -51,7 +51,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#030712] text-[#F8FAFC]">
+    <div className="min-h-screen bg-[#070312] text-[#FAF8FF]">
       {/* Sticky High-Tech Navigation */}
       <Navbar onOpenAuditModal={() => handleOpenAuditModal('')} />
 

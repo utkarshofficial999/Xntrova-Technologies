@@ -9,8 +9,7 @@ import {
   Cpu,
   Target,
   ArrowRight,
-  CheckCircle,
-  ExternalLink,
+  Terminal,
 } from 'lucide-react';
 import TiltCard from './TiltCard';
 
@@ -26,10 +25,9 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
       description:
         'Achieve undisputed search visibility. Our SEO solutions in Delhi combine in-depth semantic keyword architecture, deep technical performance fixes, high-authority backlink acquisition, and UX signals that turn organic visits into high-value inquiries.',
       icon: Search,
-      metrics: '+280% Avg Organic Traffic',
-      color: '#00D2EE',
+      metrics: '+280% organic_traffic',
+      color: '#ED80E9',
       tags: ['Technical Audit', 'Entity Schema', 'High-Tier Outreach', 'Local SEO Dwarka & NCR'],
-      image: 'https://res.cloudinary.com/di93stsbz/image/upload/v1787209735/xntrova-wp-media/xntrova-wp-media/Rectangle-4486-2-7ff366e812bb60d4.png',
     },
     {
       id: 'ppc',
@@ -39,10 +37,9 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
       description:
         'Accelerate pipeline velocity with precision targeted campaigns. We engineer conversion-optimized ad funnels across Google Ads, Meta Ads Manager, and LinkedIn that maximize return on ad spend while slashing cost-per-acquisition.',
       icon: TrendingUp,
-      metrics: '4.2x ROAS Benchmark',
-      color: '#6366F1',
+      metrics: '4.2x roas_benchmark',
+      color: '#9400D3',
       tags: ['Google Search & PMax', 'Meta Retargeting', 'High-Intent Landing Pages', 'Attribution Tracking'],
-      image: 'https://res.cloudinary.com/di93stsbz/image/upload/v1787209741/xntrova-wp-media/xntrova-wp-media/Rectangle-4486-5-19f726b3c1690da8.png',
     },
     {
       id: 'webdev',
@@ -52,10 +49,9 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
       description:
         'Build a digital presence that commands respect. We design and develop bespoke, high-performance web applications, interactive 3D web experiences, and headless CMS ecosystems that outshine competitors and convert visits into sales.',
       icon: Code2,
-      metrics: '99/100 Google Lighthouse Score',
-      color: '#10B981',
+      metrics: '99/100 lighthouse_score',
+      color: '#D3D3FF',
       tags: ['React & Next.js', 'Interactive 3D / Three.js', 'Core Web Vitals 100%', 'Conversion UX'],
-      image: 'https://res.cloudinary.com/di93stsbz/image/upload/v1787209762/xntrova-wp-media/xntrova-wp-media/Rectangle-4486-11-c13ae712a8c5d68f.png',
     },
     {
       id: 'smo',
@@ -65,8 +61,8 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
       description:
         'Elevate your brand presence across modern social ecosystems. We craft strategic creative assets, execute creator and influencer collaborations, and deploy community-driven campaigns that foster genuine loyalty and organic advocacy.',
       icon: Share2,
-      metrics: '+450% Engagement Lift',
-      color: '#EC4899',
+      metrics: '+450% engagement_lift',
+      color: '#ED80E9',
       tags: ['Short-Form Video', 'Creator Partnerships', 'Community Management', 'Brand Resonance'],
     },
     {
@@ -77,8 +73,8 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
       description:
         'Turn product browsers into repeat buyers. Tailored for Shopify and enterprise e-commerce platforms, our full-funnel tactics encompass catalog merchandising, dynamic product ads, cart abandonment recoveries, and checkout optimization.',
       icon: ShoppingCart,
-      metrics: '+38% Higher Cart Checkout Rate',
-      color: '#F59E0B',
+      metrics: '+38% checkout_rate',
+      color: '#D8BFD8',
       tags: ['Shopify Optimization', 'Dynamic Catalog Ads', 'LTV Retention Email', 'Upsell Funnels'],
     },
     {
@@ -89,8 +85,8 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
       description:
         'Build undeniable market authority with content that educates, captivates, and converts. Our specialist writers and strategists produce research-backed whitepapers, blogs, and multimedia assets calibrated for search engines and decision-makers.',
       icon: FileText,
-      metrics: '3.4x Longer Page Dwell Time',
-      color: '#8B5CF6',
+      metrics: '3.4x dwell_time',
+      color: '#9400D3',
       tags: ['Topical Authority Maps', 'Buyer Journey Content', 'Infographic Design', 'SEO Copywriting'],
     },
     {
@@ -101,8 +97,8 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
       description:
         'The future of search is conversational. We optimize your brand knowledge graphs, structured data, and citational footprint to ensure your business is recommended by LLMs and AI answer engines across Perplexity, ChatGPT, and Gemini.',
       icon: Cpu,
-      metrics: 'Ranked in AI Generative Answers',
-      color: '#06B6D4',
+      metrics: 'llm_generative_indexed',
+      color: '#D3D3FF',
       tags: ['Knowledge Graph Structuring', 'LLM Citation Seeding', 'Perplexity Ranking', 'Vector Metadata'],
     },
     {
@@ -113,17 +109,17 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
       description:
         'Double your leads without doubling ad spend. Through behavioral heatmaps, rigorous A/B multivariate testing, micro-copy refinement, and frictionless form UX, we systematically turn bounce rates into conversion surges.',
       icon: Target,
-      metrics: '+42% Average Conversion Jump',
-      color: '#14B8A6',
+      metrics: '+42% conversion_jump',
+      color: '#ED80E9',
       tags: ['A/B Split Testing', 'Heatmap & Session Analysis', 'Frictionless Forms', 'Checkout UX'],
     },
   ];
 
   const categories = [
-    { id: 'all', label: 'All Services' },
-    { id: 'organic', label: 'Organic Growth & SEO' },
-    { id: 'paid', label: 'Performance Ads & PPC' },
-    { id: 'engineering', label: 'Web Engineering & CRO' },
+    { id: 'all', label: '// all_services' },
+    { id: 'organic', label: '// organic_seo' },
+    { id: 'paid', label: '// performance_ads' },
+    { id: 'engineering', label: '// web_engineering' },
   ];
 
   const filteredServices =
@@ -148,14 +144,14 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
             Our Capabilities
           </div>
           <h2 className="section-title">
-            Engineered For <span className="gradient-text-cyan">Sustainable Business Growth</span>
+            Engineered For <span className="gradient-text-wisteria">Sustainable Growth</span>
           </h2>
           <p className="section-desc" style={{ margin: '0 auto' }}>
             Being the best creative digital marketing and web technology agency in New Delhi, we
             deliver unified growth systems where creative storytelling meets quantitative engineering.
           </p>
 
-          {/* Filter Pills */}
+          {/* Filter Pills with Code Font */}
           <div
             style={{
               display: 'flex',
@@ -170,16 +166,18 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                 key={cat.id}
                 type="button"
                 onClick={() => setActiveCategory(cat.id)}
+                className="font-mono"
                 style={{
                   padding: '0.5rem 1.15rem',
-                  fontSize: '0.85rem',
+                  fontSize: '0.8rem',
                   fontWeight: 600,
                   borderRadius: '9999px',
-                  border: activeCategory === cat.id ? '1px solid #00D2EE' : '1px solid rgba(255, 255, 255, 0.1)',
-                  backgroundColor: activeCategory === cat.id ? 'rgba(0, 210, 238, 0.12)' : 'rgba(15, 23, 42, 0.6)',
-                  color: activeCategory === cat.id ? '#00D2EE' : '#94A3B8',
+                  border: activeCategory === cat.id ? '1px solid #ED80E9' : '1px solid rgba(216, 191, 216, 0.15)',
+                  backgroundColor: activeCategory === cat.id ? 'rgba(148, 0, 211, 0.25)' : 'rgba(22, 13, 56, 0.6)',
+                  color: activeCategory === cat.id ? '#FAF8FF' : '#D8BFD8',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
+                  boxShadow: activeCategory === cat.id ? '0 0 15px rgba(148, 0, 211, 0.35)' : 'none',
                 }}
               >
                 {cat.label}
@@ -202,7 +200,7 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
               <TiltCard
                 key={service.id}
                 tiltFactor={6}
-                glowColor={`${service.color}25`}
+                glowColor={`${service.color}30`}
                 style={{
                   height: '100%',
                 }}
@@ -215,13 +213,13 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     padding: '2rem',
-                    backgroundColor: 'rgba(15, 23, 42, 0.65)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    backgroundColor: 'rgba(22, 13, 56, 0.65)',
+                    border: '1px solid rgba(216, 191, 216, 0.12)',
                     borderRadius: '16px',
                   }}
                 >
                   <div>
-                    {/* Top Icon & Metric Pill */}
+                    {/* Top Icon & Metric Pill in Code Font */}
                     <div
                       style={{
                         display: 'flex',
@@ -235,8 +233,8 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                           width: '46px',
                           height: '46px',
                           borderRadius: '12px',
-                          backgroundColor: `${service.color}15`,
-                          border: `1px solid ${service.color}35`,
+                          backgroundColor: `${service.color}20`,
+                          border: `1px solid ${service.color}45`,
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
@@ -247,17 +245,18 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                       </div>
 
                       <span
+                        className="code-metric"
                         style={{
                           fontSize: '0.72rem',
                           fontWeight: 700,
-                          color: '#10B981',
-                          backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                          border: '1px solid rgba(16, 185, 129, 0.25)',
-                          padding: '0.25rem 0.6rem',
+                          color: '#ED80E9',
+                          backgroundColor: 'rgba(237, 128, 233, 0.12)',
+                          border: '1px solid rgba(237, 128, 233, 0.3)',
+                          padding: '0.25rem 0.65rem',
                           borderRadius: '9999px',
                         }}
                       >
-                        {service.metrics}
+                        [{service.metrics}]
                       </span>
                     </div>
 
@@ -266,7 +265,7 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                       style={{
                         fontSize: '1.25rem',
                         fontWeight: 700,
-                        color: '#F8FAFC',
+                        color: '#FAF8FF',
                         marginBottom: '0.4rem',
                         lineHeight: 1.3,
                       }}
@@ -274,21 +273,22 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                       {service.title}
                     </h3>
                     <p
+                      className="font-mono"
                       style={{
-                        fontSize: '0.8rem',
+                        fontSize: '0.78rem',
                         color: service.color,
                         fontWeight: 600,
                         marginBottom: '1rem',
                       }}
                     >
-                      {service.tagline}
+                      // {service.tagline}
                     </p>
 
                     {/* Description */}
                     <p
                       style={{
                         fontSize: '0.875rem',
-                        color: '#94A3B8',
+                        color: '#D8BFD8',
                         lineHeight: 1.6,
                         marginBottom: '1.5rem',
                       }}
@@ -296,7 +296,7 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                       {service.description}
                     </p>
 
-                    {/* Deliverables Tags */}
+                    {/* Deliverables Tags in Code Font */}
                     <div
                       style={{
                         display: 'flex',
@@ -308,12 +308,13 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                       {service.tags.map((tag) => (
                         <span
                           key={tag}
+                          className="font-mono"
                           style={{
-                            fontSize: '0.7rem',
+                            fontSize: '0.68rem',
                             fontWeight: 500,
-                            color: '#CBD5E1',
-                            backgroundColor: 'rgba(255, 255, 255, 0.04)',
-                            border: '1px solid rgba(255, 255, 255, 0.08)',
+                            color: '#D3D3FF',
+                            backgroundColor: 'rgba(148, 0, 211, 0.12)',
+                            border: '1px solid rgba(216, 191, 216, 0.15)',
                             padding: '0.2rem 0.55rem',
                             borderRadius: '4px',
                           }}
@@ -324,16 +325,17 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                     </div>
                   </div>
 
-                  {/* Bottom Action Button */}
+                  {/* Bottom Action Button in Code Font */}
                   <button
                     type="button"
                     onClick={() => onSelectServiceForAudit(service.title)}
+                    className="font-mono"
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '0.5rem',
-                      fontSize: '0.875rem',
-                      fontWeight: 600,
+                      fontSize: '0.8125rem',
+                      fontWeight: 700,
                       color: service.color,
                       background: 'transparent',
                       border: 'none',
@@ -344,8 +346,8 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                     onMouseEnter={(e) => (e.currentTarget.style.gap = '0.75rem')}
                     onMouseLeave={(e) => (e.currentTarget.style.gap = '0.5rem')}
                   >
-                    <span>Request Service Strategy</span>
-                    <ArrowRight size={15} />
+                    <span>&gt; request_strategy</span>
+                    <ArrowRight size={14} />
                   </button>
                 </div>
               </TiltCard>

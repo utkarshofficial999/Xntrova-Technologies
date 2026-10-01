@@ -2,16 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 /**
- * Hero3D - High-impact, purposeful 3D visualization representing Xntrova's
- * Growth Intelligence Engine & Digital Marketing Ecosystem.
- * Features:
- * - Geometric Growth Core (faceted wireframe outer shell + internal refractive energy sphere)
- * - Concentric data orbital rings with pulsating nodes
- * - Particle field with cursor repulsion/parallax
- * - Floating 3D holographic metric badges with depth
- * - Smooth lerped cursor interaction
- * - WebGL availability detection & graceful fallback
- * - High performance: DPR clamped, RAF loop pauses off-screen
+ * Hero3D - Wisteria Bloom Edition
+ * Powered by Three.js with deep royal violet, orchid pink, and soft lavender lighting.
+ * Displays the core growth engine with code-font telemetry cards.
  */
 export default function Hero3D() {
   const containerRef = useRef(null);
@@ -43,7 +36,7 @@ export default function Hero3D() {
     const height = container.clientHeight || 550;
 
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x030712, 0.04);
+    scene.fog = new THREE.FogExp2(0x070312, 0.04);
 
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
     camera.position.set(0, 0, 8.5);
@@ -66,23 +59,26 @@ export default function Hero3D() {
     renderer.setSize(width, height);
     renderer.setClearColor(0x000000, 0);
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.2;
+    renderer.toneMappingExposure = 1.25;
 
     container.appendChild(renderer.domElement);
 
-    // 3. Lighting System
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+    // 3. Lighting System (Wisteria Bloom)
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.65);
     scene.add(ambientLight);
 
-    const cyanPointLight = new THREE.PointLight(0x00d2ee, 4, 15);
-    cyanPointLight.position.set(3, 3, 4);
-    scene.add(cyanPointLight);
+    // Violet Point Light (#9400D3)
+    const violetLight = new THREE.PointLight(0x9400d3, 4.5, 16);
+    violetLight.position.set(3, 3, 4);
+    scene.add(violetLight);
 
-    const indigoPointLight = new THREE.PointLight(0x6366f1, 3.5, 15);
-    indigoPointLight.position.set(-3, -2, 3);
-    scene.add(indigoPointLight);
+    // Orchid Blossom Point Light (#ED80E9)
+    const orchidLight = new THREE.PointLight(0xed80e9, 4.0, 15);
+    orchidLight.position.set(-3, -2, 3);
+    scene.add(orchidLight);
 
-    const coreLight = new THREE.PointLight(0x00ffff, 2, 8);
+    // Lavender Core Light (#D3D3FF)
+    const coreLight = new THREE.PointLight(0xd3d3ff, 2.5, 9);
     coreLight.position.set(0, 0, 0);
     scene.add(coreLight);
 
@@ -90,40 +86,40 @@ export default function Hero3D() {
     const coreGroup = new THREE.Group();
     scene.add(coreGroup);
 
-    // A. Inner glowing crystal (Icosahedron)
+    // A. Inner glowing crystal (Icosahedron in deep royal violet / orchid)
     const innerGeo = new THREE.IcosahedronGeometry(1.4, 0);
     const innerMat = new THREE.MeshPhysicalMaterial({
-      color: 0x0075a2,
-      emissive: 0x00334e,
-      emissiveIntensity: 0.6,
-      roughness: 0.15,
-      metalness: 0.85,
+      color: 0x9400d3,
+      emissive: 0x5c0084,
+      emissiveIntensity: 0.65,
+      roughness: 0.12,
+      metalness: 0.9,
       clearcoat: 1.0,
       clearcoatRoughness: 0.1,
       transparent: true,
-      opacity: 0.88,
+      opacity: 0.9,
     });
     const innerMesh = new THREE.Mesh(innerGeo, innerMat);
     coreGroup.add(innerMesh);
 
-    // B. Outer wireframe lattice
+    // B. Outer wireframe lattice (Orchid Pink #ED80E9)
     const wireGeo = new THREE.IcosahedronGeometry(1.85, 1);
     const wireMat = new THREE.MeshStandardMaterial({
-      color: 0x67e8f9,
-      emissive: 0x00d2ee,
-      emissiveIntensity: 0.35,
+      color: 0xed80e9,
+      emissive: 0x9400d3,
+      emissiveIntensity: 0.4,
       wireframe: true,
       transparent: true,
-      opacity: 0.45,
+      opacity: 0.5,
     });
     const wireMesh = new THREE.Mesh(wireGeo, wireMat);
     coreGroup.add(wireMesh);
 
-    // C. Orbital Ring 1 (Data Stream)
+    // C. Orbital Ring 1 (Orchid Blossom stream #ED80E9)
     const ring1Geo = new THREE.TorusGeometry(2.5, 0.025, 16, 100);
     const ring1Mat = new THREE.MeshStandardMaterial({
-      color: 0x00d2ee,
-      emissive: 0x00d2ee,
+      color: 0xed80e9,
+      emissive: 0xed80e9,
       emissiveIntensity: 0.8,
       roughness: 0.2,
       metalness: 0.9,
@@ -133,14 +129,14 @@ export default function Hero3D() {
     ring1.rotation.y = Math.PI / 6;
     scene.add(ring1);
 
-    // D. Orbital Ring 2 (Algorithm Attribution)
+    // D. Orbital Ring 2 (Soft Lavender #D3D3FF)
     const ring2Geo = new THREE.TorusGeometry(3.1, 0.02, 16, 120);
     const ring2Mat = new THREE.MeshStandardMaterial({
-      color: 0x818cf8,
-      emissive: 0x6366f1,
-      emissiveIntensity: 0.6,
+      color: 0xd3d3ff,
+      emissive: 0x9400d3,
+      emissiveIntensity: 0.7,
       roughness: 0.3,
-      metalness: 0.8,
+      metalness: 0.85,
     });
     const ring2 = new THREE.Mesh(ring2Geo, ring2Mat);
     ring2.rotation.x = -Math.PI / 4;
@@ -148,12 +144,12 @@ export default function Hero3D() {
     scene.add(ring2);
 
     // E. Orbital Satellite Nodes
-    const nodeCount = 5;
+    const nodeCount = 6;
     const satellites = [];
     for (let i = 0; i < nodeCount; i++) {
       const satGeo = new THREE.SphereGeometry(0.08, 16, 16);
       const satMat = new THREE.MeshBasicMaterial({
-        color: i % 2 === 0 ? 0x67e8f9 : 0xa5b4fc,
+        color: i % 2 === 0 ? 0xed80e9 : 0xd3d3ff,
       });
       const satMesh = new THREE.Mesh(satGeo, satMat);
       scene.add(satMesh);
@@ -166,25 +162,23 @@ export default function Hero3D() {
       });
     }
 
-    // F. Ambient Floating Particles
-    const particleCount = 120;
+    // F. Ambient Floating Particles (Lavender & Orchid)
+    const particleCount = 130;
     const pGeo = new THREE.BufferGeometry();
     const pPos = new Float32Array(particleCount * 3);
-    const pScales = new Float32Array(particleCount);
 
     for (let i = 0; i < particleCount; i++) {
       pPos[i * 3] = (Math.random() - 0.5) * 12;
       pPos[i * 3 + 1] = (Math.random() - 0.5) * 10;
       pPos[i * 3 + 2] = (Math.random() - 0.5) * 8;
-      pScales[i] = Math.random() * 0.05 + 0.02;
     }
 
     pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
     const pMat = new THREE.PointsMaterial({
-      color: 0x38bdf8,
+      color: 0xd3d3ff,
       size: 0.08,
       transparent: true,
-      opacity: 0.65,
+      opacity: 0.7,
       blending: THREE.AdditiveBlending,
     });
     const particles = new THREE.Points(pGeo, pMat);
@@ -205,7 +199,6 @@ export default function Hero3D() {
       const clientX = e.clientX - rect.left;
       const clientY = e.clientY - rect.top;
 
-      // normalized coordinates -1 to 1
       mouseX = (clientX / rect.width) * 2 - 1;
       mouseY = -(clientY / rect.height) * 2 + 1;
 
@@ -273,7 +266,7 @@ export default function Hero3D() {
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
 
-      if (!isVisible) return; // Pause rendering when scrolled out of view
+      if (!isVisible) return;
 
       const delta = clock.getDelta();
       const elapsedTime = clock.getElapsedTime();
@@ -302,18 +295,15 @@ export default function Hero3D() {
       ring1.rotation.z += 0.008;
       ring2.rotation.z -= 0.006;
 
-      // Update satellites along their orbits
       satellites.forEach((sat) => {
         sat.angle += sat.speed;
         const x = Math.cos(sat.angle) * sat.radius;
         const y = Math.sin(sat.angle) * sat.radius;
-        // Project onto orbital plane
         const vec = new THREE.Vector3(x, y, 0);
         vec.applyEuler(sat.ring.rotation);
         sat.mesh.position.copy(vec);
       });
 
-      // Subtle particle drift
       particles.rotation.y = elapsedTime * 0.02;
 
       renderer.render(scene, camera);
@@ -321,7 +311,6 @@ export default function Hero3D() {
 
     animate();
 
-    // 8. Cleanup
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('mousemove', handleMouseMove);
@@ -338,7 +327,6 @@ export default function Hero3D() {
         }
       }
 
-      // Dispose Geometries and Materials
       innerGeo.dispose();
       innerMat.dispose();
       wireGeo.dispose();
@@ -389,8 +377,8 @@ export default function Hero3D() {
               width: '80px',
               height: '80px',
               borderRadius: '50%',
-              border: '2px solid rgba(0, 210, 238, 0.2)',
-              borderTopColor: '#00D2EE',
+              border: '2px solid rgba(237, 128, 233, 0.2)',
+              borderTopColor: '#ED80E9',
               animation: 'spin 1s linear infinite',
             }}
           />
@@ -405,55 +393,56 @@ export default function Hero3D() {
             width: '320px',
             height: '320px',
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(0, 210, 238, 0.25) 0%, rgba(99, 102, 241, 0.1) 60%, transparent 80%)',
-            border: '1px solid rgba(0, 210, 238, 0.3)',
+            background: 'radial-gradient(circle, rgba(148, 0, 211, 0.3) 0%, rgba(237, 128, 233, 0.15) 60%, transparent 80%)',
+            border: '1px solid rgba(237, 128, 233, 0.3)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 0 50px rgba(0, 210, 238, 0.2)',
+            boxShadow: '0 0 50px rgba(148, 0, 211, 0.3)',
           }}
         >
           <div
+            className="font-mono"
             style={{
               width: '180px',
               height: '180px',
               borderRadius: '50%',
-              border: '2px dashed rgba(0, 210, 238, 0.4)',
+              border: '2px dashed rgba(211, 211, 255, 0.4)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#00D2EE',
+              color: '#D3D3FF',
               fontWeight: 600,
-              fontSize: '0.875rem',
+              fontSize: '0.85rem',
               textAlign: 'center',
               padding: '1rem',
             }}
           >
-            Digital Growth Engine Active
+            [Growth Engine Active]
           </div>
         </div>
       )}
 
-      {/* Floating Holographic Telemetry Cards */}
+      {/* Floating Holographic Telemetry Cards with Code Font */}
       <div
         className="telemetry-badge telemetry-badge-1"
         style={{
           position: 'absolute',
           top: '12%',
           left: '2%',
-          background: 'rgba(15, 23, 42, 0.85)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          border: '1px solid rgba(0, 210, 238, 0.35)',
+          background: 'rgba(22, 13, 56, 0.85)',
+          backdropFilter: 'blur(14px)',
+          WebkitBackdropFilter: 'blur(14px)',
+          border: '1px solid rgba(237, 128, 233, 0.4)',
           borderRadius: '12px',
-          padding: '0.75rem 1.1rem',
-          boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 210, 238, 0.15)',
+          padding: '0.75rem 1.15rem',
+          boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.8), 0 0 25px rgba(148, 0, 211, 0.3)',
           zIndex: 10,
           pointerEvents: 'none',
           animation: 'subtleFloat 5s ease-in-out infinite',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
           <span
             style={{
               display: 'inline-block',
@@ -465,11 +454,17 @@ export default function Hero3D() {
             }}
           />
           <div>
-            <div style={{ fontSize: '0.7rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
-              Organic Traffic
+            <div
+              className="font-mono"
+              style={{ fontSize: '0.7rem', color: '#D8BFD8', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600 }}
+            >
+              $ organic_traffic
             </div>
-            <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#F8FAFC', letterSpacing: '-0.02em' }}>
-              +250% <span style={{ fontSize: '0.75rem', color: '#10B981', fontWeight: 600 }}>↑ YoY</span>
+            <div
+              className="font-mono"
+              style={{ fontSize: '1.2rem', fontWeight: 800, color: '#FAF8FF', letterSpacing: '-0.02em' }}
+            >
+              +250% <span style={{ fontSize: '0.75rem', color: '#ED80E9', fontWeight: 600 }}>↑ YoY</span>
             </div>
           </div>
         </div>
@@ -481,35 +476,41 @@ export default function Hero3D() {
           position: 'absolute',
           bottom: '15%',
           right: '4%',
-          background: 'rgba(15, 23, 42, 0.85)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          border: '1px solid rgba(99, 102, 241, 0.35)',
+          background: 'rgba(22, 13, 56, 0.85)',
+          backdropFilter: 'blur(14px)',
+          WebkitBackdropFilter: 'blur(14px)',
+          border: '1px solid rgba(211, 211, 255, 0.35)',
           borderRadius: '12px',
-          padding: '0.75rem 1.1rem',
-          boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.7), 0 0 20px rgba(99, 102, 241, 0.15)',
+          padding: '0.75rem 1.15rem',
+          boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.8), 0 0 25px rgba(211, 211, 255, 0.2)',
           zIndex: 10,
           pointerEvents: 'none',
           animation: 'subtleFloat 6s ease-in-out infinite 1s',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
           <span
             style={{
               display: 'inline-block',
               width: '8px',
               height: '8px',
               borderRadius: '50%',
-              backgroundColor: '#F59E0B',
-              boxShadow: '0 0 10px #F59E0B',
+              backgroundColor: '#ED80E9',
+              boxShadow: '0 0 10px #ED80E9',
             }}
           />
           <div>
-            <div style={{ fontSize: '0.7rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
-              Client Satisfaction
+            <div
+              className="font-mono"
+              style={{ fontSize: '0.7rem', color: '#D8BFD8', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600 }}
+            >
+              $ clutch_score
             </div>
-            <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#F8FAFC', letterSpacing: '-0.02em' }}>
-              4.9 / 5.0 <span style={{ fontSize: '0.75rem', color: '#F59E0B', fontWeight: 600 }}>★ Clutch</span>
+            <div
+              className="font-mono"
+              style={{ fontSize: '1.2rem', fontWeight: 800, color: '#FAF8FF', letterSpacing: '-0.02em' }}
+            >
+              4.9 / 5.0 <span style={{ fontSize: '0.75rem', color: '#ED80E9', fontWeight: 600 }}>★</span>
             </div>
           </div>
         </div>
@@ -521,39 +522,40 @@ export default function Hero3D() {
           position: 'absolute',
           bottom: '6%',
           left: '8%',
-          background: 'rgba(15, 23, 42, 0.85)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          border: '1px solid rgba(0, 210, 238, 0.25)',
+          background: 'rgba(22, 13, 56, 0.85)',
+          backdropFilter: 'blur(14px)',
+          WebkitBackdropFilter: 'blur(14px)',
+          border: '1px solid rgba(148, 0, 211, 0.45)',
           borderRadius: '12px',
           padding: '0.65rem 1rem',
-          boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.7)',
+          boxShadow: '0 15px 35px -5px rgba(0, 0, 0, 0.8)',
           zIndex: 10,
           pointerEvents: 'none',
           animation: 'subtleFloat 7s ease-in-out infinite 0.5s',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <div style={{ fontSize: '0.7rem', color: '#94A3B8' }}>ROAS Multiplier</div>
-          <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#00D2EE' }}>4.2x Avg</div>
+          <div className="font-mono" style={{ fontSize: '0.7rem', color: '#D8BFD8' }}>roas_multiplier</div>
+          <div className="font-mono" style={{ fontSize: '0.95rem', fontWeight: 700, color: '#ED80E9' }}>4.2x</div>
         </div>
       </div>
 
       {/* Interactive Helper Hint */}
       <div
+        className="font-mono"
         style={{
           position: 'absolute',
           bottom: '2px',
           left: '50%',
           transform: 'translateX(-50%)',
           fontSize: '0.6875rem',
-          color: 'rgba(148, 163, 184, 0.6)',
+          color: 'rgba(216, 191, 216, 0.7)',
           letterSpacing: '0.05em',
           pointerEvents: 'none',
           whiteSpace: 'nowrap',
         }}
       >
-        ✦ Drag or move cursor to interact with growth engine
+        ✦ [drag to rotate growth matrix]
       </div>
     </div>
   );

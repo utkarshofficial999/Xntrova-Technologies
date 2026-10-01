@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { X, Sparkles, CheckCircle2, AlertTriangle, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { X, Sparkles, CheckCircle2, AlertTriangle, ArrowRight, ShieldCheck, Zap, Terminal } from 'lucide-react';
 
 export default function QuickAuditModal({ isOpen, onClose, initialDomain, onCompleteAuditTransfer }) {
   const [domain, setDomain] = useState(initialDomain || '');
-  const [scanStep, setScanStep] = useState('input'); // 'input' | 'scanning' | 'results'
+  const [scanStep, setScanStep] = useState('input');
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function QuickAuditModal({ isOpen, onClose, initialDomain, onComp
       style={{
         position: 'fixed',
         inset: 0,
-        backgroundColor: 'rgba(3, 7, 18, 0.85)',
+        backgroundColor: 'rgba(7, 3, 18, 0.88)',
         backdropFilter: 'blur(16px)',
         WebkitBackdropFilter: 'blur(16px)',
         display: 'flex',
@@ -57,11 +57,11 @@ export default function QuickAuditModal({ isOpen, onClose, initialDomain, onComp
         style={{
           width: '100%',
           maxWidth: '540px',
-          backgroundColor: '#0a1120',
-          border: '1px solid rgba(0, 210, 238, 0.35)',
+          backgroundColor: '#0e0724',
+          border: '1px solid rgba(237, 128, 233, 0.4)',
           borderRadius: '20px',
           padding: '2rem',
-          boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 35px rgba(0, 210, 238, 0.15)',
+          boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 35px rgba(148, 0, 211, 0.3)',
           position: 'relative',
         }}
       >
@@ -74,14 +74,14 @@ export default function QuickAuditModal({ isOpen, onClose, initialDomain, onComp
             top: '1.25rem',
             right: '1.25rem',
             background: 'rgba(255, 255, 255, 0.05)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(216, 191, 216, 0.15)',
             borderRadius: '50%',
             width: '34px',
             height: '34px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#94A3B8',
+            color: '#D8BFD8',
             cursor: 'pointer',
           }}
           aria-label="Close Audit Modal"
@@ -93,55 +93,58 @@ export default function QuickAuditModal({ isOpen, onClose, initialDomain, onComp
         {scanStep === 'input' && (
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
-              <Sparkles size={16} color="#00D2EE" />
-              <span className="badge-pill">Automated Telemetry Scanner</span>
+              <Terminal size={16} color="#ED80E9" />
+              <span className="badge-pill">// AUTOMATED_TELEMETRY_SCANNER</span>
             </div>
 
-            <h3 id="audit-modal-title" style={{ fontSize: '1.45rem', fontWeight: 800, color: '#F8FAFC', marginBottom: '0.5rem' }}>
+            <h3 id="audit-modal-title" style={{ fontSize: '1.45rem', fontWeight: 800, color: '#FAF8FF', marginBottom: '0.5rem' }}>
               Instant Digital Health Audit
             </h3>
-            <p style={{ fontSize: '0.875rem', color: '#94A3B8', lineHeight: 1.5, marginBottom: '1.5rem' }}>
+            <p style={{ fontSize: '0.875rem', color: '#D8BFD8', lineHeight: 1.5, marginBottom: '1.5rem' }}>
               Run our automated diagnostic against Google Search signals, mobile Core Web Vitals, and
               market visibility score.
             </p>
 
             <form onSubmit={handleStartScan} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '0.8125rem', fontWeight: 600, color: '#CBD5E1', marginBottom: '0.4rem' }}>
-                  Website URL / Domain
+                <label className="font-mono" style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#D3D3FF', marginBottom: '0.4rem' }}>
+                  $ target_domain
                 </label>
                 <div
                   style={{
                     display: 'flex',
                     alignItems: 'center',
-                    backgroundColor: 'rgba(3, 7, 18, 0.7)',
-                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    backgroundColor: 'rgba(7, 3, 18, 0.75)',
+                    border: '1px solid rgba(216, 191, 216, 0.2)',
                     borderRadius: '10px',
                     padding: '0.65rem 0.85rem',
                     gap: '0.5rem',
                   }}
                 >
-                  <Zap size={16} color="#00D2EE" />
+                  <span className="font-mono" style={{ color: '#ED80E9', fontSize: '0.875rem' }}>
+                    &gt;
+                  </span>
                   <input
                     type="text"
                     required
                     value={domain}
                     onChange={(e) => setDomain(e.target.value)}
-                    placeholder="e.g. acme-corp.com"
+                    placeholder="https://yourcompany.com"
+                    className="font-mono"
                     style={{
                       width: '100%',
                       background: 'transparent',
                       border: 'none',
                       outline: 'none',
-                      color: '#F8FAFC',
-                      fontSize: '0.9rem',
+                      color: '#FAF8FF',
+                      fontSize: '0.875rem',
                     }}
                   />
                 </div>
               </div>
 
               <button type="submit" className="btn-primary" style={{ padding: '0.8rem', width: '100%', marginTop: '0.5rem' }}>
-                <span>Run Diagnostic Scan</span>
+                <span>&gt; execute_diagnostic_scan</span>
                 <ArrowRight size={16} />
               </button>
             </form>
@@ -156,24 +159,24 @@ export default function QuickAuditModal({ isOpen, onClose, initialDomain, onComp
                 width: '64px',
                 height: '64px',
                 borderRadius: '50%',
-                border: '3px solid rgba(0, 210, 238, 0.2)',
-                borderTopColor: '#00D2EE',
+                border: '3px solid rgba(237, 128, 233, 0.25)',
+                borderTopColor: '#ED80E9',
                 animation: 'spin 1s linear infinite',
                 margin: '0 auto 1.5rem auto',
+                boxShadow: '0 0 25px rgba(148, 0, 211, 0.4)',
               }}
             />
-            <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '0.4rem' }}>
-              Analyzing {domain}...
+            <h4 className="font-mono" style={{ fontSize: '1.15rem', fontWeight: 700, color: '#FAF8FF', marginBottom: '0.4rem' }}>
+              [scanning: {domain}]
             </h4>
-            <p style={{ fontSize: '0.8125rem', color: '#94A3B8', marginBottom: '1.25rem' }}>
+            <p className="font-mono" style={{ fontSize: '0.8125rem', color: '#D8BFD8', marginBottom: '1.25rem' }}>
               {progress < 40
-                ? 'Inspecting DNS & Core Web Vitals...'
+                ? '$ inspecting_dns_and_core_web_vitals...'
                 : progress < 80
-                ? 'Evaluating Search Indexation & Keyword Footprint...'
-                : 'Compiling Competitor Advantage Report...'}
+                ? '$ evaluating_search_indexation_keyword_matrix...'
+                : '$ compiling_competitor_advantage_report...'}
             </p>
 
-            {/* Progress Bar */}
             <div
               style={{
                 width: '100%',
@@ -187,8 +190,9 @@ export default function QuickAuditModal({ isOpen, onClose, initialDomain, onComp
                 style={{
                   width: `${progress}%`,
                   height: '100%',
-                  background: 'linear-gradient(90deg, #00D2EE, #6366F1)',
+                  background: 'linear-gradient(90deg, #ED80E9, #9400D3)',
                   transition: 'width 0.4s ease',
+                  boxShadow: '0 0 10px #ED80E9',
                 }}
               />
             </div>
@@ -200,16 +204,18 @@ export default function QuickAuditModal({ isOpen, onClose, initialDomain, onComp
           <div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
               <div>
-                <span className="badge-pill badge-emerald">Diagnostic Completed</span>
-                <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#F8FAFC', marginTop: '0.35rem' }}>
+                <span className="badge-pill">// SCAN_COMPLETE</span>
+                <div className="font-mono" style={{ fontSize: '1.05rem', fontWeight: 800, color: '#FAF8FF', marginTop: '0.35rem' }}>
                   {domain}
                 </div>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <div style={{ fontSize: '1.85rem', fontWeight: 800, color: '#F59E0B' }}>
-                  68 <span style={{ fontSize: '0.9rem', color: '#94A3B8' }}>/100</span>
+                <div className="code-metric" style={{ fontSize: '1.85rem', fontWeight: 800, color: '#ED80E9' }}>
+                  68 <span style={{ fontSize: '0.9rem', color: '#D8BFD8' }}>/100</span>
                 </div>
-                <div style={{ fontSize: '0.7rem', color: '#94A3B8' }}>Growth Index Score</div>
+                <div className="font-mono" style={{ fontSize: '0.68rem', color: '#D8BFD8' }}>
+                  growth_index_score
+                </div>
               </div>
             </div>
 
@@ -219,8 +225,8 @@ export default function QuickAuditModal({ isOpen, onClose, initialDomain, onComp
                 style={{
                   padding: '0.75rem',
                   borderRadius: '8px',
-                  backgroundColor: 'rgba(239, 68, 68, 0.1)',
-                  border: '1px solid rgba(239, 68, 68, 0.25)',
+                  backgroundColor: 'rgba(239, 68, 68, 0.12)',
+                  border: '1px solid rgba(239, 68, 68, 0.3)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.6rem',
@@ -236,8 +242,8 @@ export default function QuickAuditModal({ isOpen, onClose, initialDomain, onComp
                 style={{
                   padding: '0.75rem',
                   borderRadius: '8px',
-                  backgroundColor: 'rgba(245, 158, 11, 0.1)',
-                  border: '1px solid rgba(245, 158, 11, 0.25)',
+                  backgroundColor: 'rgba(245, 158, 11, 0.12)',
+                  border: '1px solid rgba(245, 158, 11, 0.3)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.6rem',
@@ -253,15 +259,15 @@ export default function QuickAuditModal({ isOpen, onClose, initialDomain, onComp
                 style={{
                   padding: '0.75rem',
                   borderRadius: '8px',
-                  backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                  border: '1px solid rgba(16, 185, 129, 0.25)',
+                  backgroundColor: 'rgba(237, 128, 233, 0.15)',
+                  border: '1px solid rgba(237, 128, 233, 0.35)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.6rem',
                 }}
               >
-                <CheckCircle2 size={16} color="#34D399" style={{ flexShrink: 0 }} />
-                <span style={{ fontSize: '0.8rem', color: '#A7F3D0' }}>
+                <CheckCircle2 size={16} color="#ED80E9" style={{ flexShrink: 0 }} />
+                <span style={{ fontSize: '0.8rem', color: '#FAF8FF' }}>
                   <strong>Market Potential:</strong> Estimated 3.2x revenue scale possible in 90 days.
                 </span>
               </div>
@@ -277,7 +283,7 @@ export default function QuickAuditModal({ isOpen, onClose, initialDomain, onComp
               className="btn-primary"
               style={{ width: '100%', padding: '0.85rem' }}
             >
-              <span>Unlock Full Actionable Strategy Report</span>
+              <span>&gt; unlock_full_strategy_report</span>
               <ArrowRight size={16} />
             </button>
           </div>

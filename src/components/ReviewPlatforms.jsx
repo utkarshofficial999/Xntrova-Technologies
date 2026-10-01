@@ -28,21 +28,21 @@ export default function ReviewPlatforms() {
       rating: 'Certified Partner',
       reviews: 'Search & Display Ads',
       customBadge: 'Google Partner',
-      color: '#4285F4',
+      color: '#ED80E9',
     },
     {
       name: 'Meta Business Partner',
       rating: 'Tier 1 Agency',
       reviews: 'Performance Marketing',
       customBadge: 'Meta Partner',
-      color: '#0668E1',
+      color: '#9400D3',
     },
     {
       name: 'DesignRush',
       rating: 'Top Digital Agency',
       reviews: 'New Delhi Ranking',
       customBadge: 'DesignRush Verified',
-      color: '#FF6433',
+      color: '#D3D3FF',
     },
   ];
 
@@ -51,9 +51,9 @@ export default function ReviewPlatforms() {
       style={{
         paddingTop: '2.5rem',
         paddingBottom: '2.5rem',
-        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
-        backgroundColor: 'rgba(8, 15, 30, 0.6)',
+        borderTop: '1px solid rgba(216, 191, 216, 0.1)',
+        borderBottom: '1px solid rgba(216, 191, 216, 0.1)',
+        backgroundColor: 'rgba(14, 7, 36, 0.7)',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -61,15 +61,16 @@ export default function ReviewPlatforms() {
     >
       <div className="container" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
         <p
+          className="font-mono"
           style={{
             fontSize: '0.75rem',
             fontWeight: 700,
             textTransform: 'uppercase',
-            letterSpacing: '0.14em',
-            color: '#94A3B8',
+            letterSpacing: '0.12em',
+            color: '#D8BFD8',
           }}
         >
-          Recognized by Global Industry Authorities &amp; Enterprise Review Platforms
+          // VERIFIED_ACCREDITATIONS &amp; ENTERPRISE_REVIEW_PLATFORMS
         </p>
       </div>
 
@@ -83,19 +84,21 @@ export default function ReviewPlatforms() {
                 alignItems: 'center',
                 gap: '1rem',
                 padding: '0.75rem 1.5rem',
-                backgroundColor: 'rgba(15, 23, 42, 0.55)',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
+                backgroundColor: 'rgba(22, 13, 56, 0.65)',
+                border: '1px solid rgba(216, 191, 216, 0.12)',
                 borderRadius: '12px',
                 minWidth: '220px',
-                transition: 'border-color 0.2s, transform 0.2s',
+                transition: 'border-color 0.2s, transform 0.2s, box-shadow 0.2s',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(0, 210, 238, 0.35)';
+                e.currentTarget.style.borderColor = 'rgba(237, 128, 233, 0.45)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 0 20px rgba(148, 0, 211, 0.25)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                e.currentTarget.style.borderColor = 'rgba(216, 191, 216, 0.12)';
                 e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
               }}
             >
               {platform.logo ? (
@@ -107,15 +110,16 @@ export default function ReviewPlatforms() {
                     width: 'auto',
                     maxWidth: '100px',
                     objectFit: 'contain',
-                    filter: 'brightness(1.1)',
+                    filter: 'brightness(1.15)',
                   }}
                 />
               ) : (
                 <div
+                  className="font-mono"
                   style={{
                     fontWeight: 700,
-                    fontSize: '0.9rem',
-                    color: platform.color || '#00D2EE',
+                    fontSize: '0.85rem',
+                    color: platform.color || '#ED80E9',
                     letterSpacing: '-0.01em',
                   }}
                 >
@@ -123,12 +127,17 @@ export default function ReviewPlatforms() {
                 </div>
               )}
 
-              <div style={{ borderLeft: '1px solid rgba(255, 255, 255, 0.1)', paddingLeft: '0.85rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.78rem', fontWeight: 700, color: '#F8FAFC' }}>
-                  <Star size={11} fill="#F59E0B" color="#F59E0B" />
+              <div style={{ borderLeft: '1px solid rgba(216, 191, 216, 0.15)', paddingLeft: '0.85rem' }}>
+                <div
+                  className="font-mono"
+                  style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.78rem', fontWeight: 700, color: '#FAF8FF' }}
+                >
+                  <Star size={11} fill="#ED80E9" color="#ED80E9" />
                   <span>{platform.rating}</span>
                 </div>
-                <div style={{ fontSize: '0.6875rem', color: '#94A3B8' }}>{platform.reviews}</div>
+                <div className="font-mono" style={{ fontSize: '0.6875rem', color: '#D8BFD8' }}>
+                  {platform.reviews}
+                </div>
               </div>
             </div>
           ))}

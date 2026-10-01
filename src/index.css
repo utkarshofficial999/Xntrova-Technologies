@@ -1,49 +1,68 @@
 /* ==========================================================================
-   XNTROVA TECHNOLOGIES - DESIGN SYSTEM & GLOBAL CSS
-   Enterprise-Quality Modern 3D Web Aesthetic (2026 Edition)
+   XNTROVA TECHNOLOGIES - WISTERIA BLOOM DESIGN SYSTEM
+   Color Palette:
+     - #D3D3FF (Soft Lavender / Periwinkle Mist)
+     - #9400D3 (Electric Royal Violet / Dark Violet)
+     - #D8BFD8 (Thistle / Silky Lilac)
+     - #ED80E9 (Orchid Blossom / Luminous Magenta Pink)
+   Typography:
+     - Modern Code Font: JetBrains Mono & Fira Code
+     - Sans: Plus Jakarta Sans
    ========================================================================== */
 
 :root {
-  /* Color Tokens */
-  --bg-canvas: #030712;
-  --bg-surface: #080f1e;
-  --bg-surface-elevated: #0f172a;
-  --bg-card: rgba(15, 23, 42, 0.65);
-  --bg-card-hover: rgba(20, 32, 56, 0.82);
-  --bg-card-active: rgba(30, 41, 59, 0.95);
+  /* Wisteria Bloom Palette Tokens */
+  --wisteria-lavender: #D3D3FF;
+  --wisteria-violet: #9400D3;
+  --wisteria-thistle: #D8BFD8;
+  --wisteria-orchid: #ED80E9;
 
-  --accent-cyan: #00D2EE;
-  --accent-cyan-light: #67E8F9;
-  --accent-cyan-dark: #008BB9;
-  --accent-cyan-glow: rgba(0, 210, 238, 0.35);
+  /* Surfaces & Canvas */
+  --bg-canvas: #070312;
+  --bg-surface: #0e0724;
+  --bg-surface-elevated: #160d38;
+  --bg-card: rgba(22, 13, 56, 0.65);
+  --bg-card-hover: rgba(34, 20, 84, 0.82);
+  --bg-card-active: rgba(48, 28, 116, 0.95);
 
-  --accent-indigo: #6366F1;
-  --accent-indigo-glow: rgba(99, 102, 241, 0.3);
+  /* Accents & Brand Lighting */
+  --accent-primary: #9400D3;
+  --accent-primary-hover: #AA15EB;
+  --accent-primary-glow: rgba(148, 0, 211, 0.45);
+
+  --accent-pink: #ED80E9;
+  --accent-pink-glow: rgba(237, 128, 233, 0.4);
+
+  --accent-lavender: #D3D3FF;
+  --accent-lavender-glow: rgba(211, 211, 255, 0.35);
+
+  --accent-thistle: #D8BFD8;
 
   --accent-emerald: #10B981;
   --accent-emerald-glow: rgba(16, 185, 129, 0.25);
 
   --accent-amber: #F59E0B;
-  --accent-amber-glow: rgba(245, 158, 11, 0.25);
 
   /* Text & Inks */
-  --text-primary: #F8FAFC;
-  --text-secondary: #CBD5E1;
-  --text-muted: #64748B;
-  --text-dim: #475569;
+  --text-primary: #FAF8FF;
+  --text-secondary: #D8BFD8;
+  --text-muted: #A396BE;
+  --text-dim: #6B5E87;
 
   /* Specular Borders */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-medium: rgba(255, 255, 255, 0.14);
-  --border-cyan: rgba(0, 210, 238, 0.3);
-  --border-cyan-bright: rgba(0, 210, 238, 0.6);
+  --border-subtle: rgba(211, 211, 255, 0.1);
+  --border-medium: rgba(216, 191, 216, 0.22);
+  --border-violet: rgba(148, 0, 211, 0.45);
+  --border-pink: rgba(237, 128, 233, 0.45);
+  --border-lavender: rgba(211, 211, 255, 0.5);
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
-  --shadow-lg: 0 20px 50px -12px rgba(0, 0, 0, 0.8);
-  --shadow-glow: 0 0 30px rgba(0, 210, 238, 0.25);
-  --shadow-glow-indigo: 0 0 30px rgba(99, 102, 241, 0.25);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 20px 50px -12px rgba(0, 0, 0, 0.85);
+  --shadow-glow-violet: 0 0 35px rgba(148, 0, 211, 0.4);
+  --shadow-glow-pink: 0 0 35px rgba(237, 128, 233, 0.35);
+  --shadow-glow-lavender: 0 0 30px rgba(211, 211, 255, 0.25);
 
   /* Radius Scale */
   --radius-xs: 4px;
@@ -57,14 +76,13 @@
   --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
   --transition-slow: 450ms cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-smooth: 650ms cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Typography */
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-/* Base Styles */
+/* Base Reset */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -79,7 +97,6 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -87,10 +104,28 @@ body {
   overflow-x: hidden;
   background-color: var(--bg-canvas);
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 210, 238, 0.12), transparent 70%),
-    radial-gradient(circle 800px at 90% 20%, rgba(99, 102, 241, 0.08), transparent 60%),
-    radial-gradient(circle 700px at 10% 80%, rgba(0, 210, 238, 0.06), transparent 50%);
+    radial-gradient(ellipse 85% 55% at 50% -15%, rgba(148, 0, 211, 0.25), transparent 70%),
+    radial-gradient(circle 800px at 85% 20%, rgba(237, 128, 233, 0.15), transparent 60%),
+    radial-gradient(circle 750px at 15% 75%, rgba(211, 211, 255, 0.1), transparent 55%),
+    radial-gradient(circle 600px at 50% 90%, rgba(148, 0, 211, 0.12), transparent 60%);
   background-attachment: fixed;
+}
+
+/* Custom Code Font Utilities */
+.font-mono {
+  font-family: var(--font-mono) !important;
+}
+
+.code-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.code-metric {
+  font-family: var(--font-mono);
+  font-feature-settings: 'zero' 1, 'tnum' 1;
 }
 
 /* Custom Scrollbar */
@@ -101,22 +136,22 @@ body {
   background: var(--bg-canvas);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #25164d;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-cyan-dark);
+  background: var(--wisteria-violet);
 }
 
 /* Selection */
 ::selection {
-  background: var(--accent-cyan);
-  color: #030712;
+  background: var(--wisteria-violet);
+  color: #FAF8FF;
 }
 
 /* Accessible Focus States */
 :focus-visible {
-  outline: 2px solid var(--accent-cyan);
+  outline: 2px solid var(--wisteria-orchid);
   outline-offset: 3px;
 }
 
@@ -159,13 +194,6 @@ body {
   border-color: var(--border-medium);
 }
 
-.glass-panel-cyan {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(0, 210, 238, 0.05));
-  border: 1px solid var(--border-cyan);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
 .glass-card {
   position: relative;
   background: var(--bg-card);
@@ -185,62 +213,64 @@ body {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  opacity: 0.6;
+  background: linear-gradient(90deg, transparent, rgba(237, 128, 233, 0.4), rgba(211, 211, 255, 0.4), transparent);
+  opacity: 0.7;
 }
 
 .glass-card:hover {
   transform: translateY(-4px);
-  border-color: var(--border-cyan);
-  box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 210, 238, 0.15);
+  border-color: var(--border-pink);
+  box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.8), 0 0 25px rgba(148, 0, 211, 0.25);
 }
 
-/* Gradient Texts */
-.gradient-text-cyan {
-  background: linear-gradient(135deg, #FFFFFF 20%, #67E8F9 70%, #00D2EE 100%);
+/* Wisteria Bloom Gradient Text */
+.gradient-text-cyan,
+.gradient-text-wisteria {
+  background: linear-gradient(135deg, #FAF8FF 15%, #D3D3FF 45%, #ED80E9 80%, #9400D3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
 .gradient-text-hero {
-  background: linear-gradient(135deg, #FFFFFF 15%, #E2E8F0 50%, #38BDF8 85%, #00D2EE 100%);
+  background: linear-gradient(135deg, #FFFFFF 15%, #D3D3FF 45%, #ED80E9 75%, #D8BFD8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
 .gradient-text-gold {
-  background: linear-gradient(135deg, #FFFBEB 20%, #FBBF24 70%, #D97706 100%);
+  background: linear-gradient(135deg, #FFFBEB 20%, #FBBF24 70%, #ED80E9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
-/* Button System */
+/* Wisteria Button System */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.6rem;
-  font-size: 0.9375rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
   font-weight: 600;
-  color: #030712;
-  background: linear-gradient(135deg, #67E8F9 0%, #00D2EE 50%, #00B4D8 100%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #ED80E9 0%, #9400D3 65%, #6E00A3 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: var(--radius-sm);
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 0 20px rgba(0, 210, 238, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 24px rgba(148, 0, 211, 0.5), 0 0 12px rgba(237, 128, 233, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
   transition: all var(--transition-fast);
   white-space: nowrap;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(0, 210, 238, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  filter: brightness(1.05);
+  box-shadow: 0 0 35px rgba(148, 0, 211, 0.75), 0 0 20px rgba(237, 128, 233, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  filter: brightness(1.1);
 }
 
 .btn-primary:active {
@@ -253,10 +283,11 @@ body {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  font-size: 0.9375rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
   font-weight: 500;
-  color: var(--text-primary);
-  background: rgba(15, 23, 42, 0.7);
+  color: var(--wisteria-lavender);
+  background: rgba(22, 13, 56, 0.7);
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-sm);
   cursor: pointer;
@@ -267,38 +298,40 @@ body {
 }
 
 .btn-secondary:hover {
-  background: rgba(30, 41, 59, 0.9);
-  border-color: var(--border-cyan);
+  background: rgba(34, 20, 84, 0.9);
+  border-color: var(--wisteria-orchid);
   color: #FFFFFF;
   transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(237, 128, 233, 0.25);
 }
 
-/* Badge System */
+/* Wisteria Badge System */
 .badge-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.45rem;
   padding: 0.35rem 0.85rem;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   border-radius: var(--radius-full);
-  background: rgba(0, 210, 238, 0.08);
-  border: 1px solid rgba(0, 210, 238, 0.25);
-  color: var(--accent-cyan);
+  background: rgba(148, 0, 211, 0.14);
+  border: 1px solid rgba(237, 128, 233, 0.35);
+  color: var(--wisteria-lavender);
 }
 
 .badge-emerald {
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   color: #34D399;
 }
 
 .badge-indigo {
-  background: rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.25);
-  color: #A5B4FC;
+  background: rgba(148, 0, 211, 0.18);
+  border: 1px solid rgba(148, 0, 211, 0.4);
+  color: #D3D3FF;
 }
 
 /* Section Header Styles */
@@ -306,20 +339,21 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  font-family: var(--font-mono);
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent-cyan);
+  color: var(--wisteria-orchid);
   margin-bottom: 0.75rem;
 }
 
 .section-tag::before {
-  content: '';
+  content: '>';
   display: inline-block;
-  width: 1.25rem;
-  height: 2px;
-  background: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-weight: 800;
+  color: var(--wisteria-lavender);
 }
 
 .section-title {
@@ -345,26 +379,7 @@ body {
   border-radius: 50%;
   filter: blur(80px);
   z-index: 0;
-  opacity: 0.4;
-}
-
-/* Grid & Layout Helpers */
-.grid-bento {
-  display: grid;
-  gap: 1.25rem;
-  grid-template-columns: repeat(1, 1fr);
-}
-
-@media (min-width: 768px) {
-  .grid-bento {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .grid-bento {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  opacity: 0.45;
 }
 
 /* Marquee / Infinite Slider */
@@ -391,16 +406,6 @@ body {
 
 .marquee-track:hover {
   animation-play-state: paused;
-}
-
-/* Pulse Glow Keyframes */
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.05); }
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 4s ease-in-out infinite;
 }
 
 /* Float Keyframes */

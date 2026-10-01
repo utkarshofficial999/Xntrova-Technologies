@@ -16,6 +16,7 @@ import {
   FileText,
   Code2,
   ShieldCheck,
+  Terminal,
 } from 'lucide-react';
 
 export default function Navbar({ onOpenAuditModal }) {
@@ -33,7 +34,6 @@ export default function Navbar({ onOpenAuditModal }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -100,10 +100,10 @@ export default function Navbar({ onOpenAuditModal }) {
       {/* Top Utility Bar (Desktop) */}
       <div
         style={{
-          backgroundColor: 'rgba(3, 7, 18, 0.95)',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+          backgroundColor: 'rgba(7, 3, 18, 0.96)',
+          borderBottom: '1px solid rgba(216, 191, 216, 0.1)',
           fontSize: '0.78rem',
-          color: '#94A3B8',
+          color: '#D8BFD8',
           display: isScrolled ? 'none' : 'block',
           transition: 'all 0.3s ease',
         }}
@@ -121,65 +121,68 @@ export default function Navbar({ onOpenAuditModal }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
             <a
               href="tel:+918683828646"
+              className="font-mono"
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.4rem',
-                color: '#CBD5E1',
+                color: '#D3D3FF',
                 textDecoration: 'none',
                 transition: 'color 0.2s',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#00D2EE')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#CBD5E1')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#ED80E9')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#D3D3FF')}
             >
-              <Phone size={13} color="#00D2EE" />
+              <Phone size={13} color="#ED80E9" />
               <span>+91 868-382-8646</span>
             </a>
-            <span style={{ color: 'rgba(255, 255, 255, 0.15)' }}>|</span>
+            <span style={{ color: 'rgba(216, 191, 216, 0.2)' }}>|</span>
             <a
               href="mailto:info@xntrova.com"
+              className="font-mono"
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.4rem',
-                color: '#CBD5E1',
+                color: '#D3D3FF',
                 textDecoration: 'none',
                 transition: 'color 0.2s',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#00D2EE')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#CBD5E1')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#ED80E9')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#D3D3FF')}
             >
-              <Mail size={13} color="#00D2EE" />
+              <Mail size={13} color="#ED80E9" />
               <span>info@xntrova.com</span>
             </a>
           </div>
 
           {/* Right: Agency Trust & Region */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: '#10B981' }}>
+            <div className="font-mono" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: '#ED80E9', fontSize: '0.72rem' }}>
               <span
                 style={{
                   width: '6px',
                   height: '6px',
                   borderRadius: '50%',
-                  backgroundColor: '#10B981',
-                  boxShadow: '0 0 6px #10B981',
+                  backgroundColor: '#ED80E9',
+                  boxShadow: '0 0 8px #ED80E9',
                 }}
               />
-              <span style={{ fontWeight: 500, fontSize: '0.75rem' }}>Open for New Client Partnerships</span>
+              <span>[status: open_for_partnerships]</span>
             </div>
 
             <div style={{ position: 'relative' }}>
               <button
                 type="button"
                 onClick={() => setShowRegionMenu(!showRegionMenu)}
+                className="font-mono"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.35rem',
                   background: 'transparent',
                   border: 'none',
-                  color: '#94A3B8',
+                  color: '#D8BFD8',
                   fontSize: '0.75rem',
                   cursor: 'pointer',
                   padding: '2px 6px',
@@ -187,7 +190,7 @@ export default function Navbar({ onOpenAuditModal }) {
                 }}
                 aria-expanded={showRegionMenu}
               >
-                <Globe size={12} color="#00D2EE" />
+                <Globe size={12} color="#D3D3FF" />
                 <span>{activeRegion}</span>
                 <ChevronDown size={11} />
               </button>
@@ -199,12 +202,12 @@ export default function Navbar({ onOpenAuditModal }) {
                     right: 0,
                     top: '100%',
                     marginTop: '4px',
-                    backgroundColor: '#0f172a',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                    borderRadius: '6px',
+                    backgroundColor: '#160d38',
+                    border: '1px solid rgba(237, 128, 233, 0.25)',
+                    borderRadius: '8px',
                     padding: '4px',
-                    minWidth: '120px',
-                    boxShadow: '0 10px 25px rgba(0,0,0,0.5)',
+                    minWidth: '130px',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.6)',
                     zIndex: 100,
                   }}
                 >
@@ -215,13 +218,14 @@ export default function Navbar({ onOpenAuditModal }) {
                         setActiveRegion(reg);
                         setShowRegionMenu(false);
                       }}
+                      className="font-mono"
                       style={{
                         display: 'block',
                         width: '100%',
                         textAlign: 'left',
                         padding: '6px 10px',
-                        background: activeRegion === reg ? 'rgba(0, 210, 238, 0.12)' : 'transparent',
-                        color: activeRegion === reg ? '#00D2EE' : '#CBD5E1',
+                        background: activeRegion === reg ? 'rgba(148, 0, 211, 0.2)' : 'transparent',
+                        color: activeRegion === reg ? '#ED80E9' : '#D8BFD8',
                         border: 'none',
                         borderRadius: '4px',
                         fontSize: '0.75rem',
@@ -241,12 +245,12 @@ export default function Navbar({ onOpenAuditModal }) {
       {/* Main Navigation Bar */}
       <nav
         style={{
-          backgroundColor: isScrolled ? 'rgba(3, 7, 18, 0.85)' : 'rgba(3, 7, 18, 0.65)',
+          backgroundColor: isScrolled ? 'rgba(7, 3, 18, 0.88)' : 'rgba(7, 3, 18, 0.7)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
           borderBottom: '1px solid',
-          borderColor: isScrolled ? 'rgba(0, 210, 238, 0.2)' : 'rgba(255, 255, 255, 0.07)',
-          boxShadow: isScrolled ? '0 10px 30px -10px rgba(0, 0, 0, 0.8)' : 'none',
+          borderColor: isScrolled ? 'rgba(148, 0, 211, 0.35)' : 'rgba(216, 191, 216, 0.1)',
+          boxShadow: isScrolled ? '0 10px 30px -10px rgba(0, 0, 0, 0.85), 0 0 20px rgba(148, 0, 211, 0.15)' : 'none',
           transition: 'all 0.3s ease',
         }}
         aria-label="Main Navigation"
@@ -261,7 +265,7 @@ export default function Navbar({ onOpenAuditModal }) {
             transition: 'height 0.3s ease',
           }}
         >
-          {/* Logo & Agency Identity */}
+          {/* Logo & Agency Identity with Code Badge */}
           <a
             href="/"
             style={{
@@ -282,19 +286,16 @@ export default function Navbar({ onOpenAuditModal }) {
               }}
             />
             <span
+              className="code-badge"
               style={{
-                fontSize: '0.65rem',
-                fontWeight: 700,
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                background: 'linear-gradient(135deg, rgba(0, 210, 238, 0.2), rgba(99, 102, 241, 0.2))',
-                color: '#67E8F9',
-                border: '1px solid rgba(0, 210, 238, 0.3)',
-                padding: '2px 6px',
-                borderRadius: '4px',
+                background: 'linear-gradient(135deg, rgba(148, 0, 211, 0.25), rgba(237, 128, 233, 0.2))',
+                color: '#ED80E9',
+                border: '1px solid rgba(237, 128, 233, 0.35)',
+                padding: '3px 7px',
+                borderRadius: '6px',
               }}
             >
-              Engineered Growth
+              v3.0 // engineered
             </span>
           </a>
 
@@ -315,14 +316,15 @@ export default function Navbar({ onOpenAuditModal }) {
             >
               <a
                 href="#services"
+                className="font-mono"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '0.35rem',
                   padding: '0.5rem 0.9rem',
-                  fontSize: '0.9rem',
-                  fontWeight: 500,
-                  color: servicesDropdownOpen ? '#00D2EE' : '#CBD5E1',
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  color: servicesDropdownOpen ? '#ED80E9' : '#D8BFD8',
                   textDecoration: 'none',
                   borderRadius: '6px',
                   transition: 'color 0.2s',
@@ -347,12 +349,12 @@ export default function Navbar({ onOpenAuditModal }) {
                     left: '-100px',
                     width: '580px',
                     padding: '1.25rem',
-                    backgroundColor: 'rgba(11, 19, 36, 0.96)',
+                    backgroundColor: 'rgba(14, 7, 36, 0.98)',
                     backdropFilter: 'blur(24px)',
                     WebkitBackdropFilter: 'blur(24px)',
-                    border: '1px solid rgba(0, 210, 238, 0.25)',
+                    border: '1px solid rgba(237, 128, 233, 0.3)',
                     borderRadius: '16px',
-                    boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 35px rgba(0, 210, 238, 0.1)',
+                    boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 35px rgba(148, 0, 211, 0.2)',
                     display: 'grid',
                     gridTemplateColumns: 'repeat(2, 1fr)',
                     gap: '0.75rem',
@@ -378,8 +380,8 @@ export default function Navbar({ onOpenAuditModal }) {
                           transition: 'all 0.2s ease',
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = 'rgba(0, 210, 238, 0.06)';
-                          e.currentTarget.style.borderColor = 'rgba(0, 210, 238, 0.25)';
+                          e.currentTarget.style.backgroundColor = 'rgba(148, 0, 211, 0.15)';
+                          e.currentTarget.style.borderColor = 'rgba(237, 128, 233, 0.35)';
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.02)';
@@ -390,8 +392,8 @@ export default function Navbar({ onOpenAuditModal }) {
                           style={{
                             padding: '0.5rem',
                             borderRadius: '8px',
-                            background: 'rgba(0, 210, 238, 0.1)',
-                            color: '#00D2EE',
+                            background: 'rgba(148, 0, 211, 0.2)',
+                            color: '#ED80E9',
                             flexShrink: 0,
                           }}
                         >
@@ -405,17 +407,17 @@ export default function Navbar({ onOpenAuditModal }) {
                               gap: '0.4rem',
                               fontSize: '0.875rem',
                               fontWeight: 600,
-                              color: '#F8FAFC',
+                              color: '#FAF8FF',
                             }}
                           >
                             {item.title}
                             {item.badge && (
                               <span
+                                className="code-badge"
                                 style={{
                                   fontSize: '0.65rem',
-                                  fontWeight: 700,
-                                  color: '#00D2EE',
-                                  background: 'rgba(0, 210, 238, 0.15)',
+                                  color: '#ED80E9',
+                                  background: 'rgba(237, 128, 233, 0.15)',
                                   padding: '1px 5px',
                                   borderRadius: '4px',
                                 }}
@@ -424,7 +426,7 @@ export default function Navbar({ onOpenAuditModal }) {
                               </span>
                             )}
                           </div>
-                          <p style={{ fontSize: '0.75rem', color: '#94A3B8', marginTop: '2px', lineHeight: 1.4 }}>
+                          <p style={{ fontSize: '0.75rem', color: '#D8BFD8', marginTop: '2px', lineHeight: 1.4 }}>
                             {item.desc}
                           </p>
                         </div>
@@ -435,90 +437,29 @@ export default function Navbar({ onOpenAuditModal }) {
               )}
             </div>
 
-            <a
-              href="#about"
-              style={{
-                padding: '0.5rem 0.9rem',
-                fontSize: '0.9rem',
-                fontWeight: 500,
-                color: '#CBD5E1',
-                textDecoration: 'none',
-                borderRadius: '6px',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#00D2EE')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#CBD5E1')}
-            >
-              About
-            </a>
-
-            <a
-              href="#process"
-              style={{
-                padding: '0.5rem 0.9rem',
-                fontSize: '0.9rem',
-                fontWeight: 500,
-                color: '#CBD5E1',
-                textDecoration: 'none',
-                borderRadius: '6px',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#00D2EE')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#CBD5E1')}
-            >
-              Process
-            </a>
-
-            <a
-              href="#case-studies"
-              style={{
-                padding: '0.5rem 0.9rem',
-                fontSize: '0.9rem',
-                fontWeight: 500,
-                color: '#CBD5E1',
-                textDecoration: 'none',
-                borderRadius: '6px',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#00D2EE')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#CBD5E1')}
-            >
-              Case Studies
-            </a>
-
-            <a
-              href="#testimonials"
-              style={{
-                padding: '0.5rem 0.9rem',
-                fontSize: '0.9rem',
-                fontWeight: 500,
-                color: '#CBD5E1',
-                textDecoration: 'none',
-                borderRadius: '6px',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#00D2EE')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#CBD5E1')}
-            >
-              Testimonials
-            </a>
-
-            <a
-              href="#faq"
-              style={{
-                padding: '0.5rem 0.9rem',
-                fontSize: '0.9rem',
-                fontWeight: 500,
-                color: '#CBD5E1',
-                textDecoration: 'none',
-                borderRadius: '6px',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#00D2EE')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#CBD5E1')}
-            >
-              FAQ
-            </a>
+            {['About', 'Process', 'Case Studies', 'Testimonials', 'FAQ'].map((link) => {
+              const href = `#${link.toLowerCase().replace(' ', '-')}`;
+              return (
+                <a
+                  key={link}
+                  href={href}
+                  className="font-mono"
+                  style={{
+                    padding: '0.5rem 0.9rem',
+                    fontSize: '0.85rem',
+                    fontWeight: 600,
+                    color: '#D8BFD8',
+                    textDecoration: 'none',
+                    borderRadius: '6px',
+                    transition: 'color 0.2s',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#ED80E9')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#D8BFD8')}
+                >
+                  {link}
+                </a>
+              );
+            })}
           </div>
 
           {/* Right Action: CTA Buttons */}
@@ -526,16 +467,14 @@ export default function Navbar({ onOpenAuditModal }) {
             <button
               type="button"
               onClick={onOpenAuditModal}
-              className="btn-secondary"
+              className="btn-secondary hidden sm:inline-flex"
               style={{
                 padding: '0.55rem 1.1rem',
-                fontSize: '0.85rem',
-                display: 'none',
+                fontSize: '0.8125rem',
               }}
-              className="hidden sm:inline-flex"
             >
-              <Sparkles size={14} color="#00D2EE" />
-              <span>Instant Audit</span>
+              <Terminal size={14} color="#ED80E9" />
+              <span>&gt; audit_scanner</span>
             </button>
 
             <a
@@ -543,7 +482,7 @@ export default function Navbar({ onOpenAuditModal }) {
               className="btn-primary"
               style={{
                 padding: '0.55rem 1.25rem',
-                fontSize: '0.875rem',
+                fontSize: '0.85rem',
               }}
             >
               <span>Get Free Audit</span>
@@ -562,7 +501,7 @@ export default function Navbar({ onOpenAuditModal }) {
                 background: 'rgba(255, 255, 255, 0.05)',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
                 borderRadius: '8px',
-                color: '#F8FAFC',
+                color: '#FAF8FF',
                 cursor: 'pointer',
               }}
               className="lg:hidden"
@@ -583,7 +522,7 @@ export default function Navbar({ onOpenAuditModal }) {
               left: 0,
               right: 0,
               bottom: 0,
-              backgroundColor: 'rgba(3, 7, 18, 0.98)',
+              backgroundColor: 'rgba(7, 3, 18, 0.98)',
               backdropFilter: 'blur(20px)',
               padding: '1.5rem',
               display: 'flex',
@@ -595,8 +534,8 @@ export default function Navbar({ onOpenAuditModal }) {
             className="lg:hidden"
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#00D2EE', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                Navigation
+              <div className="code-badge" style={{ color: '#ED80E9', textTransform: 'uppercase' }}>
+                // NAVIGATION_MENU
               </div>
 
               {[
@@ -612,16 +551,17 @@ export default function Navbar({ onOpenAuditModal }) {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
+                  className="font-mono"
                   style={{
-                    fontSize: '1.15rem',
+                    fontSize: '1.1rem',
                     fontWeight: 600,
-                    color: '#F8FAFC',
+                    color: '#FAF8FF',
                     textDecoration: 'none',
                     padding: '0.5rem 0',
-                    borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+                    borderBottom: '1px solid rgba(216, 191, 216, 0.08)',
                   }}
                 >
-                  {link.label}
+                  &gt; {link.label}
                 </a>
               ))}
             </div>
@@ -630,7 +570,7 @@ export default function Navbar({ onOpenAuditModal }) {
               style={{
                 marginTop: '2rem',
                 paddingTop: '1.5rem',
-                borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+                borderTop: '1px solid rgba(216, 191, 216, 0.1)',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '1rem',
@@ -645,7 +585,7 @@ export default function Navbar({ onOpenAuditModal }) {
                 className="btn-secondary"
                 style={{ width: '100%', justifyContent: 'center' }}
               >
-                <Sparkles size={16} color="#00D2EE" />
+                <Terminal size={16} color="#ED80E9" />
                 <span>Quick Digital Audit</span>
               </button>
 
@@ -659,7 +599,7 @@ export default function Navbar({ onOpenAuditModal }) {
                 <ArrowRight size={16} />
               </a>
 
-              <div style={{ textAlign: 'center', fontSize: '0.8rem', color: '#64748B', marginTop: '0.5rem' }}>
+              <div className="font-mono" style={{ textAlign: 'center', fontSize: '0.78rem', color: '#A396BE', marginTop: '0.5rem' }}>
                 📞 +91 868-382-8646 • ✉ info@xntrova.com
               </div>
             </div>

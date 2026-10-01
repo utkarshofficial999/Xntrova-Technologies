@@ -14,9 +14,9 @@ export default function TestimonialsSection() {
       rating: 5,
       quote:
         'What impressed us most about Xntrova was their strategic mindset. Unlike other digital marketing agencies in Delhi, Xntrova didn’t give us a one-size-fits-all solution; instead, they created customized strategies for our business. Their proactive communication and data-driven approach gave us confidence in every decision we made together.',
-      metrics: '+280% Inbound Pipeline',
+      metrics: '+280% pipeline_growth',
       avatarInitial: 'A',
-      avatarBg: 'linear-gradient(135deg, #00D2EE, #0075A2)',
+      avatarBg: 'linear-gradient(135deg, #ED80E9, #9400D3)',
     },
     {
       name: 'Neha Kapoor',
@@ -26,9 +26,9 @@ export default function TestimonialsSection() {
       rating: 5,
       quote:
         'Working with Xntrova has been transformative for our digital presence. Within 90 days, our organic search traffic tripled, and our cost per qualified lead dropped by over 45%. The team is deeply knowledgeable, completely transparent, and always steps ahead of search engine updates.',
-      metrics: '-45% Cost Per Lead',
+      metrics: '-45% cpa_reduction',
       avatarInitial: 'N',
-      avatarBg: 'linear-gradient(135deg, #6366F1, #4338CA)',
+      avatarBg: 'linear-gradient(135deg, #9400D3, #4C006A)',
     },
     {
       name: 'Rahul Sharma',
@@ -38,9 +38,9 @@ export default function TestimonialsSection() {
       rating: 5,
       quote:
         'Xntrova’s web engineering and PPC execution are exceptional. They overhauled our entire digital funnel and built a lightning-fast web experience that drastically improved our conversion rates. We consider them an indispensable extension of our core growth team.',
-      metrics: '4.6x Google Ads ROAS',
+      metrics: '4.6x google_roas',
       avatarInitial: 'R',
-      avatarBg: 'linear-gradient(135deg, #10B981, #047857)',
+      avatarBg: 'linear-gradient(135deg, #D3D3FF, #9400D3)',
     },
     {
       name: 'Priya Sundaram',
@@ -50,9 +50,9 @@ export default function TestimonialsSection() {
       rating: 5,
       quote:
         'Their reporting clarity is unmatched. With their real-time telemetry dashboards, our executive board knows down to the rupee what each campaign delivers. Xntrova is the gold standard for performance marketing in India.',
-      metrics: '+310% E-Commerce GMV',
+      metrics: '+310% gmv_scale',
       avatarInitial: 'P',
-      avatarBg: 'linear-gradient(135deg, #F59E0B, #B45309)',
+      avatarBg: 'linear-gradient(135deg, #ED80E9, #D8BFD8)',
     },
   ];
 
@@ -73,9 +73,9 @@ export default function TestimonialsSection() {
         paddingTop: '6rem',
         paddingBottom: '6rem',
         position: 'relative',
-        backgroundColor: 'rgba(8, 15, 30, 0.4)',
-        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+        backgroundColor: 'rgba(14, 7, 36, 0.45)',
+        borderTop: '1px solid rgba(216, 191, 216, 0.1)',
+        borderBottom: '1px solid rgba(216, 191, 216, 0.1)',
       }}
     >
       <div className="container">
@@ -85,7 +85,7 @@ export default function TestimonialsSection() {
             Client Proof
           </div>
           <h2 className="section-title">
-            Words From Our <span className="gradient-text-cyan">Valued Partners</span>
+            Words From Our <span className="gradient-text-wisteria">Valued Partners</span>
           </h2>
           <p className="section-desc" style={{ margin: '0 auto' }}>
             We measure our success through the compounding commercial achievements of our enterprise
@@ -97,11 +97,12 @@ export default function TestimonialsSection() {
         <div style={{ maxWidth: '920px', margin: '0 auto' }}>
           <TiltCard
             tiltFactor={3}
-            glowColor="rgba(0, 210, 238, 0.2)"
+            glowColor="rgba(237, 128, 233, 0.25)"
             className="glass-panel"
             style={{
               padding: '2.5rem',
-              border: '1px solid rgba(0, 210, 238, 0.25)',
+              border: '1px solid rgba(237, 128, 233, 0.3)',
+              backgroundColor: 'rgba(22, 13, 56, 0.75)',
               position: 'relative',
             }}
           >
@@ -118,13 +119,14 @@ export default function TestimonialsSection() {
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} fill="#F59E0B" color="#F59E0B" />
+                  <Star key={i} size={18} fill="#ED80E9" color="#ED80E9" />
                 ))}
                 <span
+                  className="font-mono"
                   style={{
                     fontSize: '0.8125rem',
                     fontWeight: 700,
-                    color: '#F8FAFC',
+                    color: '#FAF8FF',
                     marginLeft: '0.5rem',
                   }}
                 >
@@ -133,15 +135,16 @@ export default function TestimonialsSection() {
               </div>
 
               <div
+                className="font-mono"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.4rem',
-                  fontSize: '0.75rem',
+                  fontSize: '0.72rem',
                   fontWeight: 600,
-                  color: '#10B981',
-                  backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                  border: '1px solid rgba(16, 185, 129, 0.25)',
+                  color: '#ED80E9',
+                  backgroundColor: 'rgba(237, 128, 233, 0.12)',
+                  border: '1px solid rgba(237, 128, 233, 0.3)',
                   padding: '0.25rem 0.65rem',
                   borderRadius: '9999px',
                 }}
@@ -155,7 +158,7 @@ export default function TestimonialsSection() {
             <blockquote
               style={{
                 fontSize: 'clamp(1.05rem, 1.4vw, 1.25rem)',
-                color: '#F8FAFC',
+                color: '#FAF8FF',
                 lineHeight: 1.7,
                 marginBottom: '2rem',
                 fontStyle: 'italic',
@@ -173,7 +176,7 @@ export default function TestimonialsSection() {
                 justifyContent: 'space-between',
                 flexWrap: 'wrap',
                 gap: '1.25rem',
-                borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                borderTop: '1px solid rgba(216, 191, 216, 0.1)',
                 paddingTop: '1.5rem',
               }}
             >
@@ -197,29 +200,29 @@ export default function TestimonialsSection() {
                 </div>
 
                 <div>
-                  <div style={{ fontSize: '1rem', fontWeight: 800, color: '#F8FAFC' }}>
+                  <div style={{ fontSize: '1rem', fontWeight: 800, color: '#FAF8FF' }}>
                     {activeReview.name}
                   </div>
-                  <div style={{ fontSize: '0.8rem', color: '#94A3B8' }}>
-                    {activeReview.role} • <span style={{ color: '#00D2EE' }}>{activeReview.company}</span>
+                  <div style={{ fontSize: '0.8rem', color: '#D8BFD8' }}>
+                    {activeReview.role} • <span style={{ color: '#ED80E9' }}>{activeReview.company}</span>
                   </div>
                 </div>
               </div>
 
-              {/* Verified Outcome Badge */}
+              {/* Verified Outcome Badge with Code Font */}
               <div
                 style={{
-                  backgroundColor: 'rgba(3, 7, 18, 0.7)',
-                  border: '1px solid rgba(0, 210, 238, 0.25)',
+                  backgroundColor: 'rgba(7, 3, 18, 0.75)',
+                  border: '1px solid rgba(237, 128, 233, 0.3)',
                   padding: '0.5rem 1rem',
                   borderRadius: '8px',
                   textAlign: 'right',
                 }}
               >
-                <div style={{ fontSize: '0.6875rem', color: '#64748B', textTransform: 'uppercase' }}>
-                  Verified Outcome
+                <div className="font-mono" style={{ fontSize: '0.65rem', color: '#D8BFD8', textTransform: 'uppercase' }}>
+                  // VERIFIED_OUTCOME
                 </div>
-                <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#00D2EE' }}>
+                <div className="code-metric" style={{ fontSize: '1.05rem', fontWeight: 800, color: '#ED80E9' }}>
                   {activeReview.metrics}
                 </div>
               </div>
@@ -244,9 +247,9 @@ export default function TestimonialsSection() {
                 width: '42px',
                 height: '42px',
                 borderRadius: '50%',
-                backgroundColor: 'rgba(15, 23, 42, 0.8)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                color: '#CBD5E1',
+                backgroundColor: 'rgba(22, 13, 56, 0.8)',
+                border: '1px solid rgba(216, 191, 216, 0.15)',
+                color: '#D8BFD8',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -254,12 +257,12 @@ export default function TestimonialsSection() {
                 transition: 'all 0.2s',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#00D2EE';
-                e.currentTarget.style.color = '#00D2EE';
+                e.currentTarget.style.borderColor = '#ED80E9';
+                e.currentTarget.style.color = '#ED80E9';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                e.currentTarget.style.color = '#CBD5E1';
+                e.currentTarget.style.borderColor = 'rgba(216, 191, 216, 0.15)';
+                e.currentTarget.style.color = '#D8BFD8';
               }}
             >
               <ChevronLeft size={20} />
@@ -277,7 +280,7 @@ export default function TestimonialsSection() {
                     width: currentIndex === idx ? '24px' : '8px',
                     height: '8px',
                     borderRadius: '4px',
-                    backgroundColor: currentIndex === idx ? '#00D2EE' : 'rgba(255, 255, 255, 0.2)',
+                    backgroundColor: currentIndex === idx ? '#ED80E9' : 'rgba(216, 191, 216, 0.25)',
                     border: 'none',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
@@ -294,9 +297,9 @@ export default function TestimonialsSection() {
                 width: '42px',
                 height: '42px',
                 borderRadius: '50%',
-                backgroundColor: 'rgba(15, 23, 42, 0.8)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                color: '#CBD5E1',
+                backgroundColor: 'rgba(22, 13, 56, 0.8)',
+                border: '1px solid rgba(216, 191, 216, 0.15)',
+                color: '#D8BFD8',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -304,12 +307,12 @@ export default function TestimonialsSection() {
                 transition: 'all 0.2s',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#00D2EE';
-                e.currentTarget.style.color = '#00D2EE';
+                e.currentTarget.style.borderColor = '#ED80E9';
+                e.currentTarget.style.color = '#ED80E9';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                e.currentTarget.style.color = '#CBD5E1';
+                e.currentTarget.style.borderColor = 'rgba(216, 191, 216, 0.15)';
+                e.currentTarget.style.color = '#D8BFD8';
               }}
             >
               <ChevronRight size={20} />

@@ -51,8 +51,8 @@ export default function FaqSection() {
         paddingTop: '6rem',
         paddingBottom: '6rem',
         position: 'relative',
-        backgroundColor: 'rgba(8, 15, 30, 0.4)',
-        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+        backgroundColor: 'rgba(14, 7, 36, 0.45)',
+        borderTop: '1px solid rgba(216, 191, 216, 0.1)',
       }}
     >
       <div className="container" style={{ maxWidth: '880px' }}>
@@ -62,14 +62,14 @@ export default function FaqSection() {
             Got Questions?
           </div>
           <h2 className="section-title">
-            Frequently Asked <span className="gradient-text-cyan">Questions</span>
+            Frequently Asked <span className="gradient-text-wisteria">Questions</span>
           </h2>
           <p className="section-desc" style={{ margin: '0 auto 2rem auto' }}>
             Everything you need to know about our engagement models, technical timelines, and growth
             methodology.
           </p>
 
-          {/* Quick FAQ Search Bar */}
+          {/* Quick FAQ Search Bar in Code Font */}
           <div
             style={{
               position: 'relative',
@@ -79,7 +79,7 @@ export default function FaqSection() {
           >
             <Search
               size={18}
-              color="#94A3B8"
+              color="#ED80E9"
               style={{
                 position: 'absolute',
                 left: '1rem',
@@ -91,15 +91,16 @@ export default function FaqSection() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search common questions..."
+              placeholder="filter: question_keywords..."
               aria-label="Filter frequently asked questions"
+              className="font-mono"
               style={{
                 width: '100%',
                 padding: '0.75rem 1rem 0.75rem 2.75rem',
                 borderRadius: '12px',
-                backgroundColor: 'rgba(15, 23, 42, 0.8)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                color: '#F8FAFC',
+                backgroundColor: 'rgba(22, 13, 56, 0.75)',
+                border: '1px solid rgba(237, 128, 233, 0.25)',
+                color: '#FAF8FF',
                 fontSize: '0.875rem',
                 outline: 'none',
               }}
@@ -115,8 +116,9 @@ export default function FaqSection() {
               <div
                 key={faq.q}
                 style={{
-                  backgroundColor: isOpen ? 'rgba(15, 23, 42, 0.85)' : 'rgba(15, 23, 42, 0.45)',
-                  border: isOpen ? '1px solid rgba(0, 210, 238, 0.35)' : '1px solid rgba(255, 255, 255, 0.07)',
+                  backgroundColor: isOpen ? 'rgba(34, 20, 84, 0.85)' : 'rgba(22, 13, 56, 0.45)',
+                  border: isOpen ? '1px solid rgba(237, 128, 233, 0.45)' : '1px solid rgba(216, 191, 216, 0.1)',
+                  boxShadow: isOpen ? '0 0 25px rgba(148, 0, 211, 0.25)' : 'none',
                   borderRadius: '12px',
                   overflow: 'hidden',
                   transition: 'all 0.2s ease',
@@ -135,7 +137,7 @@ export default function FaqSection() {
                     textAlign: 'left',
                     background: 'transparent',
                     border: 'none',
-                    color: isOpen ? '#00D2EE' : '#F8FAFC',
+                    color: isOpen ? '#ED80E9' : '#FAF8FF',
                     fontSize: '1rem',
                     fontWeight: 700,
                     cursor: 'pointer',
@@ -148,7 +150,7 @@ export default function FaqSection() {
                       width: '28px',
                       height: '28px',
                       borderRadius: '50%',
-                      backgroundColor: isOpen ? 'rgba(0, 210, 238, 0.15)' : 'rgba(255, 255, 255, 0.05)',
+                      backgroundColor: isOpen ? 'rgba(237, 128, 233, 0.2)' : 'rgba(255, 255, 255, 0.05)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -157,7 +159,7 @@ export default function FaqSection() {
                       transition: 'transform 0.25s ease',
                     }}
                   >
-                    <ChevronDown size={16} color={isOpen ? '#00D2EE' : '#CBD5E1'} />
+                    <ChevronDown size={16} color={isOpen ? '#ED80E9' : '#D8BFD8'} />
                   </div>
                 </button>
 
@@ -166,9 +168,9 @@ export default function FaqSection() {
                     style={{
                       padding: '0 1.5rem 1.25rem 1.5rem',
                       fontSize: '0.925rem',
-                      color: '#CBD5E1',
+                      color: '#D8BFD8',
                       lineHeight: 1.7,
-                      borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+                      borderTop: '1px solid rgba(216, 191, 216, 0.1)',
                       paddingTop: '1rem',
                     }}
                   >
@@ -180,8 +182,8 @@ export default function FaqSection() {
           })}
 
           {filteredFaqs.length === 0 && (
-            <div style={{ textAlign: 'center', padding: '2rem', color: '#94A3B8' }}>
-              No questions matched "{searchQuery}". Reach out directly to our team!
+            <div className="font-mono" style={{ textAlign: 'center', padding: '2rem', color: '#D8BFD8' }}>
+              [0 results found for "{searchQuery}". Contact us directly.]
             </div>
           )}
         </div>

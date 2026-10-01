@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, ArrowUp, ShieldCheck, Heart } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowUp, ShieldCheck, Terminal } from 'lucide-react';
 
 export default function Footer({ onOpenAuditModal }) {
   const scrollToTop = () => {
@@ -9,23 +9,23 @@ export default function Footer({ onOpenAuditModal }) {
   return (
     <footer
       style={{
-        backgroundColor: '#02050e',
-        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+        backgroundColor: '#04010a',
+        borderTop: '1px solid rgba(216, 191, 216, 0.12)',
         paddingTop: '5rem',
         paddingBottom: '2.5rem',
         position: 'relative',
-        color: '#94A3B8',
+        color: '#D8BFD8',
       }}
     >
       <div className="container">
-        {/* Top Tier: Brand, Newsletter/CTA, & Live System Status */}
+        {/* Top Tier */}
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(1, 1fr)',
             gap: '3rem',
             paddingBottom: '4rem',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+            borderBottom: '1px solid rgba(216, 191, 216, 0.08)',
           }}
           className="lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]"
         >
@@ -39,23 +39,24 @@ export default function Footer({ onOpenAuditModal }) {
               />
             </a>
 
-            <p style={{ fontSize: '0.875rem', color: '#94A3B8', lineHeight: 1.65, maxWidth: '340px', marginBottom: '1.5rem' }}>
+            <p style={{ fontSize: '0.875rem', color: '#D8BFD8', lineHeight: 1.65, maxWidth: '340px', marginBottom: '1.5rem' }}>
               India’s premier digital marketing and web engineering agency. We turn latent market
               potential into measurable revenue velocity for ambitious enterprises.
             </p>
 
-            {/* Live Operational Status */}
+            {/* Live Operational Status with Code Font */}
             <div
+              className="font-mono"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.35rem 0.75rem',
                 borderRadius: '9999px',
-                backgroundColor: 'rgba(16, 185, 129, 0.08)',
-                border: '1px solid rgba(16, 185, 129, 0.2)',
-                fontSize: '0.75rem',
-                color: '#34D399',
+                backgroundColor: 'rgba(237, 128, 233, 0.12)',
+                border: '1px solid rgba(237, 128, 233, 0.3)',
+                fontSize: '0.72rem',
+                color: '#ED80E9',
               }}
             >
               <span
@@ -63,27 +64,28 @@ export default function Footer({ onOpenAuditModal }) {
                   width: '6px',
                   height: '6px',
                   borderRadius: '50%',
-                  backgroundColor: '#10B981',
-                  boxShadow: '0 0 8px #10B981',
+                  backgroundColor: '#ED80E9',
+                  boxShadow: '0 0 8px #ED80E9',
                 }}
               />
-              <span>All Telemetry Systems Operational</span>
+              <span>[status: telemetry_all_systems_operational]</span>
             </div>
           </div>
 
           {/* Col 2: Services Sitemap */}
           <div>
             <div
+              className="font-mono"
               style={{
                 fontSize: '0.8125rem',
                 fontWeight: 700,
-                color: '#F8FAFC',
+                color: '#FAF8FF',
                 textTransform: 'uppercase',
-                letterSpacing: '0.1em',
+                letterSpacing: '0.08em',
                 marginBottom: '1.25rem',
               }}
             >
-              Services
+              // SERVICES
             </div>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {[
@@ -100,12 +102,12 @@ export default function Footer({ onOpenAuditModal }) {
                     href={s.href}
                     style={{
                       fontSize: '0.85rem',
-                      color: '#94A3B8',
+                      color: '#D8BFD8',
                       textDecoration: 'none',
                       transition: 'color 0.2s',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#00D2EE')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#ED80E9')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#D8BFD8')}
                   >
                     {s.name}
                   </a>
@@ -117,16 +119,17 @@ export default function Footer({ onOpenAuditModal }) {
           {/* Col 3: Company & Approach */}
           <div>
             <div
+              className="font-mono"
               style={{
                 fontSize: '0.8125rem',
                 fontWeight: 700,
-                color: '#F8FAFC',
+                color: '#FAF8FF',
                 textTransform: 'uppercase',
-                letterSpacing: '0.1em',
+                letterSpacing: '0.08em',
                 marginBottom: '1.25rem',
               }}
             >
-              Company
+              // COMPANY
             </div>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {[
@@ -142,12 +145,12 @@ export default function Footer({ onOpenAuditModal }) {
                     href={c.href}
                     style={{
                       fontSize: '0.85rem',
-                      color: '#94A3B8',
+                      color: '#D8BFD8',
                       textDecoration: 'none',
                       transition: 'color 0.2s',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#00D2EE')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#ED80E9')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#D8BFD8')}
                   >
                     {c.name}
                   </a>
@@ -159,32 +162,33 @@ export default function Footer({ onOpenAuditModal }) {
           {/* Col 4: Connect & Location */}
           <div>
             <div
+              className="font-mono"
               style={{
                 fontSize: '0.8125rem',
                 fontWeight: 700,
-                color: '#F8FAFC',
+                color: '#FAF8FF',
                 textTransform: 'uppercase',
-                letterSpacing: '0.1em',
+                letterSpacing: '0.08em',
                 marginBottom: '1.25rem',
               }}
             >
-              Delhi NCR Center
+              // DELHI_NCR_CENTER
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.85rem', marginBottom: '1.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                <MapPin size={16} color="#00D2EE" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <MapPin size={16} color="#ED80E9" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <span>Dwarka, New Delhi, Delhi NCR 110075, India</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Phone size={15} color="#00D2EE" style={{ flexShrink: 0 }} />
-                <a href="tel:+918683828646" style={{ color: '#CBD5E1', textDecoration: 'none' }}>
+                <Phone size={15} color="#ED80E9" style={{ flexShrink: 0 }} />
+                <a href="tel:+918683828646" className="font-mono" style={{ color: '#D3D3FF', textDecoration: 'none' }}>
                   +91 868-382-8646
                 </a>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Mail size={15} color="#00D2EE" style={{ flexShrink: 0 }} />
-                <a href="mailto:info@xntrova.com" style={{ color: '#CBD5E1', textDecoration: 'none' }}>
+                <Mail size={15} color="#ED80E9" style={{ flexShrink: 0 }} />
+                <a href="mailto:info@xntrova.com" className="font-mono" style={{ color: '#D3D3FF', textDecoration: 'none' }}>
                   info@xntrova.com
                 </a>
               </div>
@@ -204,30 +208,33 @@ export default function Footer({ onOpenAuditModal }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={soc.label}
+                  className="font-mono"
                   style={{
                     width: '34px',
                     height: '34px',
                     borderRadius: '8px',
-                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    backgroundColor: 'rgba(237, 128, 233, 0.1)',
+                    border: '1px solid rgba(237, 128, 233, 0.25)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#CBD5E1',
-                    fontSize: '0.75rem',
+                    color: '#FAF8FF',
+                    fontSize: '0.78rem',
                     fontWeight: 700,
                     textDecoration: 'none',
                     transition: 'all 0.2s',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#00D2EE';
-                    e.currentTarget.style.color = '#00D2EE';
+                    e.currentTarget.style.borderColor = '#ED80E9';
+                    e.currentTarget.style.color = '#ED80E9';
                     e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = '0 0 15px rgba(148, 0, 211, 0.4)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                    e.currentTarget.style.color = '#CBD5E1';
+                    e.currentTarget.style.borderColor = 'rgba(237, 128, 233, 0.25)';
+                    e.currentTarget.style.color = '#FAF8FF';
                     e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
                   {soc.name[0]}
@@ -247,13 +254,12 @@ export default function Footer({ onOpenAuditModal }) {
             alignItems: 'center',
             justifyContent: 'space-between',
             fontSize: '0.78rem',
-            color: '#64748B',
+            color: '#A396BE',
           }}
-          className="sm:flex-row"
+          className="sm:flex-row font-mono"
         >
           <div>
-            © {new Date().getFullYear()} Xntrova Technologies Pvt. Ltd. All rights reserved. Built with
-            high-performance 3D architecture.
+            © {new Date().getFullYear()} Xntrova Technologies Pvt. Ltd. // Built with high-performance 3D architecture.
           </div>
 
           <button
@@ -265,14 +271,14 @@ export default function Footer({ onOpenAuditModal }) {
               gap: '0.4rem',
               backgroundColor: 'transparent',
               border: 'none',
-              color: '#94A3B8',
+              color: '#D8BFD8',
               cursor: 'pointer',
               fontSize: '0.78rem',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = '#00D2EE')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#ED80E9')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#D8BFD8')}
           >
-            <span>Back to top</span>
+            <span>[back_to_top]</span>
             <ArrowUp size={14} />
           </button>
         </div>

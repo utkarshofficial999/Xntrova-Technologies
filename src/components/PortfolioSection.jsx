@@ -15,13 +15,12 @@ export default function PortfolioSection({ onOpenAuditModal }) {
       description:
         'Migrated an enterprise cloud monitoring platform from legacy WordPress to a high-speed web application, coupled with full semantic topical clustering and high-intent Google Search campaigns.',
       metrics: [
-        { label: 'Organic Traffic', value: '+320%' },
-        { label: 'Pipeline ROAS', value: '4.4x' },
-        { label: 'Qualified Deals', value: '$1.4M+' },
+        { label: 'organic_traffic', value: '+320%' },
+        { label: 'pipeline_roas', value: '4.4x' },
+        { label: 'pipeline_value', value: '$1.4M+' },
       ],
       tags: ['Technical SEO', 'Google Ads PMax', 'Next.js Web App'],
-      accent: '#00D2EE',
-      image: 'https://res.cloudinary.com/di93stsbz/image/upload/v1787209762/xntrova-wp-media/xntrova-wp-media/Rectangle-4486-11-c13ae712a8c5d68f.png',
+      accent: '#ED80E9',
     },
     {
       id: 'd2c-ecommerce',
@@ -32,13 +31,12 @@ export default function PortfolioSection({ onOpenAuditModal }) {
       description:
         'Overhauled full-funnel paid media on Meta and Google Shopping. Deployed creative iteration cycles testing 25+ short-form UGC video hooks weekly, complemented by a lightning-fast Shopify UX overhaul.',
       metrics: [
-        { label: 'Blended ROAS', value: '5.2x' },
-        { label: 'Cart Conversion', value: '+46%' },
-        { label: 'Monthly GMV', value: '₹1.2 Cr' },
+        { label: 'blended_roas', value: '5.2x' },
+        { label: 'checkout_lift', value: '+46%' },
+        { label: 'monthly_gmv', value: '₹1.2 Cr' },
       ],
       tags: ['Meta Ads', 'Shopify Plus Optimization', 'Creative Strategy'],
-      accent: '#EC4899',
-      image: 'https://res.cloudinary.com/di93stsbz/image/upload/v1787209735/xntrova-wp-media/xntrova-wp-media/Rectangle-4486-2-7ff366e812bb60d4.png',
+      accent: '#9400D3',
     },
     {
       id: 'healthcare-ncr',
@@ -49,13 +47,12 @@ export default function PortfolioSection({ onOpenAuditModal }) {
       description:
         'Implemented multi-location local SEO architecture, Google Maps 3-Pack optimization, and high-trust medical content hubs that positioned Apex as the premier destination for specialized care in North India.',
       metrics: [
-        { label: 'Monthly Inquiries', value: '14,500+' },
-        { label: 'Local #1 Rankings', value: '240+ Terms' },
-        { label: 'Cost Per Lead', value: '-52%' },
+        { label: 'monthly_inquiries', value: '14,500+' },
+        { label: 'local_rankings', value: '240+ Terms' },
+        { label: 'lead_cost', value: '-52%' },
       ],
       tags: ['Local SEO Delhi NCR', 'Reputation Mgmt', 'High-Trust CRO'],
-      accent: '#10B981',
-      image: 'https://res.cloudinary.com/di93stsbz/image/upload/v1787209741/xntrova-wp-media/xntrova-wp-media/Rectangle-4486-5-19f726b3c1690da8.png',
+      accent: '#D3D3FF',
     },
     {
       id: 'luxury-real-estate',
@@ -66,13 +63,12 @@ export default function PortfolioSection({ onOpenAuditModal }) {
       description:
         'Created an immersive 3D digital architectural showcase paired with ultra-exclusive Google Search & LinkedIn programmatic targeting directed at high-net-worth investors across India and the GCC.',
       metrics: [
-        { label: 'Qualified Buyer Leads', value: '1,820' },
-        { label: 'Inventory Sold', value: '88% in 90 Days' },
-        { label: 'Inquiry Value', value: '₹160 Cr+' },
+        { label: 'buyer_leads', value: '1,820' },
+        { label: 'sold_velocity', value: '88% in 90d' },
+        { label: 'inquiry_pipeline', value: '₹160 Cr+' },
       ],
       tags: ['3D Interactive UI', 'HNW Targeting', 'VIP Lead Funnels'],
-      accent: '#F59E0B',
-      image: 'https://res.cloudinary.com/di93stsbz/image/upload/v1787209762/xntrova-wp-media/xntrova-wp-media/Rectangle-4486-11-c13ae712a8c5d68f.png',
+      accent: '#D8BFD8',
     },
   ];
 
@@ -105,7 +101,7 @@ export default function PortfolioSection({ onOpenAuditModal }) {
           <div>
             <div className="section-tag">Case Studies &amp; Outcomes</div>
             <h2 className="section-title" style={{ marginBottom: '0.5rem' }}>
-              Real Businesses. <span className="gradient-text-cyan">Uncompromising Growth.</span>
+              Real Businesses. <span className="gradient-text-wisteria">Uncompromising Growth.</span>
             </h2>
             <p className="section-desc">
               Explore how our unified approach to digital marketing and web engineering delivers
@@ -113,28 +109,30 @@ export default function PortfolioSection({ onOpenAuditModal }) {
             </p>
           </div>
 
-          {/* Filter Pills */}
+          {/* Filter Pills with Code Font */}
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
             {[
-              { id: 'all', label: 'All Case Studies' },
-              { id: 'b2b', label: 'B2B & SaaS' },
-              { id: 'ecommerce', label: 'E-Commerce' },
-              { id: 'healthcare', label: 'Healthcare' },
+              { id: 'all', label: '// all_cases' },
+              { id: 'b2b', label: '// b2b_saas' },
+              { id: 'ecommerce', label: '// e_commerce' },
+              { id: 'healthcare', label: '// healthcare' },
             ].map((f) => (
               <button
                 key={f.id}
                 type="button"
                 onClick={() => setActiveFilter(f.id)}
+                className="font-mono"
                 style={{
                   padding: '0.45rem 0.95rem',
-                  fontSize: '0.8125rem',
+                  fontSize: '0.8rem',
                   fontWeight: 600,
                   borderRadius: '9999px',
-                  border: activeFilter === f.id ? '1px solid #00D2EE' : '1px solid rgba(255, 255, 255, 0.1)',
-                  backgroundColor: activeFilter === f.id ? 'rgba(0, 210, 238, 0.15)' : 'rgba(15, 23, 42, 0.6)',
-                  color: activeFilter === f.id ? '#00D2EE' : '#94A3B8',
+                  border: activeFilter === f.id ? '1px solid #ED80E9' : '1px solid rgba(216, 191, 216, 0.15)',
+                  backgroundColor: activeFilter === f.id ? 'rgba(148, 0, 211, 0.25)' : 'rgba(22, 13, 56, 0.6)',
+                  color: activeFilter === f.id ? '#FAF8FF' : '#D8BFD8',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
+                  boxShadow: activeFilter === f.id ? '0 0 15px rgba(148, 0, 211, 0.35)' : 'none',
                 }}
               >
                 {f.label}
@@ -156,7 +154,7 @@ export default function PortfolioSection({ onOpenAuditModal }) {
             <TiltCard
               key={study.id}
               tiltFactor={4}
-              glowColor={`${study.accent}20`}
+              glowColor={`${study.accent}30`}
               className="glass-card"
               style={{
                 height: '100%',
@@ -164,7 +162,8 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 padding: '2.25rem',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
+                backgroundColor: 'rgba(22, 13, 56, 0.65)',
+                border: '1px solid rgba(216, 191, 216, 0.12)',
               }}
             >
               <div>
@@ -178,6 +177,7 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                   }}
                 >
                   <span
+                    className="font-mono"
                     style={{
                       fontSize: '0.75rem',
                       fontWeight: 700,
@@ -186,17 +186,17 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                       letterSpacing: '0.08em',
                     }}
                   >
-                    {study.industry}
+                    // {study.industry}
                   </span>
                   <span
+                    className="font-mono"
                     style={{
                       fontSize: '0.8rem',
                       fontWeight: 700,
-                      color: '#F8FAFC',
-                      fontFamily: 'var(--font-mono)',
+                      color: '#FAF8FF',
                     }}
                   >
-                    {study.client}
+                    @{study.client}
                   </span>
                 </div>
 
@@ -205,7 +205,7 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                   style={{
                     fontSize: '1.35rem',
                     fontWeight: 800,
-                    color: '#F8FAFC',
+                    color: '#FAF8FF',
                     marginBottom: '0.85rem',
                     lineHeight: 1.35,
                   }}
@@ -217,7 +217,7 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                 <p
                   style={{
                     fontSize: '0.9rem',
-                    color: '#94A3B8',
+                    color: '#D8BFD8',
                     lineHeight: 1.6,
                     marginBottom: '1.5rem',
                   }}
@@ -225,16 +225,16 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                   {study.description}
                 </p>
 
-                {/* 3 Metric Pills */}
+                {/* 3 Metric Pills with Code Font */}
                 <div
                   style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(3, 1fr)',
                     gap: '0.75rem',
-                    backgroundColor: 'rgba(3, 7, 18, 0.65)',
+                    backgroundColor: 'rgba(7, 3, 18, 0.75)',
                     padding: '1rem',
                     borderRadius: '12px',
-                    border: '1px solid rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(216, 191, 216, 0.1)',
                     marginBottom: '1.5rem',
                     textAlign: 'center',
                   }}
@@ -242,6 +242,7 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                   {study.metrics.map((m) => (
                     <div key={m.label}>
                       <div
+                        className="code-metric"
                         style={{
                           fontSize: '1.25rem',
                           fontWeight: 800,
@@ -250,7 +251,7 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                       >
                         {m.value}
                       </div>
-                      <div style={{ fontSize: '0.7rem', color: '#64748B', marginTop: '2px' }}>
+                      <div className="font-mono" style={{ fontSize: '0.68rem', color: '#D8BFD8', marginTop: '2px' }}>
                         {m.label}
                       </div>
                     </div>
@@ -271,12 +272,13 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                   {study.tags.map((tag) => (
                     <span
                       key={tag}
+                      className="font-mono"
                       style={{
-                        fontSize: '0.72rem',
+                        fontSize: '0.7rem',
                         fontWeight: 500,
-                        color: '#CBD5E1',
-                        backgroundColor: 'rgba(255, 255, 255, 0.04)',
-                        border: '1px solid rgba(255, 255, 255, 0.08)',
+                        color: '#D3D3FF',
+                        backgroundColor: 'rgba(148, 0, 211, 0.12)',
+                        border: '1px solid rgba(216, 191, 216, 0.15)',
                         padding: '0.25rem 0.6rem',
                         borderRadius: '6px',
                       }}
@@ -289,11 +291,12 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                 <button
                   type="button"
                   onClick={onOpenAuditModal}
+                  className="font-mono"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '0.5rem',
-                    fontSize: '0.875rem',
+                    fontSize: '0.8125rem',
                     fontWeight: 700,
                     color: study.accent,
                     background: 'transparent',
@@ -302,7 +305,7 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                     padding: 0,
                   }}
                 >
-                  <span>Request Similar Case Study Strategy</span>
+                  <span>&gt; inspect_case_study</span>
                   <ArrowUpRight size={16} />
                 </button>
               </div>
