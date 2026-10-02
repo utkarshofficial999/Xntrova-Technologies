@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Sparkles, CheckCircle2, Shield, Play, TrendingUp, Terminal, Zap } from 'lucide-react';
+import { ArrowRight, Sparkles, CheckCircle2, Search } from 'lucide-react';
 import Hero3D from './Hero3D';
 
 export default function HeroSection({ onOpenAuditModal, onQuickAuditSubmit }) {
@@ -16,23 +16,24 @@ export default function HeroSection({ onOpenAuditModal, onQuickAuditSubmit }) {
       id="hero"
       style={{
         position: 'relative',
-        minHeight: 'calc(100vh - 110px)',
+        minHeight: 'calc(100vh - 90px)',
         display: 'flex',
         alignItems: 'center',
         paddingTop: '2.5rem',
         paddingBottom: '4.5rem',
         overflow: 'hidden',
+        backgroundColor: '#FFFFFF',
       }}
     >
-      {/* Background Gradient Orbs in Wisteria Violet & Orchid Pink */}
+      {/* Background Radial Glow in Electric Violet & Indigo */}
       <div
         className="glow-spot"
         style={{
-          top: '10%',
+          top: '5%',
           left: '5%',
           width: '550px',
           height: '550px',
-          background: 'radial-gradient(circle, rgba(148, 0, 211, 0.22) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 70%)',
         }}
         aria-hidden="true"
       />
@@ -43,84 +44,83 @@ export default function HeroSection({ onOpenAuditModal, onQuickAuditSubmit }) {
           right: '5%',
           width: '600px',
           height: '600px',
-          background: 'radial-gradient(circle, rgba(237, 128, 233, 0.18) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%)',
         }}
         aria-hidden="true"
       />
 
       <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(1, 1fr)',
-            alignItems: 'center',
-            gap: '2.5rem',
-          }}
-          className="lg:grid-cols-[1.1fr_0.9fr]"
-        >
+        <div className="hero-grid">
           {/* Left Column: Core Value Proposition & Headings */}
           <div>
-            {/* Eyebrow Badge in Code Font */}
+            {/* Eyebrow Badge */}
             <div style={{ marginBottom: '1.25rem' }}>
               <div
                 className="badge-pill"
                 style={{
-                  padding: '0.4rem 0.95rem',
+                  padding: '0.45rem 0.9rem',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  maxWidth: '100%',
+                  lineHeight: 1.4,
+                  fontSize: '0.74rem',
                 }}
               >
-                <Terminal size={14} color="#ED80E9" />
-                <span>// NEXT_GEN_PERFORMANCE_ENGINEERING</span>
+                <Sparkles size={14} color="#7C3AED" style={{ flexShrink: 0 }} />
+                <span>Next-Gen Performance & Automated Growth Engineering</span>
               </div>
             </div>
 
-            {/* Main Headline with Wisteria Gradient */}
+            {/* Main Headline with Electric Violet Gradient */}
             <h1
               style={{
-                fontSize: 'clamp(2.35rem, 4.5vw, 3.65rem)',
+                fontSize: 'clamp(2.05rem, 4.5vw, 3.75rem)',
                 fontWeight: 800,
-                lineHeight: 1.12,
+                lineHeight: 1.15,
                 letterSpacing: '-0.035em',
-                color: '#FAF8FF',
+                color: '#0F172A',
                 marginBottom: '1.25rem',
               }}
             >
               Scale Your Business With Delhi's Premier{' '}
-              <span className="gradient-text-wisteria">Growth Agency</span>
+              <span className="gradient-text-hero">Growth Engine</span>
             </h1>
 
             {/* Value Proposition Subtitle */}
             <p
               style={{
-                fontSize: 'clamp(1.05rem, 1.35vw, 1.25rem)',
-                color: '#D8BFD8',
+                fontSize: 'clamp(0.95rem, 1.35vw, 1.25rem)',
+                color: '#475569',
                 lineHeight: 1.6,
                 maxWidth: '580px',
                 marginBottom: '2rem',
               }}
             >
               We engineer high-velocity digital marketing ecosystems. By fusing data-driven SEO,
-              high-ROAS paid media, and modern web applications, Xntrova turns business potential
-              into dominant market authority.
+              automated high-ROAS paid media, and bleeding-edge web applications, Xntrova turns business potential
+              into undisputed market authority.
             </p>
 
-            {/* Primary & Secondary CTAs with Code Font */}
+            {/* Primary & Secondary CTAs */}
             <div
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '1rem',
+                gap: '0.75rem',
                 alignItems: 'center',
-                marginBottom: '2.25rem',
+                marginBottom: '2rem',
               }}
             >
               <a
                 href="#contact"
                 className="btn-primary"
                 style={{
-                  padding: '0.9rem 1.85rem',
+                  padding: '0.85rem 1.65rem',
+                  fontSize: '0.875rem',
                 }}
               >
-                <span>&gt; Get Free Digital Audit</span>
+                <span>Get Free Digital Audit</span>
                 <ArrowRight size={16} />
               </a>
 
@@ -128,29 +128,29 @@ export default function HeroSection({ onOpenAuditModal, onQuickAuditSubmit }) {
                 href="#case-studies"
                 className="btn-secondary"
                 style={{
-                  padding: '0.9rem 1.75rem',
+                  padding: '0.85rem 1.5rem',
+                  fontSize: '0.875rem',
                 }}
               >
                 <span>View Case Studies</span>
               </a>
             </div>
 
-            {/* Interactive Quick Website Audit Input with Code Styling */}
+            {/* Interactive Quick Website Audit Input */}
             <div
               style={{
-                maxWidth: '520px',
+                maxWidth: '540px',
                 marginBottom: '2rem',
                 padding: '0.35rem',
-                background: 'rgba(22, 13, 56, 0.75)',
-                backdropFilter: 'blur(14px)',
-                WebkitBackdropFilter: 'blur(14px)',
-                border: '1px solid rgba(237, 128, 233, 0.35)',
+                background: '#FFFFFF',
+                border: '1px solid #E2E8F0',
                 borderRadius: '12px',
-                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(148, 0, 211, 0.2)',
+                boxShadow: '0 8px 30px -4px rgba(15, 23, 42, 0.08), 0 0 20px rgba(124, 58, 237, 0.06)',
               }}
             >
               <form
                 onSubmit={handleAuditSubmit}
+                className="hero-audit-form"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -162,93 +162,90 @@ export default function HeroSection({ onOpenAuditModal, onQuickAuditSubmit }) {
                   style={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '0.5rem',
+                    gap: '0.65rem',
                     flex: 1,
                     paddingLeft: '0.85rem',
                   }}
                 >
-                  <span className="font-mono" style={{ color: '#ED80E9', fontSize: '0.875rem' }}>
-                    $
-                  </span>
+                  <Search size={16} color="#7C3AED" />
                   <input
                     type="text"
                     value={quickDomain}
                     onChange={(e) => setQuickDomain(e.target.value)}
-                    placeholder="scan: https://yourdomain.com"
+                    placeholder="Enter your website URL (e.g. yourdomain.com)"
                     aria-label="Enter website URL for quick analysis"
-                    className="font-mono"
                     style={{
                       width: '100%',
                       background: 'transparent',
                       border: 'none',
                       outline: 'none',
-                      color: '#FAF8FF',
+                      color: '#0F172A',
                       fontSize: '0.875rem',
                     }}
                   />
                 </div>
                 <button
                   type="submit"
-                  className="font-mono"
                   style={{
-                    background: 'linear-gradient(135deg, #ED80E9, #9400D3)',
+                    background: 'linear-gradient(135deg, #7C3AED 0%, #6366F1 100%)',
                     color: '#FFFFFF',
-                    border: '1px solid rgba(255, 255, 255, 0.3)',
-                    fontWeight: 700,
-                    fontSize: '0.8125rem',
-                    padding: '0.65rem 1.15rem',
+                    border: '1px solid rgba(124, 58, 237, 0.6)',
+                    fontWeight: 600,
+                    fontSize: '0.875rem',
+                    padding: '0.65rem 1.25rem',
                     borderRadius: '8px',
                     cursor: 'pointer',
                     whiteSpace: 'nowrap',
                     transition: 'all 0.2s',
-                    boxShadow: '0 0 15px rgba(148, 0, 211, 0.4)',
+                    boxShadow: '0 2px 14px rgba(124, 58, 237, 0.3)',
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.filter = 'brightness(1.15)')}
+                  onMouseEnter={(e) => (e.currentTarget.style.filter = 'brightness(1.12)')}
                   onMouseLeave={(e) => (e.currentTarget.style.filter = 'none')}
                 >
-                  [scan_site]
+                  Analyze Site
                 </button>
               </form>
             </div>
 
-            {/* Value Proof Micro-Bullets with Code Font */}
+            {/* Value Proof Micro-Bullets */}
             <div
               style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-                gap: '1rem',
-                borderTop: '1px solid rgba(216, 191, 216, 0.12)',
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '1.25rem',
+                borderTop: '1px solid #E2E8F0',
                 paddingTop: '1.25rem',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <CheckCircle2 size={16} color="#ED80E9" />
-                <span className="font-mono" style={{ fontSize: '0.78rem', color: '#D3D3FF' }}>
+                <CheckCircle2 size={16} color="#7C3AED" />
+                <span style={{ fontSize: '0.85rem', color: '#334155', fontWeight: 600 }}>
                   100% Data-Driven ROI
                 </span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <CheckCircle2 size={16} color="#ED80E9" />
-                <span className="font-mono" style={{ fontSize: '0.78rem', color: '#D3D3FF' }}>
+                <CheckCircle2 size={16} color="#7C3AED" />
+                <span style={{ fontSize: '0.85rem', color: '#334155', fontWeight: 600 }}>
                   No Lock-In Contracts
                 </span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <CheckCircle2 size={16} color="#ED80E9" />
-                <span className="font-mono" style={{ fontSize: '0.78rem', color: '#D3D3FF' }}>
+                <CheckCircle2 size={16} color="#7C3AED" />
+                <span style={{ fontSize: '0.85rem', color: '#334155', fontWeight: 600 }}>
                   Dedicated Growth Pod
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Purposeful 3D Visualization */}
+          {/* Right Column: Real-Time SaaS Growth Dashboard */}
           <div
             style={{
               position: 'relative',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              width: '100%',
             }}
           >
             <Hero3D />

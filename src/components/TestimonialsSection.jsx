@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, Quote, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
 import TiltCard from './TiltCard';
 
 export default function TestimonialsSection() {
@@ -14,9 +14,9 @@ export default function TestimonialsSection() {
       rating: 5,
       quote:
         'What impressed us most about Xntrova was their strategic mindset. Unlike other digital marketing agencies in Delhi, Xntrova didn’t give us a one-size-fits-all solution; instead, they created customized strategies for our business. Their proactive communication and data-driven approach gave us confidence in every decision we made together.',
-      metrics: '+280% pipeline_growth',
+      metrics: '+280% Pipeline Growth',
       avatarInitial: 'A',
-      avatarBg: 'linear-gradient(135deg, #ED80E9, #9400D3)',
+      avatarBg: 'linear-gradient(135deg, #7C3AED, #6366F1)',
     },
     {
       name: 'Neha Kapoor',
@@ -26,9 +26,9 @@ export default function TestimonialsSection() {
       rating: 5,
       quote:
         'Working with Xntrova has been transformative for our digital presence. Within 90 days, our organic search traffic tripled, and our cost per qualified lead dropped by over 45%. The team is deeply knowledgeable, completely transparent, and always steps ahead of search engine updates.',
-      metrics: '-45% cpa_reduction',
+      metrics: '-45% CPA Reduction',
       avatarInitial: 'N',
-      avatarBg: 'linear-gradient(135deg, #9400D3, #4C006A)',
+      avatarBg: 'linear-gradient(135deg, #6366F1, #38BDF8)',
     },
     {
       name: 'Rahul Sharma',
@@ -38,9 +38,9 @@ export default function TestimonialsSection() {
       rating: 5,
       quote:
         'Xntrova’s web engineering and PPC execution are exceptional. They overhauled our entire digital funnel and built a lightning-fast web experience that drastically improved our conversion rates. We consider them an indispensable extension of our core growth team.',
-      metrics: '4.6x google_roas',
+      metrics: '4.6x Google ROAS',
       avatarInitial: 'R',
-      avatarBg: 'linear-gradient(135deg, #D3D3FF, #9400D3)',
+      avatarBg: 'linear-gradient(135deg, #A855F7, #EC4899)',
     },
     {
       name: 'Priya Sundaram',
@@ -50,9 +50,9 @@ export default function TestimonialsSection() {
       rating: 5,
       quote:
         'Their reporting clarity is unmatched. With their real-time telemetry dashboards, our executive board knows down to the rupee what each campaign delivers. Xntrova is the gold standard for performance marketing in India.',
-      metrics: '+310% gmv_scale',
+      metrics: '+310% GMV Growth',
       avatarInitial: 'P',
-      avatarBg: 'linear-gradient(135deg, #ED80E9, #D8BFD8)',
+      avatarBg: 'linear-gradient(135deg, #7C3AED, #A855F7)',
     },
   ];
 
@@ -73,9 +73,9 @@ export default function TestimonialsSection() {
         paddingTop: '6rem',
         paddingBottom: '6rem',
         position: 'relative',
-        backgroundColor: 'rgba(14, 7, 36, 0.45)',
-        borderTop: '1px solid rgba(216, 191, 216, 0.1)',
-        borderBottom: '1px solid rgba(216, 191, 216, 0.1)',
+        backgroundColor: '#F8FAFC',
+        borderTop: '1px solid #E2E8F0',
+        borderBottom: '1px solid #E2E8F0',
       }}
     >
       <div className="container">
@@ -85,7 +85,7 @@ export default function TestimonialsSection() {
             Client Proof
           </div>
           <h2 className="section-title">
-            Words From Our <span className="gradient-text-wisteria">Valued Partners</span>
+            Words From Our <span className="gradient-text-hero">Valued Partners</span>
           </h2>
           <p className="section-desc" style={{ margin: '0 auto' }}>
             We measure our success through the compounding commercial achievements of our enterprise
@@ -97,12 +97,13 @@ export default function TestimonialsSection() {
         <div style={{ maxWidth: '920px', margin: '0 auto' }}>
           <TiltCard
             tiltFactor={3}
-            glowColor="rgba(237, 128, 233, 0.25)"
+            glowColor="rgba(124, 58, 237, 0.12)"
             className="glass-panel"
             style={{
               padding: '2.5rem',
-              border: '1px solid rgba(237, 128, 233, 0.3)',
-              backgroundColor: 'rgba(22, 13, 56, 0.75)',
+              border: '1px solid #E2E8F0',
+              backgroundColor: '#FFFFFF',
+              boxShadow: '0 20px 45px rgba(15, 23, 42, 0.06)',
               position: 'relative',
             }}
           >
@@ -119,14 +120,14 @@ export default function TestimonialsSection() {
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} fill="#ED80E9" color="#ED80E9" />
+                  <Star key={i} size={18} fill="#7C3AED" color="#7C3AED" />
                 ))}
                 <span
                   className="font-mono"
                   style={{
                     fontSize: '0.8125rem',
                     fontWeight: 700,
-                    color: '#FAF8FF',
+                    color: '#0F172A',
                     marginLeft: '0.5rem',
                   }}
                 >
@@ -140,16 +141,16 @@ export default function TestimonialsSection() {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.4rem',
-                  fontSize: '0.72rem',
+                  fontSize: '0.74rem',
                   fontWeight: 600,
-                  color: '#ED80E9',
-                  backgroundColor: 'rgba(237, 128, 233, 0.12)',
-                  border: '1px solid rgba(237, 128, 233, 0.3)',
-                  padding: '0.25rem 0.65rem',
+                  color: '#7C3AED',
+                  backgroundColor: 'rgba(124, 58, 237, 0.08)',
+                  border: '1px solid rgba(124, 58, 237, 0.2)',
+                  padding: '0.3rem 0.75rem',
                   borderRadius: '9999px',
                 }}
               >
-                <CheckCircle2 size={13} />
+                <CheckCircle2 size={14} />
                 <span>{activeReview.platform}</span>
               </div>
             </div>
@@ -158,8 +159,8 @@ export default function TestimonialsSection() {
             <blockquote
               style={{
                 fontSize: 'clamp(1.05rem, 1.4vw, 1.25rem)',
-                color: '#FAF8FF',
-                lineHeight: 1.7,
+                color: '#0F172A',
+                lineHeight: 1.75,
                 marginBottom: '2rem',
                 fontStyle: 'italic',
                 position: 'relative',
@@ -176,7 +177,7 @@ export default function TestimonialsSection() {
                 justifyContent: 'space-between',
                 flexWrap: 'wrap',
                 gap: '1.25rem',
-                borderTop: '1px solid rgba(216, 191, 216, 0.1)',
+                borderTop: '1px solid #E2E8F0',
                 paddingTop: '1.5rem',
               }}
             >
@@ -193,18 +194,18 @@ export default function TestimonialsSection() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.5)',
+                    boxShadow: '0 4px 15px rgba(124, 58, 237, 0.25)',
                   }}
                 >
                   {activeReview.avatarInitial}
                 </div>
 
                 <div>
-                  <div style={{ fontSize: '1rem', fontWeight: 800, color: '#FAF8FF' }}>
+                  <div style={{ fontSize: '1rem', fontWeight: 800, color: '#0F172A' }}>
                     {activeReview.name}
                   </div>
-                  <div style={{ fontSize: '0.8rem', color: '#D8BFD8' }}>
-                    {activeReview.role} • <span style={{ color: '#ED80E9' }}>{activeReview.company}</span>
+                  <div style={{ fontSize: '0.82rem', color: '#64748B' }}>
+                    {activeReview.role} • <span style={{ color: '#7C3AED', fontWeight: 600 }}>{activeReview.company}</span>
                   </div>
                 </div>
               </div>
@@ -212,17 +213,17 @@ export default function TestimonialsSection() {
               {/* Verified Outcome Badge with Code Font */}
               <div
                 style={{
-                  backgroundColor: 'rgba(7, 3, 18, 0.75)',
-                  border: '1px solid rgba(237, 128, 233, 0.3)',
-                  padding: '0.5rem 1rem',
-                  borderRadius: '8px',
+                  backgroundColor: '#F8FAFC',
+                  border: '1px solid #E2E8F0',
+                  padding: '0.6rem 1.1rem',
+                  borderRadius: '10px',
                   textAlign: 'right',
                 }}
               >
-                <div className="font-mono" style={{ fontSize: '0.65rem', color: '#D8BFD8', textTransform: 'uppercase' }}>
-                  // VERIFIED_OUTCOME
+                <div style={{ fontSize: '0.72rem', color: '#64748B', textTransform: 'uppercase', fontWeight: 600 }}>
+                  Verified Result
                 </div>
-                <div className="code-metric" style={{ fontSize: '1.05rem', fontWeight: 800, color: '#ED80E9' }}>
+                <div className="code-metric" style={{ fontSize: '1.15rem', fontWeight: 800, color: '#7C3AED' }}>
                   {activeReview.metrics}
                 </div>
               </div>
@@ -247,22 +248,23 @@ export default function TestimonialsSection() {
                 width: '42px',
                 height: '42px',
                 borderRadius: '50%',
-                backgroundColor: 'rgba(22, 13, 56, 0.8)',
-                border: '1px solid rgba(216, 191, 216, 0.15)',
-                color: '#D8BFD8',
+                backgroundColor: '#FFFFFF',
+                border: '1px solid #E2E8F0',
+                color: '#0F172A',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
+                boxShadow: '0 2px 8px rgba(15, 23, 42, 0.05)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#ED80E9';
-                e.currentTarget.style.color = '#ED80E9';
+                e.currentTarget.style.borderColor = '#7C3AED';
+                e.currentTarget.style.color = '#7C3AED';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(216, 191, 216, 0.15)';
-                e.currentTarget.style.color = '#D8BFD8';
+                e.currentTarget.style.borderColor = '#E2E8F0';
+                e.currentTarget.style.color = '#0F172A';
               }}
             >
               <ChevronLeft size={20} />
@@ -280,7 +282,7 @@ export default function TestimonialsSection() {
                     width: currentIndex === idx ? '24px' : '8px',
                     height: '8px',
                     borderRadius: '4px',
-                    backgroundColor: currentIndex === idx ? '#ED80E9' : 'rgba(216, 191, 216, 0.25)',
+                    backgroundColor: currentIndex === idx ? '#7C3AED' : '#CBD5E1',
                     border: 'none',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
@@ -297,22 +299,23 @@ export default function TestimonialsSection() {
                 width: '42px',
                 height: '42px',
                 borderRadius: '50%',
-                backgroundColor: 'rgba(22, 13, 56, 0.8)',
-                border: '1px solid rgba(216, 191, 216, 0.15)',
-                color: '#D8BFD8',
+                backgroundColor: '#FFFFFF',
+                border: '1px solid #E2E8F0',
+                color: '#0F172A',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
+                boxShadow: '0 2px 8px rgba(15, 23, 42, 0.05)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#ED80E9';
-                e.currentTarget.style.color = '#ED80E9';
+                e.currentTarget.style.borderColor = '#7C3AED';
+                e.currentTarget.style.color = '#7C3AED';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(216, 191, 216, 0.15)';
-                e.currentTarget.style.color = '#D8BFD8';
+                e.currentTarget.style.borderColor = '#E2E8F0';
+                e.currentTarget.style.color = '#0F172A';
               }}
             >
               <ChevronRight size={20} />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Search, Compass, Rocket, BarChart, TrendingUp, CheckCircle, ArrowRight, Terminal } from 'lucide-react';
+import { Search, Compass, Rocket, BarChart, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
 import TiltCard from './TiltCard';
+import ProcessPipeline3D from './ProcessPipeline3D';
 
 export default function ProcessSection() {
   const [activeStep, setActiveStep] = useState(0);
@@ -13,7 +14,7 @@ export default function ProcessSection() {
       desc: 'We perform an exhaustive 360° technical diagnostic of your web assets, organic rankings, backlink topology, paid advertising ROI, and competitive moats. We uncover the exact bottlenecks choking your conversion pipeline.',
       icon: Search,
       deliverables: ['Full Technical SEO Health Report', 'Ad Spend Inefficiency Breakdown', 'Competitor Keyword Gap Analysis'],
-      timeline: 'days_1_to_5',
+      timeline: 'Days 1 – 5',
     },
     {
       number: '02',
@@ -22,7 +23,7 @@ export default function ProcessSection() {
       desc: 'No cookie-cutter templates. We craft a bespoke quarterly roadmap detailing exact audience cohorts, search intent clusters, channel budget weighting, and multi-touch conversion attribution models.',
       icon: Compass,
       deliverables: ['Target Channel Budget Matrix', 'High-Intent Content Calendar', 'Conversion Architecture Wireframes'],
-      timeline: 'days_6_to_10',
+      timeline: 'Days 6 – 10',
     },
     {
       number: '03',
@@ -31,7 +32,7 @@ export default function ProcessSection() {
       desc: 'Our cross-functional pod builds high-converting landing pages, launches optimized Google & Meta campaigns, executes on-page schema enhancements, and initiates authoritative digital PR outreach.',
       icon: Rocket,
       deliverables: ['Responsive Web Pages Deployed', 'Targeted Ad Creative Variations Live', 'Full GA4 & CAPI Tracking Verified'],
-      timeline: 'days_11_to_20',
+      timeline: 'Days 11 – 20',
     },
     {
       number: '04',
@@ -40,7 +41,7 @@ export default function ProcessSection() {
       desc: 'We continuously analyze live user behavior using heatmaps, session recordings, and bid efficiency telemetry. Underperforming ad sets are pruned; winning variations receive amplified budget.',
       icon: BarChart,
       deliverables: ['Bi-Weekly Sprint Retrospectives', 'A/B Test Statistical Significance', 'Bid & Keyword Pruning Adjustments'],
-      timeline: 'bi_weekly_sprints',
+      timeline: 'Bi-Weekly Sprints',
     },
     {
       number: '05',
@@ -49,7 +50,7 @@ export default function ProcessSection() {
       desc: 'Once unit economics are validated, we unlock aggressive growth. We expand campaign reach into secondary markets, dominate broad commercial search terms, and establish your brand as the undisputed leader.',
       icon: TrendingUp,
       deliverables: ['Regional Market Expansion', 'Brand Search Dominance', 'Lower Blended Acquisition Cost'],
-      timeline: 'continuous_scale',
+      timeline: 'Continuous Scale',
     },
   ];
 
@@ -60,9 +61,9 @@ export default function ProcessSection() {
         paddingTop: '6rem',
         paddingBottom: '6rem',
         position: 'relative',
-        backgroundColor: 'rgba(14, 7, 36, 0.45)',
-        borderTop: '1px solid rgba(216, 191, 216, 0.1)',
-        borderBottom: '1px solid rgba(216, 191, 216, 0.1)',
+        backgroundColor: '#F8FAFC',
+        borderTop: '1px solid #E2E8F0',
+        borderBottom: '1px solid #E2E8F0',
       }}
     >
       <div className="container">
@@ -72,7 +73,7 @@ export default function ProcessSection() {
             The Growth Engine
           </div>
           <h2 className="section-title">
-            Our 5-Stage <span className="gradient-text-wisteria">Execution Framework</span>
+            Our 5-Stage <span className="gradient-text-hero">Execution Framework</span>
           </h2>
           <p className="section-desc" style={{ margin: '0 auto' }}>
             A disciplined, battle-tested methodology designed to de-risk your investment and deliver
@@ -103,11 +104,11 @@ export default function ProcessSection() {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'flex-start',
-                  padding: '1rem',
+                  padding: '1.1rem 1rem',
                   borderRadius: '12px',
-                  backgroundColor: isCurrent ? 'rgba(148, 0, 211, 0.25)' : 'rgba(22, 13, 56, 0.5)',
-                  border: isCurrent ? '1px solid #ED80E9' : '1px solid rgba(216, 191, 216, 0.12)',
-                  boxShadow: isCurrent ? '0 0 20px rgba(148, 0, 211, 0.35)' : 'none',
+                  backgroundColor: isCurrent ? 'rgba(124, 58, 237, 0.08)' : '#FFFFFF',
+                  border: isCurrent ? '2px solid #7C3AED' : '1px solid #E2E8F0',
+                  boxShadow: isCurrent ? '0 8px 24px rgba(124, 58, 237, 0.15)' : '0 2px 8px rgba(15, 23, 42, 0.04)',
                   cursor: 'pointer',
                   textAlign: 'left',
                   transition: 'all 0.2s ease',
@@ -119,17 +120,17 @@ export default function ProcessSection() {
                   style={{
                     fontSize: '0.75rem',
                     fontWeight: 800,
-                    color: isCurrent ? '#ED80E9' : '#A396BE',
+                    color: isCurrent ? '#7C3AED' : '#64748B',
                     marginBottom: '0.4rem',
                   }}
                 >
-                  PHASE_{step.number}
+                  Phase {step.number}
                 </div>
                 <div
                   style={{
-                    fontSize: '0.875rem',
+                    fontSize: '0.88rem',
                     fontWeight: 700,
-                    color: isCurrent ? '#FAF8FF' : '#D8BFD8',
+                    color: isCurrent ? '#7C3AED' : '#0F172A',
                     lineHeight: 1.3,
                   }}
                 >
@@ -140,15 +141,19 @@ export default function ProcessSection() {
           })}
         </div>
 
+        {/* Interactive Milestone Pipeline Track */}
+        <ProcessPipeline3D activeStep={activeStep} onSelectStep={(idx) => setActiveStep(idx)} />
+
         {/* Active Stage Deep View Card */}
         <TiltCard
           tiltFactor={4}
-          glowColor="rgba(237, 128, 233, 0.25)"
+          glowColor="rgba(124, 58, 237, 0.1)"
           className="glass-panel"
           style={{
             padding: '2.5rem',
-            border: '1px solid rgba(237, 128, 233, 0.35)',
-            backgroundColor: 'rgba(22, 13, 56, 0.75)',
+            border: '1px solid #E2E8F0',
+            backgroundColor: '#FFFFFF',
+            boxShadow: '0 20px 40px rgba(15, 23, 42, 0.06)',
           }}
         >
           <div
@@ -163,22 +168,21 @@ export default function ProcessSection() {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
                 <span className="badge-pill">Stage {steps[activeStep].number}</span>
-                <span className="font-mono" style={{ fontSize: '0.78rem', color: '#ED80E9', fontWeight: 600 }}>
+                <span className="font-mono" style={{ fontSize: '0.78rem', color: '#7C3AED', fontWeight: 600 }}>
                   [timeline: {steps[activeStep].timeline}]
                 </span>
               </div>
 
-              <h3 style={{ fontSize: '1.85rem', fontWeight: 800, color: '#FAF8FF', marginBottom: '0.5rem' }}>
+              <h3 style={{ fontSize: '1.85rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>
                 {steps[activeStep].title}
               </h3>
               <p
-                className="font-mono"
-                style={{ fontSize: '0.85rem', color: '#ED80E9', fontWeight: 600, marginBottom: '1.25rem' }}
+                style={{ fontSize: '0.9rem', color: '#7C3AED', fontWeight: 600, marginBottom: '1.25rem' }}
               >
-                // {steps[activeStep].subtitle}
+                {steps[activeStep].subtitle}
               </p>
 
-              <p style={{ fontSize: '0.9375rem', color: '#D8BFD8', lineHeight: 1.65, marginBottom: '1.75rem' }}>
+              <p style={{ fontSize: '0.9375rem', color: '#475569', lineHeight: 1.65, marginBottom: '1.75rem' }}>
                 {steps[activeStep].desc}
               </p>
 
@@ -206,8 +210,8 @@ export default function ProcessSection() {
             {/* Deliverables Checklist Column */}
             <div
               style={{
-                backgroundColor: 'rgba(7, 3, 18, 0.8)',
-                border: '1px solid rgba(216, 191, 216, 0.12)',
+                backgroundColor: '#F8FAFC',
+                border: '1px solid #E2E8F0',
                 borderRadius: '16px',
                 padding: '2rem',
               }}
@@ -215,18 +219,18 @@ export default function ProcessSection() {
               <div
                 className="font-mono"
                 style={{
-                  fontSize: '0.78rem',
+                  fontSize: '0.8rem',
                   fontWeight: 700,
-                  color: '#ED80E9',
+                  color: '#7C3AED',
                   textTransform: 'uppercase',
                   letterSpacing: '0.08em',
                   marginBottom: '1.25rem',
                 }}
               >
-                // KEY_PHASE_DELIVERABLES
+                Key Phase Deliverables
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                 {steps[activeStep].deliverables.map((item) => (
                   <div
                     key={item}
@@ -235,13 +239,13 @@ export default function ProcessSection() {
                       alignItems: 'flex-start',
                       gap: '0.75rem',
                       padding: '0.85rem 1rem',
-                      backgroundColor: 'rgba(22, 13, 56, 0.65)',
+                      backgroundColor: '#FFFFFF',
                       borderRadius: '10px',
-                      border: '1px solid rgba(216, 191, 216, 0.1)',
+                      border: '1px solid #E2E8F0',
                     }}
                   >
-                    <CheckCircle size={18} color="#ED80E9" style={{ flexShrink: 0, marginTop: '2px' }} />
-                    <span style={{ fontSize: '0.875rem', color: '#FAF8FF', fontWeight: 500 }}>
+                    <CheckCircle size={18} color="#7C3AED" style={{ flexShrink: 0, marginTop: '2px' }} />
+                    <span style={{ fontSize: '0.875rem', color: '#0F172A', fontWeight: 600 }}>
                       {item}
                     </span>
                   </div>
@@ -253,16 +257,16 @@ export default function ProcessSection() {
                 style={{
                   marginTop: '1.5rem',
                   paddingTop: '1.25rem',
-                  borderTop: '1px solid rgba(216, 191, 216, 0.1)',
+                  borderTop: '1px solid #E2E8F0',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   fontSize: '0.75rem',
-                  color: '#D8BFD8',
+                  color: '#64748B',
                 }}
               >
-                <span>[milestone_signoff: verified]</span>
-                <span style={{ color: '#ED80E9', fontWeight: 600 }}>100% Transparency</span>
+                <span>Milestone Sign-Off: Verified</span>
+                <span style={{ color: '#2563EB', fontWeight: 700 }}>100% Transparency</span>
               </div>
             </div>
           </div>

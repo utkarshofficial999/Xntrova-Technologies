@@ -8,15 +8,11 @@ import {
   ChevronDown,
   ArrowRight,
   Search,
-  Sparkles,
-  BarChart3,
   TrendingUp,
   Share2,
   ShoppingCart,
   FileText,
   Code2,
-  ShieldCheck,
-  Terminal,
 } from 'lucide-react';
 
 export default function Navbar({ onOpenAuditModal }) {
@@ -74,7 +70,7 @@ export default function Navbar({ onOpenAuditModal }) {
     },
     {
       title: 'Full-Stack Web Engineering',
-      desc: 'Modern, high-performance, 3D interactive web applications built for speed.',
+      desc: 'Modern, high-performance web applications built for speed and conversion.',
       icon: Code2,
       href: '#services',
       badge: 'Next-Gen',
@@ -97,14 +93,14 @@ export default function Navbar({ onOpenAuditModal }) {
         transition: 'all 0.3s ease',
       }}
     >
-      {/* Top Utility Bar (Desktop) */}
+      {/* Top Utility Bar (Subtle Off-White) - Hidden on mobile (< 768px), visible on tablet/desktop */}
       <div
+        className={`top-utility-bar ${isScrolled ? 'hidden' : ''}`}
         style={{
-          backgroundColor: 'rgba(7, 3, 18, 0.96)',
-          borderBottom: '1px solid rgba(216, 191, 216, 0.1)',
+          backgroundColor: '#F8FAFC',
+          borderBottom: '1px solid #E2E8F0',
           fontSize: '0.78rem',
-          color: '#D8BFD8',
-          display: isScrolled ? 'none' : 'block',
+          color: '#64748B',
           transition: 'all 0.3s ease',
         }}
       >
@@ -126,17 +122,18 @@ export default function Navbar({ onOpenAuditModal }) {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.4rem',
-                color: '#D3D3FF',
+                color: '#475569',
+                fontWeight: 600,
                 textDecoration: 'none',
                 transition: 'color 0.2s',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#ED80E9')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#D3D3FF')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#7C3AED')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#475569')}
             >
-              <Phone size={13} color="#ED80E9" />
+              <Phone size={13} color="#7C3AED" />
               <span>+91 868-382-8646</span>
             </a>
-            <span style={{ color: 'rgba(216, 191, 216, 0.2)' }}>|</span>
+            <span style={{ color: 'rgba(148, 163, 184, 0.4)' }}>|</span>
             <a
               href="mailto:info@xntrova.com"
               className="font-mono"
@@ -144,31 +141,32 @@ export default function Navbar({ onOpenAuditModal }) {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.4rem',
-                color: '#D3D3FF',
+                color: '#475569',
+                fontWeight: 600,
                 textDecoration: 'none',
                 transition: 'color 0.2s',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#ED80E9')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#D3D3FF')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#7C3AED')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#475569')}
             >
-              <Mail size={13} color="#ED80E9" />
+              <Mail size={13} color="#7C3AED" />
               <span>info@xntrova.com</span>
             </a>
           </div>
 
           {/* Right: Agency Trust & Region */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <div className="font-mono" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: '#ED80E9', fontSize: '0.72rem' }}>
+            <div className="font-mono" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: '#059669', fontSize: '0.72rem', fontWeight: 600 }}>
               <span
                 style={{
                   width: '6px',
                   height: '6px',
                   borderRadius: '50%',
-                  backgroundColor: '#ED80E9',
-                  boxShadow: '0 0 8px #ED80E9',
+                  backgroundColor: '#10B981',
+                  boxShadow: '0 0 6px #10B981',
                 }}
               />
-              <span>[status: open_for_partnerships]</span>
+              <span>Open for Partnerships</span>
             </div>
 
             <div style={{ position: 'relative' }}>
@@ -182,15 +180,16 @@ export default function Navbar({ onOpenAuditModal }) {
                   gap: '0.35rem',
                   background: 'transparent',
                   border: 'none',
-                  color: '#D8BFD8',
+                  color: '#64748B',
                   fontSize: '0.75rem',
+                  fontWeight: 600,
                   cursor: 'pointer',
                   padding: '2px 6px',
                   borderRadius: '4px',
                 }}
                 aria-expanded={showRegionMenu}
               >
-                <Globe size={12} color="#D3D3FF" />
+                <Globe size={12} color="#7C3AED" />
                 <span>{activeRegion}</span>
                 <ChevronDown size={11} />
               </button>
@@ -202,12 +201,12 @@ export default function Navbar({ onOpenAuditModal }) {
                     right: 0,
                     top: '100%',
                     marginTop: '4px',
-                    backgroundColor: '#160d38',
-                    border: '1px solid rgba(237, 128, 233, 0.25)',
+                    backgroundColor: '#FFFFFF',
+                    border: '1px solid #E2E8F0',
                     borderRadius: '8px',
                     padding: '4px',
                     minWidth: '130px',
-                    boxShadow: '0 10px 25px rgba(0,0,0,0.6)',
+                    boxShadow: '0 10px 25px rgba(15, 23, 42, 0.1)',
                     zIndex: 100,
                   }}
                 >
@@ -224,8 +223,9 @@ export default function Navbar({ onOpenAuditModal }) {
                         width: '100%',
                         textAlign: 'left',
                         padding: '6px 10px',
-                        background: activeRegion === reg ? 'rgba(148, 0, 211, 0.2)' : 'transparent',
-                        color: activeRegion === reg ? '#ED80E9' : '#D8BFD8',
+                        background: activeRegion === reg ? 'rgba(124, 58, 237, 0.08)' : 'transparent',
+                        color: activeRegion === reg ? '#7C3AED' : '#334155',
+                        fontWeight: 600,
                         border: 'none',
                         borderRadius: '4px',
                         fontSize: '0.75rem',
@@ -242,15 +242,14 @@ export default function Navbar({ onOpenAuditModal }) {
         </div>
       </div>
 
-      {/* Main Navigation Bar */}
+      {/* Main Navigation Bar (Clean White Glass) */}
       <nav
         style={{
-          backgroundColor: isScrolled ? 'rgba(7, 3, 18, 0.88)' : 'rgba(7, 3, 18, 0.7)',
+          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.88)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
-          borderBottom: '1px solid',
-          borderColor: isScrolled ? 'rgba(148, 0, 211, 0.35)' : 'rgba(216, 191, 216, 0.1)',
-          boxShadow: isScrolled ? '0 10px 30px -10px rgba(0, 0, 0, 0.85), 0 0 20px rgba(148, 0, 211, 0.15)' : 'none',
+          borderBottom: '1px solid #E2E8F0',
+          boxShadow: isScrolled ? '0 4px 20px -2px rgba(15, 23, 42, 0.06)' : 'none',
           transition: 'all 0.3s ease',
         }}
         aria-label="Main Navigation"
@@ -265,49 +264,47 @@ export default function Navbar({ onOpenAuditModal }) {
             transition: 'height 0.3s ease',
           }}
         >
-          {/* Logo & Agency Identity with Code Badge */}
+          {/* Logo & Agency Identity */}
           <a
             href="/"
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '0.75rem',
+              gap: '0.65rem',
               textDecoration: 'none',
+              flexShrink: 0,
             }}
           >
             <img
               src="https://res.cloudinary.com/di93stsbz/image/upload/f_auto,q_auto,c_limit,w_384/v1788158799/cms-settings/cx4pzlnw2srdmd5ckfjp.png"
               alt="Xntrova Technologies"
               style={{
-                height: isScrolled ? '32px' : '38px',
+                height: isScrolled ? '28px' : '32px',
                 width: 'auto',
+                maxWidth: '120px',
                 objectFit: 'contain',
                 transition: 'height 0.3s ease',
               }}
             />
             <span
-              className="code-badge"
+              className="navbar-platform-badge"
               style={{
-                background: 'linear-gradient(135deg, rgba(148, 0, 211, 0.25), rgba(237, 128, 233, 0.2))',
-                color: '#ED80E9',
-                border: '1px solid rgba(237, 128, 233, 0.35)',
-                padding: '3px 7px',
+                background: 'rgba(124, 58, 237, 0.08)',
+                color: '#7C3AED',
+                border: '1px solid rgba(124, 58, 237, 0.25)',
+                padding: '3px 8px',
                 borderRadius: '6px',
+                fontSize: '0.72rem',
+                fontWeight: 700,
+                letterSpacing: '0.04em',
               }}
             >
-              v3.0 // engineered
+              Growth Platform
             </span>
           </a>
 
           {/* Desktop Navigation Links */}
-          <div
-            style={{
-              display: 'none',
-              alignItems: 'center',
-              gap: '0.5rem',
-            }}
-            className="lg:flex"
-          >
+          <div className="desktop-nav-links">
             {/* Services Dropdown */}
             <div
               style={{ position: 'relative' }}
@@ -323,8 +320,8 @@ export default function Navbar({ onOpenAuditModal }) {
                   gap: '0.35rem',
                   padding: '0.5rem 0.9rem',
                   fontSize: '0.85rem',
-                  fontWeight: 600,
-                  color: servicesDropdownOpen ? '#ED80E9' : '#D8BFD8',
+                  fontWeight: 700,
+                  color: servicesDropdownOpen ? '#7C3AED' : '#334155',
                   textDecoration: 'none',
                   borderRadius: '6px',
                   transition: 'color 0.2s',
@@ -340,7 +337,7 @@ export default function Navbar({ onOpenAuditModal }) {
                 />
               </a>
 
-              {/* Mega Dropdown Menu */}
+              {/* Mega Dropdown Menu (White SaaS) */}
               {servicesDropdownOpen && (
                 <div
                   style={{
@@ -349,12 +346,10 @@ export default function Navbar({ onOpenAuditModal }) {
                     left: '-100px',
                     width: '580px',
                     padding: '1.25rem',
-                    backgroundColor: 'rgba(14, 7, 36, 0.98)',
-                    backdropFilter: 'blur(24px)',
-                    WebkitBackdropFilter: 'blur(24px)',
-                    border: '1px solid rgba(237, 128, 233, 0.3)',
+                    backgroundColor: '#FFFFFF',
+                    border: '1px solid #E2E8F0',
                     borderRadius: '16px',
-                    boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 35px rgba(148, 0, 211, 0.2)',
+                    boxShadow: '0 20px 50px -10px rgba(15, 23, 42, 0.12), 0 0 30px rgba(124, 58, 237, 0.06)',
                     display: 'grid',
                     gridTemplateColumns: 'repeat(2, 1fr)',
                     gap: '0.75rem',
@@ -375,25 +370,25 @@ export default function Navbar({ onOpenAuditModal }) {
                           padding: '0.75rem',
                           borderRadius: '10px',
                           textDecoration: 'none',
-                          backgroundColor: 'rgba(255, 255, 255, 0.02)',
-                          border: '1px solid transparent',
+                          backgroundColor: '#F8FAFC',
+                          border: '1px solid #E2E8F0',
                           transition: 'all 0.2s ease',
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = 'rgba(148, 0, 211, 0.15)';
-                          e.currentTarget.style.borderColor = 'rgba(237, 128, 233, 0.35)';
+                          e.currentTarget.style.backgroundColor = 'rgba(124, 58, 237, 0.05)';
+                          e.currentTarget.style.borderColor = 'rgba(124, 58, 237, 0.3)';
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.02)';
-                          e.currentTarget.style.borderColor = 'transparent';
+                          e.currentTarget.style.backgroundColor = '#F8FAFC';
+                          e.currentTarget.style.borderColor = '#E2E8F0';
                         }}
                       >
                         <div
                           style={{
                             padding: '0.5rem',
                             borderRadius: '8px',
-                            background: 'rgba(148, 0, 211, 0.2)',
-                            color: '#ED80E9',
+                            background: 'rgba(124, 58, 237, 0.1)',
+                            color: '#7C3AED',
                             flexShrink: 0,
                           }}
                         >
@@ -406,8 +401,8 @@ export default function Navbar({ onOpenAuditModal }) {
                               alignItems: 'center',
                               gap: '0.4rem',
                               fontSize: '0.875rem',
-                              fontWeight: 600,
-                              color: '#FAF8FF',
+                              fontWeight: 700,
+                              color: '#0F172A',
                             }}
                           >
                             {item.title}
@@ -416,8 +411,8 @@ export default function Navbar({ onOpenAuditModal }) {
                                 className="code-badge"
                                 style={{
                                   fontSize: '0.65rem',
-                                  color: '#ED80E9',
-                                  background: 'rgba(237, 128, 233, 0.15)',
+                                  color: '#7C3AED',
+                                  background: 'rgba(124, 58, 237, 0.1)',
                                   padding: '1px 5px',
                                   borderRadius: '4px',
                                 }}
@@ -426,7 +421,7 @@ export default function Navbar({ onOpenAuditModal }) {
                               </span>
                             )}
                           </div>
-                          <p style={{ fontSize: '0.75rem', color: '#D8BFD8', marginTop: '2px', lineHeight: 1.4 }}>
+                          <p style={{ fontSize: '0.75rem', color: '#64748B', marginTop: '2px', lineHeight: 1.4 }}>
                             {item.desc}
                           </p>
                         </div>
@@ -447,14 +442,14 @@ export default function Navbar({ onOpenAuditModal }) {
                   style={{
                     padding: '0.5rem 0.9rem',
                     fontSize: '0.85rem',
-                    fontWeight: 600,
-                    color: '#D8BFD8',
+                    fontWeight: 700,
+                    color: '#475569',
                     textDecoration: 'none',
                     borderRadius: '6px',
                     transition: 'color 0.2s',
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#ED80E9')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#D8BFD8')}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#7C3AED')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#475569')}
                 >
                   {link}
                 </a>
@@ -463,48 +458,52 @@ export default function Navbar({ onOpenAuditModal }) {
           </div>
 
           {/* Right Action: CTA Buttons */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexShrink: 0 }}>
+            {/* Audit Scanner Button (hidden on mobile, visible on tablet/desktop) */}
             <button
               type="button"
               onClick={onOpenAuditModal}
-              className="btn-secondary hidden sm:inline-flex"
+              className="btn-secondary navbar-scanner-btn"
               style={{
-                padding: '0.55rem 1.1rem',
-                fontSize: '0.8125rem',
+                padding: '0.5rem 0.9rem',
+                fontSize: '0.8rem',
+                gap: '0.4rem',
               }}
             >
-              <Terminal size={14} color="#ED80E9" />
-              <span>&gt; audit_scanner</span>
+              <Search size={14} color="#7C3AED" />
+              <span>Audit Scanner</span>
             </button>
 
+            {/* Quick CTA - Compact 'Audit' on small phone (<480px), full on larger */}
             <a
               href="#contact"
               className="btn-primary"
               style={{
-                padding: '0.55rem 1.25rem',
-                fontSize: '0.85rem',
+                padding: '0.45rem 0.9rem',
+                fontSize: '0.8rem',
+                whiteSpace: 'nowrap',
               }}
             >
-              <span>Get Free Audit</span>
-              <ArrowRight size={14} />
+              <span className="navbar-cta-text-full">Get Free Audit</span>
+              <span className="navbar-cta-text-compact">Audit</span>
+              <ArrowRight size={13} />
             </a>
 
-            {/* Mobile Hamburger Toggle */}
+            {/* Mobile Hamburger Toggle (hidden on desktop lg) */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="navbar-hamburger-btn"
               style={{
-                display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '0.5rem',
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
+                padding: '0.45rem',
+                background: '#F8FAFC',
+                border: '1px solid #E2E8F0',
                 borderRadius: '8px',
-                color: '#FAF8FF',
+                color: '#0F172A',
                 cursor: 'pointer',
               }}
-              className="lg:hidden"
               aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
               aria-expanded={mobileMenuOpen}
             >
@@ -513,16 +512,16 @@ export default function Navbar({ onOpenAuditModal }) {
           </div>
         </div>
 
-        {/* Mobile Navigation Drawer */}
+        {/* Mobile Navigation Drawer (White Glass) */}
         {mobileMenuOpen && (
           <div
             style={{
               position: 'fixed',
-              top: '64px',
+              top: isScrolled ? '64px' : '74px',
               left: 0,
               right: 0,
               bottom: 0,
-              backgroundColor: 'rgba(7, 3, 18, 0.98)',
+              backgroundColor: 'rgba(255, 255, 255, 0.98)',
               backdropFilter: 'blur(20px)',
               padding: '1.5rem',
               display: 'flex',
@@ -534,12 +533,12 @@ export default function Navbar({ onOpenAuditModal }) {
             className="lg:hidden"
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <div className="code-badge" style={{ color: '#ED80E9', textTransform: 'uppercase' }}>
-                // NAVIGATION_MENU
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#7C3AED', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                Navigation Menu
               </div>
 
               {[
-                { label: 'Services & Solutions', href: '#services' },
+                { label: 'Services & Capabilities', href: '#services' },
                 { label: 'About Xntrova', href: '#about' },
                 { label: 'Growth Process', href: '#process' },
                 { label: 'Client Case Studies', href: '#case-studies' },
@@ -554,14 +553,14 @@ export default function Navbar({ onOpenAuditModal }) {
                   className="font-mono"
                   style={{
                     fontSize: '1.1rem',
-                    fontWeight: 600,
-                    color: '#FAF8FF',
+                    fontWeight: 700,
+                    color: '#0F172A',
                     textDecoration: 'none',
                     padding: '0.5rem 0',
-                    borderBottom: '1px solid rgba(216, 191, 216, 0.08)',
+                    borderBottom: '1px solid #E2E8F0',
                   }}
                 >
-                  &gt; {link.label}
+                  {link.label}
                 </a>
               ))}
             </div>
@@ -570,7 +569,7 @@ export default function Navbar({ onOpenAuditModal }) {
               style={{
                 marginTop: '2rem',
                 paddingTop: '1.5rem',
-                borderTop: '1px solid rgba(216, 191, 216, 0.1)',
+                borderTop: '1px solid #E2E8F0',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '1rem',
@@ -585,7 +584,7 @@ export default function Navbar({ onOpenAuditModal }) {
                 className="btn-secondary"
                 style={{ width: '100%', justifyContent: 'center' }}
               >
-                <Terminal size={16} color="#ED80E9" />
+                <Search size={16} color="#7C3AED" />
                 <span>Quick Digital Audit</span>
               </button>
 
@@ -599,7 +598,7 @@ export default function Navbar({ onOpenAuditModal }) {
                 <ArrowRight size={16} />
               </a>
 
-              <div className="font-mono" style={{ textAlign: 'center', fontSize: '0.78rem', color: '#A396BE', marginTop: '0.5rem' }}>
+              <div className="font-mono" style={{ textAlign: 'center', fontSize: '0.78rem', color: '#64748B', marginTop: '0.5rem' }}>
                 📞 +91 868-382-8646 • ✉ info@xntrova.com
               </div>
             </div>

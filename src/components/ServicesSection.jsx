@@ -9,7 +9,6 @@ import {
   Cpu,
   Target,
   ArrowRight,
-  Terminal,
 } from 'lucide-react';
 import TiltCard from './TiltCard';
 
@@ -25,8 +24,8 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
       description:
         'Achieve undisputed search visibility. Our SEO solutions in Delhi combine in-depth semantic keyword architecture, deep technical performance fixes, high-authority backlink acquisition, and UX signals that turn organic visits into high-value inquiries.',
       icon: Search,
-      metrics: '+280% organic_traffic',
-      color: '#ED80E9',
+      metrics: '+280% Organic Traffic',
+      color: '#7C3AED',
       tags: ['Technical Audit', 'Entity Schema', 'High-Tier Outreach', 'Local SEO Dwarka & NCR'],
     },
     {
@@ -37,21 +36,21 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
       description:
         'Accelerate pipeline velocity with precision targeted campaigns. We engineer conversion-optimized ad funnels across Google Ads, Meta Ads Manager, and LinkedIn that maximize return on ad spend while slashing cost-per-acquisition.',
       icon: TrendingUp,
-      metrics: '4.2x roas_benchmark',
-      color: '#9400D3',
+      metrics: '4.2x ROAS Benchmark',
+      color: '#6366F1',
       tags: ['Google Search & PMax', 'Meta Retargeting', 'High-Intent Landing Pages', 'Attribution Tracking'],
     },
     {
       id: 'webdev',
       category: 'engineering',
-      title: 'Modern Web Engineering & 3D UI',
+      title: 'Modern Web Engineering & UI/UX',
       tagline: 'Sub-Second Speeds & High-Conversion Architectures',
       description:
-        'Build a digital presence that commands respect. We design and develop bespoke, high-performance web applications, interactive 3D web experiences, and headless CMS ecosystems that outshine competitors and convert visits into sales.',
+        'Build a digital presence that commands respect. We design and develop bespoke, high-performance web applications, responsive SaaS portals, and headless CMS ecosystems that outshine competitors and convert visits into sales.',
       icon: Code2,
-      metrics: '99/100 lighthouse_score',
-      color: '#D3D3FF',
-      tags: ['React & Next.js', 'Interactive 3D / Three.js', 'Core Web Vitals 100%', 'Conversion UX'],
+      metrics: '99/100 Performance Score',
+      color: '#A855F7',
+      tags: ['React & Next.js', 'Responsive SaaS UI', 'Core Web Vitals 100%', 'Conversion UX'],
     },
     {
       id: 'smo',
@@ -61,8 +60,8 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
       description:
         'Elevate your brand presence across modern social ecosystems. We craft strategic creative assets, execute creator and influencer collaborations, and deploy community-driven campaigns that foster genuine loyalty and organic advocacy.',
       icon: Share2,
-      metrics: '+450% engagement_lift',
-      color: '#ED80E9',
+      metrics: '+450% Engagement Lift',
+      color: '#818CF8',
       tags: ['Short-Form Video', 'Creator Partnerships', 'Community Management', 'Brand Resonance'],
     },
     {
@@ -73,8 +72,8 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
       description:
         'Turn product browsers into repeat buyers. Tailored for Shopify and enterprise e-commerce platforms, our full-funnel tactics encompass catalog merchandising, dynamic product ads, cart abandonment recoveries, and checkout optimization.',
       icon: ShoppingCart,
-      metrics: '+38% checkout_rate',
-      color: '#D8BFD8',
+      metrics: '+38% Checkout Rate',
+      color: '#7C3AED',
       tags: ['Shopify Optimization', 'Dynamic Catalog Ads', 'LTV Retention Email', 'Upsell Funnels'],
     },
     {
@@ -85,8 +84,8 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
       description:
         'Build undeniable market authority with content that educates, captivates, and converts. Our specialist writers and strategists produce research-backed whitepapers, blogs, and multimedia assets calibrated for search engines and decision-makers.',
       icon: FileText,
-      metrics: '3.4x dwell_time',
-      color: '#9400D3',
+      metrics: '3.4x Dwell Time',
+      color: '#6366F1',
       tags: ['Topical Authority Maps', 'Buyer Journey Content', 'Infographic Design', 'SEO Copywriting'],
     },
     {
@@ -97,8 +96,8 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
       description:
         'The future of search is conversational. We optimize your brand knowledge graphs, structured data, and citational footprint to ensure your business is recommended by LLMs and AI answer engines across Perplexity, ChatGPT, and Gemini.',
       icon: Cpu,
-      metrics: 'llm_generative_indexed',
-      color: '#D3D3FF',
+      metrics: 'AI & LLM Indexed',
+      color: '#A855F7',
       tags: ['Knowledge Graph Structuring', 'LLM Citation Seeding', 'Perplexity Ranking', 'Vector Metadata'],
     },
     {
@@ -109,17 +108,17 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
       description:
         'Double your leads without doubling ad spend. Through behavioral heatmaps, rigorous A/B multivariate testing, micro-copy refinement, and frictionless form UX, we systematically turn bounce rates into conversion surges.',
       icon: Target,
-      metrics: '+42% conversion_jump',
-      color: '#ED80E9',
+      metrics: '+42% Conversion Lift',
+      color: '#818CF8',
       tags: ['A/B Split Testing', 'Heatmap & Session Analysis', 'Frictionless Forms', 'Checkout UX'],
     },
   ];
 
   const categories = [
-    { id: 'all', label: '// all_services' },
-    { id: 'organic', label: '// organic_seo' },
-    { id: 'paid', label: '// performance_ads' },
-    { id: 'engineering', label: '// web_engineering' },
+    { id: 'all', label: 'All Capabilities' },
+    { id: 'organic', label: 'Organic SEO' },
+    { id: 'paid', label: 'Performance Ads' },
+    { id: 'engineering', label: 'Web Engineering' },
   ];
 
   const filteredServices =
@@ -134,64 +133,75 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
         paddingTop: '6rem',
         paddingBottom: '6rem',
         position: 'relative',
-        backgroundColor: 'var(--bg-canvas)',
+        backgroundColor: '#FFFFFF',
+        borderTop: '1px solid #E2E8F0',
+        borderBottom: '1px solid #E2E8F0',
       }}
     >
       <div className="container">
-        {/* Header */}
-        <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 3rem auto' }}>
+        {/* Section Header */}
+        <div
+          style={{
+            textAlign: 'center',
+            maxWidth: '740px',
+            margin: '0 auto 3.5rem auto',
+          }}
+        >
           <div className="section-tag" style={{ justifyContent: 'center' }}>
-            Our Capabilities
+            Our Core Capabilities
           </div>
           <h2 className="section-title">
-            Engineered For <span className="gradient-text-wisteria">Sustainable Growth</span>
+            Engineered For <span className="gradient-text-hero">Exponential Scale</span>
           </h2>
           <p className="section-desc" style={{ margin: '0 auto' }}>
-            Being the best creative digital marketing and web technology agency in New Delhi, we
+            Being Delhi NCR's bleeding-edge digital marketing and web technology agency, we
             deliver unified growth systems where creative storytelling meets quantitative engineering.
           </p>
 
-          {/* Filter Pills with Code Font */}
+          {/* Filter Pills with Electric Violet styling */}
           <div
             style={{
               display: 'flex',
               flexWrap: 'wrap',
               justifyContent: 'center',
-              gap: '0.6rem',
+              gap: '0.65rem',
               marginTop: '2rem',
             }}
           >
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                type="button"
-                onClick={() => setActiveCategory(cat.id)}
-                className="font-mono"
-                style={{
-                  padding: '0.5rem 1.15rem',
-                  fontSize: '0.8rem',
-                  fontWeight: 600,
-                  borderRadius: '9999px',
-                  border: activeCategory === cat.id ? '1px solid #ED80E9' : '1px solid rgba(216, 191, 216, 0.15)',
-                  backgroundColor: activeCategory === cat.id ? 'rgba(148, 0, 211, 0.25)' : 'rgba(22, 13, 56, 0.6)',
-                  color: activeCategory === cat.id ? '#FAF8FF' : '#D8BFD8',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  boxShadow: activeCategory === cat.id ? '0 0 15px rgba(148, 0, 211, 0.35)' : 'none',
-                }}
-              >
-                {cat.label}
-              </button>
-            ))}
+            {categories.map((cat) => {
+              const isSelected = activeCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => setActiveCategory(cat.id)}
+                  className="font-mono"
+                  style={{
+                    padding: '0.55rem 1.25rem',
+                    fontSize: '0.8rem',
+                    fontWeight: 700,
+                    borderRadius: '9999px',
+                    border: isSelected ? '1px solid #7C3AED' : '1px solid #E2E8F0',
+                    backgroundColor: isSelected ? '#7C3AED' : '#FFFFFF',
+                    color: isSelected ? '#FFFFFF' : '#475569',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    boxShadow: isSelected ? '0 4px 18px rgba(124, 58, 237, 0.35)' : '0 1px 3px rgba(15, 23, 42, 0.05)',
+                  }}
+                >
+                  {cat.label}
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        {/* Services 3D Bento Grid */}
+        {/* Services Bento Grid */}
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-            gap: '1.5rem',
+            gap: '1.75rem',
           }}
         >
           {filteredServices.map((service) => {
@@ -199,8 +209,8 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
             return (
               <TiltCard
                 key={service.id}
-                tiltFactor={6}
-                glowColor={`${service.color}30`}
+                tiltFactor={5}
+                glowColor="rgba(124, 58, 237, 0.15)"
                 style={{
                   height: '100%',
                 }}
@@ -213,13 +223,14 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     padding: '2rem',
-                    backgroundColor: 'rgba(22, 13, 56, 0.65)',
-                    border: '1px solid rgba(216, 191, 216, 0.12)',
+                    backgroundColor: '#FFFFFF',
+                    border: '1px solid #E2E8F0',
                     borderRadius: '16px',
+                    boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.06)',
                   }}
                 >
                   <div>
-                    {/* Top Icon & Metric Pill in Code Font */}
+                    {/* Top Icon & Metric Pill */}
                     <div
                       style={{
                         display: 'flex',
@@ -233,12 +244,12 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                           width: '46px',
                           height: '46px',
                           borderRadius: '12px',
-                          backgroundColor: `${service.color}20`,
-                          border: `1px solid ${service.color}45`,
+                          backgroundColor: 'rgba(124, 58, 237, 0.08)',
+                          border: '1px solid rgba(124, 58, 237, 0.25)',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          color: service.color,
+                          color: '#7C3AED',
                         }}
                       >
                         <Icon size={22} />
@@ -247,16 +258,16 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                       <span
                         className="code-metric"
                         style={{
-                          fontSize: '0.72rem',
+                          fontSize: '0.74rem',
                           fontWeight: 700,
-                          color: '#ED80E9',
-                          backgroundColor: 'rgba(237, 128, 233, 0.12)',
-                          border: '1px solid rgba(237, 128, 233, 0.3)',
-                          padding: '0.25rem 0.65rem',
+                          color: '#7C3AED',
+                          backgroundColor: 'rgba(124, 58, 237, 0.08)',
+                          border: '1px solid rgba(124, 58, 237, 0.2)',
+                          padding: '0.28rem 0.75rem',
                           borderRadius: '9999px',
                         }}
                       >
-                        [{service.metrics}]
+                        {service.metrics}
                       </span>
                     </div>
 
@@ -264,31 +275,30 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                     <h3
                       style={{
                         fontSize: '1.25rem',
-                        fontWeight: 700,
-                        color: '#FAF8FF',
-                        marginBottom: '0.4rem',
+                        fontWeight: 800,
+                        color: '#0F172A',
+                        marginBottom: '0.35rem',
                         lineHeight: 1.3,
                       }}
                     >
                       {service.title}
                     </h3>
-                    <p
-                      className="font-mono"
+
+                    <div
                       style={{
-                        fontSize: '0.78rem',
-                        color: service.color,
+                        fontSize: '0.8rem',
                         fontWeight: 600,
-                        marginBottom: '1rem',
+                        color: '#7C3AED',
+                        marginBottom: '0.85rem',
                       }}
                     >
-                      // {service.tagline}
-                    </p>
+                      {service.tagline}
+                    </div>
 
-                    {/* Description */}
                     <p
                       style={{
                         fontSize: '0.875rem',
-                        color: '#D8BFD8',
+                        color: '#475569',
                         lineHeight: 1.6,
                         marginBottom: '1.5rem',
                       }}
@@ -296,12 +306,12 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                       {service.description}
                     </p>
 
-                    {/* Deliverables Tags in Code Font */}
+                    {/* Tech Tags */}
                     <div
                       style={{
                         display: 'flex',
                         flexWrap: 'wrap',
-                        gap: '0.4rem',
+                        gap: '0.45rem',
                         marginBottom: '1.75rem',
                       }}
                     >
@@ -310,13 +320,13 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                           key={tag}
                           className="font-mono"
                           style={{
-                            fontSize: '0.68rem',
-                            fontWeight: 500,
-                            color: '#D3D3FF',
-                            backgroundColor: 'rgba(148, 0, 211, 0.12)',
-                            border: '1px solid rgba(216, 191, 216, 0.15)',
-                            padding: '0.2rem 0.55rem',
-                            borderRadius: '4px',
+                            fontSize: '0.7rem',
+                            fontWeight: 600,
+                            padding: '0.22rem 0.55rem',
+                            borderRadius: '6px',
+                            backgroundColor: '#F8FAFC',
+                            color: '#334155',
+                            border: '1px solid #E2E8F0',
                           }}
                         >
                           {tag}
@@ -325,29 +335,28 @@ export default function ServicesSection({ onSelectServiceForAudit }) {
                     </div>
                   </div>
 
-                  {/* Bottom Action Button in Code Font */}
+                  {/* Action Link */}
                   <button
                     type="button"
                     onClick={() => onSelectServiceForAudit(service.title)}
-                    className="font-mono"
                     style={{
-                      display: 'inline-flex',
+                      display: 'flex',
                       alignItems: 'center',
                       gap: '0.5rem',
-                      fontSize: '0.8125rem',
-                      fontWeight: 700,
-                      color: service.color,
-                      background: 'transparent',
+                      background: 'none',
                       border: 'none',
-                      cursor: 'pointer',
                       padding: 0,
-                      transition: 'gap 0.2s ease',
+                      color: '#7C3AED',
+                      fontSize: '0.875rem',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                      transition: 'color 0.2s',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.gap = '0.75rem')}
-                    onMouseLeave={(e) => (e.currentTarget.style.gap = '0.5rem')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#6D28D9')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#7C3AED')}
                   >
-                    <span>&gt; request_strategy</span>
-                    <ArrowRight size={14} />
+                    <span>Request Audit For This Service</span>
+                    <ArrowRight size={15} />
                   </button>
                 </div>
               </TiltCard>

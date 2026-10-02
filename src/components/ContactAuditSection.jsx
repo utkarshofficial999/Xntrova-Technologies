@@ -6,13 +6,11 @@ import {
   Phone,
   Mail,
   MapPin,
-  Clock,
-  Sparkles,
   ShieldCheck,
-  Terminal,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import TiltCard from './TiltCard';
+import GlobalNetwork3D from './GlobalNetwork3D';
 
 export default function ContactAuditSection({ selectedService, prefilledDomain }) {
   const [formData, setFormData] = useState({
@@ -74,13 +72,12 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
     setTimeout(() => {
       setFormStatus('success');
 
-      // Trigger Wisteria Bloom confetti celebration
       try {
         confetti({
           particleCount: 90,
           spread: 75,
           origin: { y: 0.6 },
-          colors: ['#ED80E9', '#9400D3', '#D3D3FF', '#D8BFD8', '#FAF8FF'],
+          colors: ['#7C3AED', '#6366F1', '#38BDF8', '#C084FC', '#FFFFFF'],
         });
       } catch (err) {
         // graceful
@@ -114,7 +111,7 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
         paddingTop: '6rem',
         paddingBottom: '6rem',
         position: 'relative',
-        backgroundColor: 'var(--bg-canvas)',
+        backgroundColor: '#FFFFFF',
       }}
     >
       <div className="container">
@@ -132,14 +129,17 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
             <div className="section-tag">Direct Collaboration</div>
             <h2 className="section-title">
               Ready To Outpace <br />
-              <span className="gradient-text-wisteria">Your Competition?</span>
+              <span className="gradient-text-hero">Your Competition?</span>
             </h2>
 
-            <p style={{ fontSize: '1rem', color: '#D8BFD8', lineHeight: 1.65, marginBottom: '2rem' }}>
+            <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.65, marginBottom: '1.5rem' }}>
               Schedule a comprehensive digital growth audit. Within 24 business hours, our lead strategists
               will inspect your current search presence, paid media efficiency, and web performance to
               deliver an actionable roadmap.
             </p>
+
+            {/* Global Telemetry Node Matrix */}
+            <GlobalNetwork3D />
 
             {/* Contact Details List */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2.5rem' }}>
@@ -150,34 +150,42 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                   alignItems: 'center',
                   gap: '1rem',
                   textDecoration: 'none',
-                  padding: '1rem',
+                  padding: '1.1rem',
                   borderRadius: '12px',
-                  backgroundColor: 'rgba(22, 13, 56, 0.6)',
-                  border: '1px solid rgba(216, 191, 216, 0.12)',
-                  transition: 'border-color 0.2s',
+                  backgroundColor: '#F8FAFC',
+                  border: '1px solid #E2E8F0',
+                  boxShadow: '0 4px 15px rgba(15, 23, 42, 0.04)',
+                  transition: 'border-color 0.2s, transform 0.2s',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#ED80E9')}
-                onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(216, 191, 216, 0.12)')}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = '#7C3AED';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = '#E2E8F0';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
               >
                 <div
                   style={{
-                    width: '42px',
-                    height: '42px',
+                    width: '44px',
+                    height: '44px',
                     borderRadius: '10px',
-                    backgroundColor: 'rgba(237, 128, 233, 0.15)',
+                    backgroundColor: 'rgba(124, 58, 237, 0.08)',
+                    border: '1px solid rgba(124, 58, 237, 0.2)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#ED80E9',
+                    color: '#7C3AED',
                   }}
                 >
                   <Phone size={20} />
                 </div>
                 <div>
-                  <div className="font-mono" style={{ fontSize: '0.72rem', color: '#D8BFD8', textTransform: 'uppercase' }}>
-                    // DIRECT_HOTLINE
+                  <div style={{ fontSize: '0.75rem', color: '#64748B', textTransform: 'uppercase', fontWeight: 600 }}>
+                    Direct Hotline
                   </div>
-                  <div className="font-mono" style={{ fontSize: '1rem', fontWeight: 700, color: '#FAF8FF' }}>
+                  <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#0F172A' }}>
                     +91 868-382-8646
                   </div>
                 </div>
@@ -190,34 +198,42 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                   alignItems: 'center',
                   gap: '1rem',
                   textDecoration: 'none',
-                  padding: '1rem',
+                  padding: '1.1rem',
                   borderRadius: '12px',
-                  backgroundColor: 'rgba(22, 13, 56, 0.6)',
-                  border: '1px solid rgba(216, 191, 216, 0.12)',
-                  transition: 'border-color 0.2s',
+                  backgroundColor: '#F8FAFC',
+                  border: '1px solid #E2E8F0',
+                  boxShadow: '0 4px 15px rgba(15, 23, 42, 0.04)',
+                  transition: 'border-color 0.2s, transform 0.2s',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#ED80E9')}
-                onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(216, 191, 216, 0.12)')}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = '#7C3AED';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = '#E2E8F0';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
               >
                 <div
                   style={{
-                    width: '42px',
-                    height: '42px',
+                    width: '44px',
+                    height: '44px',
                     borderRadius: '10px',
-                    backgroundColor: 'rgba(148, 0, 211, 0.2)',
+                    backgroundColor: 'rgba(124, 58, 237, 0.08)',
+                    border: '1px solid rgba(124, 58, 237, 0.2)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#D3D3FF',
+                    color: '#7C3AED',
                   }}
                 >
                   <Mail size={20} />
                 </div>
                 <div>
-                  <div className="font-mono" style={{ fontSize: '0.72rem', color: '#D8BFD8', textTransform: 'uppercase' }}>
-                    // INQUIRIES_AND_RFPS
+                  <div style={{ fontSize: '0.75rem', color: '#64748B', textTransform: 'uppercase', fontWeight: 600 }}>
+                    Inquiries & RFPs
                   </div>
-                  <div className="font-mono" style={{ fontSize: '1rem', fontWeight: 700, color: '#FAF8FF' }}>
+                  <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#0F172A' }}>
                     info@xntrova.com
                   </div>
                 </div>
@@ -228,31 +244,33 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                   display: 'flex',
                   alignItems: 'center',
                   gap: '1rem',
-                  padding: '1rem',
+                  padding: '1.1rem',
                   borderRadius: '12px',
-                  backgroundColor: 'rgba(22, 13, 56, 0.6)',
-                  border: '1px solid rgba(216, 191, 216, 0.12)',
+                  backgroundColor: '#F8FAFC',
+                  border: '1px solid #E2E8F0',
+                  boxShadow: '0 4px 15px rgba(15, 23, 42, 0.04)',
                 }}
               >
                 <div
                   style={{
-                    width: '42px',
-                    height: '42px',
+                    width: '44px',
+                    height: '44px',
                     borderRadius: '10px',
-                    backgroundColor: 'rgba(211, 211, 255, 0.15)',
+                    backgroundColor: 'rgba(124, 58, 237, 0.08)',
+                    border: '1px solid rgba(124, 58, 237, 0.2)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#D3D3FF',
+                    color: '#7C3AED',
                   }}
                 >
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <div className="font-mono" style={{ fontSize: '0.72rem', color: '#D8BFD8', textTransform: 'uppercase' }}>
-                    // HEADQUARTERS
+                  <div style={{ fontSize: '0.75rem', color: '#64748B', textTransform: 'uppercase', fontWeight: 600 }}>
+                    Headquarters
                   </div>
-                  <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#FAF8FF' }}>
+                  <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0F172A' }}>
                     Dwarka, New Delhi, Delhi NCR 110075, India
                   </div>
                 </div>
@@ -261,30 +279,30 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
 
             {/* NDA & Privacy Promise */}
             <div
-              className="font-mono"
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.6rem',
-                fontSize: '0.78rem',
-                color: '#D8BFD8',
+                fontSize: '0.85rem',
+                color: '#64748B',
+                fontWeight: 500,
               }}
             >
-              <ShieldCheck size={16} color="#ED80E9" />
-              <span>[100% Confidentiality &amp; Mutual NDA Protected]</span>
+              <ShieldCheck size={18} color="#7C3AED" />
+              <span>100% Confidentiality &amp; Mutual NDA Protected</span>
             </div>
           </div>
 
           {/* Right Column: Lead Capture Form Card */}
           <TiltCard
             tiltFactor={2}
-            glowColor="rgba(237, 128, 233, 0.25)"
+            glowColor="rgba(124, 58, 237, 0.12)"
             className="glass-panel"
             style={{
               padding: '2.5rem',
-              border: '1px solid rgba(237, 128, 233, 0.35)',
-              backgroundColor: 'rgba(22, 13, 56, 0.8)',
-              boxShadow: '0 20px 50px rgba(0, 0, 0, 0.85), 0 0 35px rgba(148, 0, 211, 0.25)',
+              border: '1px solid #E2E8F0',
+              backgroundColor: '#FFFFFF',
+              boxShadow: '0 20px 45px rgba(15, 23, 42, 0.08)',
             }}
           >
             {formStatus === 'success' ? (
@@ -294,26 +312,26 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                     width: '64px',
                     height: '64px',
                     borderRadius: '50%',
-                    backgroundColor: 'rgba(237, 128, 233, 0.18)',
-                    border: '2px solid #ED80E9',
+                    backgroundColor: 'rgba(124, 58, 237, 0.1)',
+                    border: '2px solid #7C3AED',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#ED80E9',
+                    color: '#7C3AED',
                     margin: '0 auto 1.5rem auto',
-                    boxShadow: '0 0 30px rgba(237, 128, 233, 0.4)',
+                    boxShadow: '0 0 25px rgba(124, 58, 237, 0.2)',
                   }}
                 >
                   <CheckCircle2 size={36} />
                 </div>
 
-                <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#FAF8FF', marginBottom: '0.5rem' }}>
+                <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>
                   Audit Request Dispatched!
                 </h3>
-                <p style={{ fontSize: '0.95rem', color: '#D8BFD8', maxWidth: '420px', margin: '0 auto 1.75rem auto' }}>
-                  Thank you, <strong style={{ color: '#FAF8FF' }}>{formData.name}</strong>. Our senior growth
+                <p style={{ fontSize: '0.95rem', color: '#475569', maxWidth: '420px', margin: '0 auto 1.75rem auto' }}>
+                  Thank you, <strong style={{ color: '#0F172A' }}>{formData.name}</strong>. Our senior growth
                   director is assembling your website telemetry report. We will be in touch via{' '}
-                  <span className="font-mono" style={{ color: '#ED80E9' }}>
+                  <span className="font-mono" style={{ color: '#7C3AED', fontWeight: 700 }}>
                     {formData.email}
                   </span>{' '}
                   within 24 hours.
@@ -331,10 +349,10 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
             ) : (
               <div>
                 <div style={{ marginBottom: '1.75rem' }}>
-                  <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#FAF8FF', marginBottom: '0.35rem' }}>
+                  <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.35rem' }}>
                     Request A Free Digital Audit
                   </h3>
-                  <p style={{ fontSize: '0.875rem', color: '#D8BFD8' }}>
+                  <p style={{ fontSize: '0.9rem', color: '#64748B' }}>
                     Fill out your business parameters and receive an audit breakdown with actionable growth levers.
                   </p>
                 </div>
@@ -348,9 +366,9 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                       gap: '0.6rem',
                       padding: '0.75rem 1rem',
                       borderRadius: '8px',
-                      backgroundColor: 'rgba(239, 68, 68, 0.15)',
-                      border: '1px solid rgba(239, 68, 68, 0.35)',
-                      color: '#FCA5A5',
+                      backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                      border: '1px solid rgba(239, 68, 68, 0.3)',
+                      color: '#DC2626',
                       fontSize: '0.82rem',
                       marginBottom: '1.5rem',
                     }}
@@ -384,10 +402,9 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                     <div>
                       <label
                         htmlFor="lead-name"
-                        className="font-mono"
-                        style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#D3D3FF', marginBottom: '0.35rem' }}
+                        style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: '#0F172A', marginBottom: '0.35rem' }}
                       >
-                        // name *
+                        Your Name *
                       </label>
                       <input
                         id="lead-name"
@@ -399,12 +416,12 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                         placeholder="Amit Verma"
                         style={{
                           width: '100%',
-                          padding: '0.7rem 0.9rem',
+                          padding: '0.75rem 0.95rem',
                           borderRadius: '8px',
-                          backgroundColor: 'rgba(7, 3, 18, 0.75)',
-                          border: '1px solid rgba(216, 191, 216, 0.15)',
-                          color: '#FAF8FF',
-                          fontSize: '0.875rem',
+                          backgroundColor: '#F8FAFC',
+                          border: '1px solid #CBD5E1',
+                          color: '#0F172A',
+                          fontSize: '0.9rem',
                           outline: 'none',
                         }}
                       />
@@ -413,10 +430,9 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                     <div>
                       <label
                         htmlFor="lead-email"
-                        className="font-mono"
-                        style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#D3D3FF', marginBottom: '0.35rem' }}
+                        style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: '#0F172A', marginBottom: '0.35rem' }}
                       >
-                        // work_email *
+                        Work Email *
                       </label>
                       <input
                         id="lead-email"
@@ -426,15 +442,14 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="amit@company.com"
-                        className="font-mono"
                         style={{
                           width: '100%',
-                          padding: '0.7rem 0.9rem',
+                          padding: '0.75rem 0.95rem',
                           borderRadius: '8px',
-                          backgroundColor: 'rgba(7, 3, 18, 0.75)',
-                          border: '1px solid rgba(216, 191, 216, 0.15)',
-                          color: '#FAF8FF',
-                          fontSize: '0.875rem',
+                          backgroundColor: '#F8FAFC',
+                          border: '1px solid #CBD5E1',
+                          color: '#0F172A',
+                          fontSize: '0.9rem',
                           outline: 'none',
                         }}
                       />
@@ -453,10 +468,9 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                     <div>
                       <label
                         htmlFor="lead-phone"
-                        className="font-mono"
-                        style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#D3D3FF', marginBottom: '0.35rem' }}
+                        style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: '#0F172A', marginBottom: '0.35rem' }}
                       >
-                        // phone_number
+                        Phone Number
                       </label>
                       <input
                         id="lead-phone"
@@ -465,15 +479,14 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+91 98765 43210"
-                        className="font-mono"
                         style={{
                           width: '100%',
-                          padding: '0.7rem 0.9rem',
+                          padding: '0.75rem 0.95rem',
                           borderRadius: '8px',
-                          backgroundColor: 'rgba(7, 3, 18, 0.75)',
-                          border: '1px solid rgba(216, 191, 216, 0.15)',
-                          color: '#FAF8FF',
-                          fontSize: '0.875rem',
+                          backgroundColor: '#F8FAFC',
+                          border: '1px solid #CBD5E1',
+                          color: '#0F172A',
+                          fontSize: '0.9rem',
                           outline: 'none',
                         }}
                       />
@@ -482,10 +495,9 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                     <div>
                       <label
                         htmlFor="lead-company"
-                        className="font-mono"
-                        style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#D3D3FF', marginBottom: '0.35rem' }}
+                        style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: '#0F172A', marginBottom: '0.35rem' }}
                       >
-                        // company_name
+                        Company Name
                       </label>
                       <input
                         id="lead-company"
@@ -496,12 +508,12 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                         placeholder="Acme Technologies"
                         style={{
                           width: '100%',
-                          padding: '0.7rem 0.9rem',
+                          padding: '0.75rem 0.95rem',
                           borderRadius: '8px',
-                          backgroundColor: 'rgba(7, 3, 18, 0.75)',
-                          border: '1px solid rgba(216, 191, 216, 0.15)',
-                          color: '#FAF8FF',
-                          fontSize: '0.875rem',
+                          backgroundColor: '#F8FAFC',
+                          border: '1px solid #CBD5E1',
+                          color: '#0F172A',
+                          fontSize: '0.9rem',
                           outline: 'none',
                         }}
                       />
@@ -512,10 +524,9 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                   <div>
                     <label
                       htmlFor="lead-website"
-                      className="font-mono"
-                      style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#D3D3FF', marginBottom: '0.35rem' }}
+                      style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: '#0F172A', marginBottom: '0.35rem' }}
                     >
-                      // website_domain
+                      Website URL
                     </label>
                     <input
                       id="lead-website"
@@ -524,15 +535,14 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                       value={formData.website_url}
                       onChange={handleChange}
                       placeholder="https://yourcompany.com"
-                      className="font-mono"
                       style={{
                         width: '100%',
-                        padding: '0.7rem 0.9rem',
+                        padding: '0.75rem 0.95rem',
                         borderRadius: '8px',
-                        backgroundColor: 'rgba(7, 3, 18, 0.75)',
-                        border: '1px solid rgba(216, 191, 216, 0.15)',
-                        color: '#FAF8FF',
-                        fontSize: '0.875rem',
+                        backgroundColor: '#F8FAFC',
+                        border: '1px solid #CBD5E1',
+                        color: '#0F172A',
+                        fontSize: '0.9rem',
                         outline: 'none',
                       }}
                     />
@@ -542,31 +552,29 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                   <div>
                     <label
                       htmlFor="lead-service"
-                      className="font-mono"
-                      style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#D3D3FF', marginBottom: '0.35rem' }}
+                      style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: '#0F172A', marginBottom: '0.35rem' }}
                     >
-                      // primary_service_interest
+                      Primary Service Interest
                     </label>
                     <select
                       id="lead-service"
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="font-mono"
                       style={{
                         width: '100%',
-                        padding: '0.7rem 0.9rem',
+                        padding: '0.75rem 0.95rem',
                         borderRadius: '8px',
-                        backgroundColor: '#160d38',
-                        border: '1px solid rgba(237, 128, 233, 0.3)',
-                        color: '#FAF8FF',
-                        fontSize: '0.85rem',
+                        backgroundColor: '#F8FAFC',
+                        border: '1px solid #CBD5E1',
+                        color: '#0F172A',
+                        fontSize: '0.88rem',
                         outline: 'none',
                         cursor: 'pointer',
                       }}
                     >
                       {serviceOptions.map((opt) => (
-                        <option key={opt} value={opt} style={{ backgroundColor: '#160d38', color: '#FAF8FF' }}>
+                        <option key={opt} value={opt} style={{ backgroundColor: '#FFFFFF', color: '#0F172A' }}>
                           {opt}
                         </option>
                       ))}
@@ -576,10 +584,9 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                   {/* Monthly Growth Budget Pills */}
                   <div>
                     <label
-                      className="font-mono"
-                      style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#D3D3FF', marginBottom: '0.35rem' }}
+                      style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: '#0F172A', marginBottom: '0.35rem' }}
                     >
-                      // estimated_monthly_budget
+                      Estimated Monthly Growth Budget
                     </label>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.5rem' }}>
                       {budgetOptions.map((b) => (
@@ -587,18 +594,17 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                           key={b}
                           type="button"
                           onClick={() => setFormData((prev) => ({ ...prev, budget: b }))}
-                          className="font-mono"
                           style={{
-                            padding: '0.5rem',
-                            fontSize: '0.75rem',
+                            padding: '0.55rem',
+                            fontSize: '0.8rem',
                             fontWeight: 600,
-                            borderRadius: '6px',
-                            border: formData.budget === b ? '1px solid #ED80E9' : '1px solid rgba(216, 191, 216, 0.12)',
-                            backgroundColor: formData.budget === b ? 'rgba(148, 0, 211, 0.3)' : 'rgba(7, 3, 18, 0.65)',
-                            color: formData.budget === b ? '#ED80E9' : '#D8BFD8',
+                            borderRadius: '8px',
+                            border: formData.budget === b ? '2px solid #7C3AED' : '1px solid #E2E8F0',
+                            backgroundColor: formData.budget === b ? 'rgba(124, 58, 237, 0.08)' : '#F8FAFC',
+                            color: formData.budget === b ? '#7C3AED' : '#0F172A',
                             cursor: 'pointer',
                             transition: 'all 0.2s',
-                            boxShadow: formData.budget === b ? '0 0 12px rgba(148, 0, 211, 0.35)' : 'none',
+                            boxShadow: formData.budget === b ? '0 2px 8px rgba(124, 58, 237, 0.15)' : 'none',
                           }}
                         >
                           {b}
@@ -611,10 +617,9 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                   <div>
                     <label
                       htmlFor="lead-message"
-                      className="font-mono"
-                      style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#D3D3FF', marginBottom: '0.35rem' }}
+                      style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: '#0F172A', marginBottom: '0.35rem' }}
                     >
-                      // core_growth_targets
+                      Core Growth Targets & Goals
                     </label>
                     <textarea
                       id="lead-message"
@@ -625,36 +630,36 @@ export default function ContactAuditSection({ selectedService, prefilledDomain }
                       placeholder="e.g. Expand organic keywords in North India, lower cost per lead on Meta ads, or redesign web app for higher conversion."
                       style={{
                         width: '100%',
-                        padding: '0.7rem 0.9rem',
+                        padding: '0.75rem 0.95rem',
                         borderRadius: '8px',
-                        backgroundColor: 'rgba(7, 3, 18, 0.75)',
-                        border: '1px solid rgba(216, 191, 216, 0.15)',
-                        color: '#FAF8FF',
-                        fontSize: '0.875rem',
+                        backgroundColor: '#F8FAFC',
+                        border: '1px solid #CBD5E1',
+                        color: '#0F172A',
+                        fontSize: '0.9rem',
                         outline: 'none',
                         resize: 'vertical',
                       }}
                     />
                   </div>
 
-                  {/* Submit Button with Code Font */}
+                  {/* Submit Button */}
                   <button
                     type="submit"
                     disabled={formStatus === 'submitting'}
                     className="btn-primary"
                     style={{
                       width: '100%',
-                      padding: '0.9rem',
+                      padding: '0.95rem',
                       fontSize: '0.95rem',
                       marginTop: '0.5rem',
                       cursor: formStatus === 'submitting' ? 'wait' : 'pointer',
                     }}
                   >
                     {formStatus === 'submitting' ? (
-                      <span>[telemetry_dispatching...]</span>
+                      <span>Submitting Request...</span>
                     ) : (
                       <>
-                        <span>&gt; dispatch_audit_request</span>
+                        <span>Request Free Digital Audit</span>
                         <Send size={16} />
                       </>
                     )}

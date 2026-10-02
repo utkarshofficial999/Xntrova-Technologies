@@ -1,25 +1,25 @@
 import React from 'react';
 import {
-  ShieldCheck,
   Users2,
   Cpu,
   LineChart,
   Zap,
   CheckCircle,
-  Terminal,
+  ExternalLink,
 } from 'lucide-react';
 import TiltCard from './TiltCard';
+import GrowthCalculator3D from './GrowthCalculator3D';
 
-export default function WhyChooseUs() {
+export default function WhyChooseUs({ onClaimProjection }) {
   const tools = [
-    { name: 'Google Ads', category: 'paid_media' },
-    { name: 'Meta Ads Manager', category: 'social_ads' },
-    { name: 'Ahrefs', category: 'seo_intelligence' },
-    { name: 'SEMrush', category: 'competitor_intel' },
-    { name: 'Google Analytics 4', category: 'attribution' },
-    { name: 'Shopify Plus', category: 'e_commerce' },
-    { name: 'Vercel & Next.js', category: 'high_speed_web' },
-    { name: 'Figma', category: 'ui_ux_design' },
+    { name: 'Google Ads', category: 'Paid Media' },
+    { name: 'Meta Ads Manager', category: 'Social Ads' },
+    { name: 'Ahrefs', category: 'SEO Intel' },
+    { name: 'SEMrush', category: 'Market Intel' },
+    { name: 'Google Analytics 4', category: 'Attribution' },
+    { name: 'Shopify Plus', category: 'E-Commerce' },
+    { name: 'Vercel & Next.js', category: 'Web Engine' },
+    { name: 'React 19 & Tailwind', category: 'High-Speed UI' },
   ];
 
   return (
@@ -29,7 +29,7 @@ export default function WhyChooseUs() {
         paddingTop: '6rem',
         paddingBottom: '6rem',
         position: 'relative',
-        backgroundColor: 'var(--bg-canvas)',
+        backgroundColor: '#FFFFFF',
       }}
     >
       <div className="container">
@@ -39,11 +39,11 @@ export default function WhyChooseUs() {
             Why Xntrova
           </div>
           <h2 className="section-title">
-            Turning Potential Into <span className="gradient-text-wisteria">Quantifiable Performance</span>
+            Engineering Repeatable <span className="gradient-text-hero">SaaS & Growth Scalability</span>
           </h2>
           <p className="section-desc" style={{ margin: '0 auto' }}>
-            Every business possesses latent growth potential. We replace subjective guesswork with
-            transparent engineering, cross-functional talent, and real-time execution.
+            Every enterprise possesses latent growth velocity. We replace subjective agency guesswork with
+            transparent engineering, cross-functional pods, and real-time telemetry execution.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function WhyChooseUs() {
           <div style={{ gridColumn: 'span 12' }} className="lg:!col-span-8">
             <TiltCard
               tiltFactor={4}
-              glowColor="rgba(237, 128, 233, 0.2)"
+              glowColor="rgba(124, 58, 237, 0.15)"
               className="glass-card"
               style={{
                 height: '100%',
@@ -67,8 +67,9 @@ export default function WhyChooseUs() {
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 padding: '2rem',
-                backgroundColor: 'rgba(22, 13, 56, 0.65)',
-                borderColor: 'rgba(216, 191, 216, 0.15)',
+                backgroundColor: '#FFFFFF',
+                borderColor: '#E2E8F0',
+                boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.06)',
               }}
             >
               <div>
@@ -78,30 +79,30 @@ export default function WhyChooseUs() {
                       width: '38px',
                       height: '38px',
                       borderRadius: '10px',
-                      backgroundColor: 'rgba(237, 128, 233, 0.15)',
-                      border: '1px solid rgba(237, 128, 233, 0.35)',
+                      backgroundColor: 'rgba(124, 58, 237, 0.08)',
+                      border: '1px solid rgba(124, 58, 237, 0.25)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: '#ED80E9',
+                      color: '#7C3AED',
                     }}
                   >
                     <Users2 size={20} />
                   </div>
-                  <span className="badge-pill">// AUTONOMOUS_POD_MODEL</span>
+                  <span className="badge-pill">Autonomous Pod Architecture</span>
                 </div>
 
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#FAF8FF', marginBottom: '0.6rem' }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.6rem' }}>
                   A Dedicated Multi-Disciplinary Growth Pod
                 </h3>
-                <p style={{ fontSize: '0.9rem', color: '#D8BFD8', lineHeight: 1.6, maxWidth: '640px' }}>
+                <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: 1.65, maxWidth: '640px' }}>
                   You don’t get a junior account manager handing off tasks to outsourced freelancers.
                   Every Xntrova client is paired with a synchronized in-house pod: Senior Growth Strategist,
                   Technical SEO Lead, Performance Copywriter, and Full-Stack Web Engineer.
                 </p>
               </div>
 
-              {/* Pod Roles Visual with Code Font */}
+              {/* Pod Roles Visual with Light Slate Badges */}
               <div
                 style={{
                   display: 'grid',
@@ -109,29 +110,29 @@ export default function WhyChooseUs() {
                   gap: '0.75rem',
                   marginTop: '1.5rem',
                   paddingTop: '1.25rem',
-                  borderTop: '1px solid rgba(216, 191, 216, 0.1)',
+                  borderTop: '1px solid #E2E8F0',
                 }}
               >
                 {[
-                  { role: 'Growth Architect', status: 'strategy_and_roi' },
-                  { role: 'Technical SEO Lead', status: 'core_web_vitals_serp' },
-                  { role: 'Paid Media Buyer', status: 'google_meta_roas' },
-                  { role: 'Web Engineer', status: 'react_3d_nextjs' },
+                  { role: 'Growth Architect', status: 'Strategy & Unit Econ' },
+                  { role: 'Technical SEO Lead', status: 'Core Web Vitals & SERP' },
+                  { role: 'Paid Media Buyer', status: 'ROAS & Scaled Bidding' },
+                  { role: 'Web Engineer', status: 'Next.js & Headless CMS' },
                 ].map((member) => (
                   <div
                     key={member.role}
                     style={{
                       padding: '0.75rem',
                       borderRadius: '8px',
-                      backgroundColor: 'rgba(7, 3, 18, 0.65)',
-                      border: '1px solid rgba(216, 191, 216, 0.1)',
+                      backgroundColor: '#F8FAFC',
+                      border: '1px solid #E2E8F0',
                     }}
                   >
-                    <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#FAF8FF' }}>
+                    <div style={{ fontSize: '0.82rem', fontWeight: 700, color: '#0F172A' }}>
                       {member.role}
                     </div>
-                    <div className="font-mono" style={{ fontSize: '0.68rem', color: '#ED80E9', marginTop: '3px' }}>
-                      $ {member.status}
+                    <div style={{ fontSize: '0.72rem', color: '#7C3AED', marginTop: '3px', fontWeight: 600 }}>
+                      {member.status}
                     </div>
                   </div>
                 ))}
@@ -139,77 +140,87 @@ export default function WhyChooseUs() {
             </TiltCard>
           </div>
 
-          {/* Bento Cell 2: Real-Time BI Dashboard (4 Cols) */}
+          {/* Bento Cell 2: Real-Time BI Dashboard with Image (4 Cols) */}
           <div style={{ gridColumn: 'span 12' }} className="lg:!col-span-4">
             <TiltCard
               tiltFactor={4}
-              glowColor="rgba(148, 0, 211, 0.25)"
+              glowColor="rgba(124, 58, 237, 0.15)"
               className="glass-card"
               style={{
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                padding: '2rem',
-                backgroundColor: 'rgba(22, 13, 56, 0.65)',
-                borderColor: 'rgba(216, 191, 216, 0.15)',
+                padding: '1.75rem',
+                backgroundColor: '#FFFFFF',
+                borderColor: '#E2E8F0',
+                boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.06)',
               }}
             >
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.75rem' }}>
                   <div
                     style={{
                       width: '38px',
                       height: '38px',
                       borderRadius: '10px',
-                      backgroundColor: 'rgba(148, 0, 211, 0.2)',
-                      border: '1px solid rgba(148, 0, 211, 0.4)',
+                      backgroundColor: 'rgba(124, 58, 237, 0.08)',
+                      border: '1px solid rgba(124, 58, 237, 0.25)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: '#D3D3FF',
+                      color: '#7C3AED',
                     }}
                   >
                     <LineChart size={20} />
                   </div>
-                  <span className="badge-pill">// LIVE_TELEMETRY</span>
+                  <span className="badge-pill">Live Telemetry & BI</span>
                 </div>
 
-                <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#FAF8FF', marginBottom: '0.6rem' }}>
-                  100% Transparent BI Dashboard
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>
+                  100% Transparent BI Portal
                 </h3>
-                <p style={{ fontSize: '0.875rem', color: '#D8BFD8', lineHeight: 1.6 }}>
-                  Say goodbye to delayed, opaque month-end PDF reports. Inspect live conversions, ad
-                  spend efficiency, and search impressions in real-time.
+                <p style={{ fontSize: '0.86rem', color: '#475569', lineHeight: 1.55 }}>
+                  Say goodbye to delayed, opaque month-end PDF reports. Inspect live attribution, customer acquisition cost, and organic index coverage in real-time.
                 </p>
+
+                {/* SaaS Dashboard Image Preview */}
+                <div style={{ marginTop: '1rem', position: 'relative', borderRadius: '8px', overflow: 'hidden', border: '1px solid #E2E8F0' }}>
+                  <img
+                    src="/images/saas_dashboard_ui.jpg"
+                    alt="Xntrova Live BI Dashboard"
+                    style={{ width: '100%', height: '120px', objectFit: 'cover', display: 'block' }}
+                  />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 40%, rgba(15, 23, 42, 0.4) 100%)' }} />
+                </div>
               </div>
 
               <div
                 style={{
-                  marginTop: '1.5rem',
-                  padding: '1rem',
-                  backgroundColor: 'rgba(7, 3, 18, 0.75)',
+                  marginTop: '1rem',
+                  padding: '0.75rem 1rem',
+                  backgroundColor: '#F8FAFC',
                   borderRadius: '10px',
-                  border: '1px solid rgba(237, 128, 233, 0.25)',
+                  border: '1px solid #E2E8F0',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                 }}
               >
                 <div>
-                  <div className="font-mono" style={{ fontSize: '0.7rem', color: '#D8BFD8' }}>
-                    pipeline_velocity
+                  <div style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 600 }}>
+                    Pipeline Velocity
                   </div>
-                  <div className="code-metric" style={{ fontSize: '1.15rem', fontWeight: 800, color: '#ED80E9' }}>
+                  <div className="code-metric" style={{ fontSize: '1.15rem', fontWeight: 800, color: '#7C3AED' }}>
                     +68.4%
                   </div>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <div className="font-mono" style={{ fontSize: '0.7rem', color: '#D8BFD8' }}>
-                    attribution_score
+                  <div style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: 600 }}>
+                    Attribution Score
                   </div>
-                  <div className="code-metric" style={{ fontSize: '1.15rem', fontWeight: 800, color: '#D3D3FF' }}>
-                    99.2%
+                  <div className="code-metric" style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0284C7' }}>
+                    99.4%
                   </div>
                 </div>
               </div>
@@ -220,13 +231,14 @@ export default function WhyChooseUs() {
           <div style={{ gridColumn: 'span 12' }} className="lg:!col-span-6">
             <TiltCard
               tiltFactor={4}
-              glowColor="rgba(211, 211, 255, 0.2)"
+              glowColor="rgba(124, 58, 237, 0.15)"
               className="glass-card"
               style={{
                 height: '100%',
                 padding: '2rem',
-                backgroundColor: 'rgba(22, 13, 56, 0.65)',
-                borderColor: 'rgba(216, 191, 216, 0.15)',
+                backgroundColor: '#FFFFFF',
+                borderColor: '#E2E8F0',
+                boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.06)',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem' }}>
@@ -235,23 +247,23 @@ export default function WhyChooseUs() {
                     width: '38px',
                     height: '38px',
                     borderRadius: '10px',
-                    backgroundColor: 'rgba(211, 211, 255, 0.15)',
-                    border: '1px solid rgba(211, 211, 255, 0.35)',
+                    backgroundColor: 'rgba(124, 58, 237, 0.08)',
+                    border: '1px solid rgba(124, 58, 237, 0.25)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#D3D3FF',
+                    color: '#7C3AED',
                   }}
                 >
                   <Cpu size={20} />
                 </div>
-                <span className="badge-pill">// TOOL_INTEGRATIONS</span>
+                <span className="badge-pill">Enterprise Tool Integrations</span>
               </div>
 
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#FAF8FF', marginBottom: '0.6rem' }}>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.6rem' }}>
                 Enterprise Tools We Master
               </h3>
-              <p style={{ fontSize: '0.875rem', color: '#D8BFD8', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+              <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.65, marginBottom: '1.25rem' }}>
                 We license and exploit top-tier analytics, crawler engines, and programmatic bidding
                 platforms to identify market gaps our competitors miss.
               </p>
@@ -260,7 +272,7 @@ export default function WhyChooseUs() {
                 style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(2, 1fr)',
-                  gap: '0.6rem',
+                  gap: '0.65rem',
                 }}
               >
                 {tools.map((t) => (
@@ -270,16 +282,16 @@ export default function WhyChooseUs() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      padding: '0.6rem 0.85rem',
+                      padding: '0.65rem 0.85rem',
                       borderRadius: '8px',
-                      backgroundColor: 'rgba(14, 7, 36, 0.8)',
-                      border: '1px solid rgba(216, 191, 216, 0.1)',
+                      backgroundColor: '#F8FAFC',
+                      border: '1px solid #E2E8F0',
                     }}
                   >
-                    <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#FAF8FF' }}>
+                    <span style={{ fontSize: '0.82rem', fontWeight: 600, color: '#0F172A' }}>
                       {t.name}
                     </span>
-                    <span className="font-mono" style={{ fontSize: '0.68rem', color: '#ED80E9' }}>
+                    <span style={{ fontSize: '0.72rem', color: '#7C3AED', fontWeight: 600 }}>
                       {t.category}
                     </span>
                   </div>
@@ -292,13 +304,14 @@ export default function WhyChooseUs() {
           <div style={{ gridColumn: 'span 12' }} className="lg:!col-span-6">
             <TiltCard
               tiltFactor={4}
-              glowColor="rgba(237, 128, 233, 0.2)"
+              glowColor="rgba(124, 58, 237, 0.15)"
               className="glass-card"
               style={{
                 height: '100%',
                 padding: '2rem',
-                backgroundColor: 'rgba(22, 13, 56, 0.65)',
-                borderColor: 'rgba(216, 191, 216, 0.15)',
+                backgroundColor: '#FFFFFF',
+                borderColor: '#E2E8F0',
+                boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.06)',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem' }}>
@@ -307,37 +320,38 @@ export default function WhyChooseUs() {
                     width: '38px',
                     height: '38px',
                     borderRadius: '10px',
-                    backgroundColor: 'rgba(237, 128, 233, 0.15)',
-                    border: '1px solid rgba(237, 128, 233, 0.35)',
+                    backgroundColor: 'rgba(124, 58, 237, 0.08)',
+                    border: '1px solid rgba(124, 58, 237, 0.25)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#ED80E9',
+                    color: '#7C3AED',
                   }}
                 >
                   <Zap size={20} />
                 </div>
-                <span className="badge-pill">// 14_DAY_SPRINT_CYCLE</span>
+                <span className="badge-pill">14-Day Sprint Velocity</span>
               </div>
 
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#FAF8FF', marginBottom: '0.6rem' }}>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.6rem' }}>
                 Rapid 14-Day Sprint Velocity
               </h3>
-              <p style={{ fontSize: '0.875rem', color: '#D8BFD8', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+              <p style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.65, marginBottom: '1.25rem' }}>
                 Digital markets evolve at lightning speed. We iterate your campaigns and website
                 assets in disciplined bi-weekly sprints, continuously testing new angles and optimizing
                 conversions.
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                 {[
                   'Continuous multivariate A/B ad creative testing',
                   'Bi-weekly technical SEO crawl checks & schema updates',
-                  'Instant escalation Slack/WhatsApp communication channel',
+                  'Instant escalation Slack/Discord communication channel',
+                  'Direct Git commit deployments & automated preview pipelines',
                 ].map((item) => (
                   <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                    <CheckCircle size={15} color="#ED80E9" />
-                    <span className="font-mono" style={{ fontSize: '0.78rem', color: '#D3D3FF' }}>
+                    <CheckCircle size={16} color="#7C3AED" />
+                    <span className="font-mono" style={{ fontSize: '0.78rem', color: '#334155', fontWeight: 500 }}>
                       {item}
                     </span>
                   </div>
@@ -345,6 +359,11 @@ export default function WhyChooseUs() {
               </div>
             </TiltCard>
           </div>
+        </div>
+
+        {/* Interactive Growth ROI Simulator */}
+        <div style={{ marginTop: '3.5rem' }}>
+          <GrowthCalculator3D onClaimProjection={onClaimProjection} />
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, TrendingUp, ArrowUpRight, CheckCircle2, Sparkles, Filter } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import TiltCard from './TiltCard';
 
 export default function PortfolioSection({ onOpenAuditModal }) {
@@ -11,64 +11,68 @@ export default function PortfolioSection({ onOpenAuditModal }) {
       category: 'b2b',
       client: 'CloudScale Telemetry',
       industry: 'B2B Enterprise SaaS',
-      headline: '+320% Organic Traffic & 4.4x Pipeline ROAS in 6 Months',
+      image: '/images/growth_funnel_ui.jpg',
+      headline: '+320% Organic Pipeline & 4.4x B2B ROAS in 6 Months',
       description:
-        'Migrated an enterprise cloud monitoring platform from legacy WordPress to a high-speed web application, coupled with full semantic topical clustering and high-intent Google Search campaigns.',
+        'Migrated an enterprise cloud monitoring platform from legacy monolithic CMS to high-speed Next.js web application, coupled with semantic topical clustering, automated lead routing, and precision Google Search bidding.',
       metrics: [
-        { label: 'organic_traffic', value: '+320%' },
-        { label: 'pipeline_roas', value: '4.4x' },
-        { label: 'pipeline_value', value: '$1.4M+' },
+        { label: 'Organic Traffic', value: '+320%' },
+        { label: 'Pipeline ROAS', value: '4.4x' },
+        { label: 'Pipeline Value', value: '$1.4M+' },
       ],
       tags: ['Technical SEO', 'Google Ads PMax', 'Next.js Web App'],
-      accent: '#ED80E9',
+      accent: '#7C3AED',
     },
     {
       id: 'd2c-ecommerce',
       category: 'ecommerce',
       client: 'Aura Lifestyle & Apparel',
-      industry: 'D2C E-Commerce Fashion',
+      industry: 'D2C E-Commerce Brand',
+      image: '/images/saas_dashboard_ui.jpg',
       headline: 'Scaling from ₹18L to ₹1.2 Cr Monthly GMV With Precision Ads',
       description:
-        'Overhauled full-funnel paid media on Meta and Google Shopping. Deployed creative iteration cycles testing 25+ short-form UGC video hooks weekly, complemented by a lightning-fast Shopify UX overhaul.',
+        'Overhauled full-funnel paid media on Meta and Google Shopping. Deployed creative iteration cycles testing 25+ short-form UGC video hooks weekly, complemented by a lightning-fast headless Shopify UX overhaul.',
       metrics: [
-        { label: 'blended_roas', value: '5.2x' },
-        { label: 'checkout_lift', value: '+46%' },
-        { label: 'monthly_gmv', value: '₹1.2 Cr' },
+        { label: 'Blended ROAS', value: '5.2x' },
+        { label: 'Checkout Lift', value: '+46%' },
+        { label: 'Monthly GMV', value: '₹1.2 Cr' },
       ],
       tags: ['Meta Ads', 'Shopify Plus Optimization', 'Creative Strategy'],
-      accent: '#9400D3',
+      accent: '#6366F1',
     },
     {
       id: 'healthcare-ncr',
       category: 'healthcare',
       client: 'Apex HealthCare Network',
       industry: 'Healthcare & Multispecialty Clinics',
+      image: null,
       headline: 'Dominating Local Search Across Delhi NCR & Dwarka',
       description:
-        'Implemented multi-location local SEO architecture, Google Maps 3-Pack optimization, and high-trust medical content hubs that positioned Apex as the premier destination for specialized care in North India.',
+        'Implemented multi-location local SEO architecture, Google Maps 3-Pack dominance, and high-trust medical content hubs that positioned Apex as the premier destination for specialized care in North India.',
       metrics: [
-        { label: 'monthly_inquiries', value: '14,500+' },
-        { label: 'local_rankings', value: '240+ Terms' },
-        { label: 'lead_cost', value: '-52%' },
+        { label: 'Monthly Inquiries', value: '14,500+' },
+        { label: 'Local Rankings', value: '240+ Terms' },
+        { label: 'Lead Cost Reduction', value: '-52%' },
       ],
       tags: ['Local SEO Delhi NCR', 'Reputation Mgmt', 'High-Trust CRO'],
-      accent: '#D3D3FF',
+      accent: '#38BDF8',
     },
     {
       id: 'luxury-real-estate',
       category: 'b2b',
       client: 'Vanguard Luxury Residences',
       industry: 'High-End Real Estate Developments',
+      image: null,
       headline: 'Generating ₹160 Cr in Verified Buyer Intent for Luxury Condos',
       description:
-        'Created an immersive 3D digital architectural showcase paired with ultra-exclusive Google Search & LinkedIn programmatic targeting directed at high-net-worth investors across India and the GCC.',
+        'Created a high-converting digital showcase paired with ultra-exclusive Google Search & LinkedIn programmatic targeting directed at high-net-worth investors across India and the GCC.',
       metrics: [
-        { label: 'buyer_leads', value: '1,820' },
-        { label: 'sold_velocity', value: '88% in 90d' },
-        { label: 'inquiry_pipeline', value: '₹160 Cr+' },
+        { label: 'Buyer Leads', value: '1,820' },
+        { label: 'Sales Velocity', value: '88% in 90d' },
+        { label: 'Inquiry Pipeline', value: '₹160 Cr+' },
       ],
-      tags: ['3D Interactive UI', 'HNW Targeting', 'VIP Lead Funnels'],
-      accent: '#D8BFD8',
+      tags: ['Interactive Web UI', 'HNW Targeting', 'VIP Lead Funnels'],
+      accent: '#A855F7',
     },
   ];
 
@@ -84,7 +88,7 @@ export default function PortfolioSection({ onOpenAuditModal }) {
         paddingTop: '6rem',
         paddingBottom: '6rem',
         position: 'relative',
-        backgroundColor: 'var(--bg-canvas)',
+        backgroundColor: '#FFFFFF',
       }}
     >
       <div className="container">
@@ -101,7 +105,7 @@ export default function PortfolioSection({ onOpenAuditModal }) {
           <div>
             <div className="section-tag">Case Studies &amp; Outcomes</div>
             <h2 className="section-title" style={{ marginBottom: '0.5rem' }}>
-              Real Businesses. <span className="gradient-text-wisteria">Uncompromising Growth.</span>
+              Real Businesses. <span className="gradient-text-hero">Uncompromising Growth.</span>
             </h2>
             <p className="section-desc">
               Explore how our unified approach to digital marketing and web engineering delivers
@@ -112,10 +116,10 @@ export default function PortfolioSection({ onOpenAuditModal }) {
           {/* Filter Pills with Code Font */}
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
             {[
-              { id: 'all', label: '// all_cases' },
-              { id: 'b2b', label: '// b2b_saas' },
-              { id: 'ecommerce', label: '// e_commerce' },
-              { id: 'healthcare', label: '// healthcare' },
+              { id: 'all', label: 'All Cases' },
+              { id: 'b2b', label: 'B2B SaaS' },
+              { id: 'ecommerce', label: 'E-Commerce' },
+              { id: 'healthcare', label: 'Healthcare' },
             ].map((f) => (
               <button
                 key={f.id}
@@ -127,12 +131,12 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                   fontSize: '0.8rem',
                   fontWeight: 600,
                   borderRadius: '9999px',
-                  border: activeFilter === f.id ? '1px solid #ED80E9' : '1px solid rgba(216, 191, 216, 0.15)',
-                  backgroundColor: activeFilter === f.id ? 'rgba(148, 0, 211, 0.25)' : 'rgba(22, 13, 56, 0.6)',
-                  color: activeFilter === f.id ? '#FAF8FF' : '#D8BFD8',
+                  border: activeFilter === f.id ? '2px solid #7C3AED' : '1px solid #E2E8F0',
+                  backgroundColor: activeFilter === f.id ? 'rgba(124, 58, 237, 0.08)' : '#F8FAFC',
+                  color: activeFilter === f.id ? '#7C3AED' : '#64748B',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
-                  boxShadow: activeFilter === f.id ? '0 0 15px rgba(148, 0, 211, 0.35)' : 'none',
+                  boxShadow: activeFilter === f.id ? '0 4px 14px rgba(124, 58, 237, 0.15)' : 'none',
                 }}
               >
                 {f.label}
@@ -154,26 +158,54 @@ export default function PortfolioSection({ onOpenAuditModal }) {
             <TiltCard
               key={study.id}
               tiltFactor={4}
-              glowColor={`${study.accent}30`}
+              glowColor="rgba(124, 58, 237, 0.12)"
               className="glass-card"
               style={{
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                padding: '2.25rem',
-                backgroundColor: 'rgba(22, 13, 56, 0.65)',
-                border: '1px solid rgba(216, 191, 216, 0.12)',
+                padding: '2rem',
+                backgroundColor: '#FFFFFF',
+                border: '1px solid #E2E8F0',
+                boxShadow: '0 20px 40px rgba(15, 23, 42, 0.05)',
               }}
             >
               <div>
+                {/* Visual Image Banner for key studies */}
+                {study.image && (
+                  <div
+                    style={{
+                      marginBottom: '1.25rem',
+                      borderRadius: '12px',
+                      overflow: 'hidden',
+                      height: '180px',
+                      position: 'relative',
+                      border: '1px solid #E2E8F0',
+                    }}
+                  >
+                    <img
+                      src={study.image}
+                      alt={study.client}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                    <div
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: 'linear-gradient(180deg, transparent 40%, rgba(15, 23, 42, 0.4) 100%)',
+                      }}
+                    />
+                  </div>
+                )}
+
                 {/* Header Info */}
                 <div
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    marginBottom: '1rem',
+                    marginBottom: '0.85rem',
                   }}
                 >
                   <span
@@ -181,31 +213,30 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                     style={{
                       fontSize: '0.75rem',
                       fontWeight: 700,
-                      color: study.accent,
+                      color: '#7C3AED',
                       textTransform: 'uppercase',
                       letterSpacing: '0.08em',
                     }}
                   >
-                    // {study.industry}
+                    {study.industry}
                   </span>
                   <span
-                    className="font-mono"
                     style={{
-                      fontSize: '0.8rem',
+                      fontSize: '0.82rem',
                       fontWeight: 700,
-                      color: '#FAF8FF',
+                      color: '#0F172A',
                     }}
                   >
-                    @{study.client}
+                    {study.client}
                   </span>
                 </div>
 
                 {/* Headline */}
                 <h3
                   style={{
-                    fontSize: '1.35rem',
+                    fontSize: '1.3rem',
                     fontWeight: 800,
-                    color: '#FAF8FF',
+                    color: '#0F172A',
                     marginBottom: '0.85rem',
                     lineHeight: 1.35,
                   }}
@@ -217,8 +248,8 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                 <p
                   style={{
                     fontSize: '0.9rem',
-                    color: '#D8BFD8',
-                    lineHeight: 1.6,
+                    color: '#475569',
+                    lineHeight: 1.65,
                     marginBottom: '1.5rem',
                   }}
                 >
@@ -231,10 +262,10 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                     display: 'grid',
                     gridTemplateColumns: 'repeat(3, 1fr)',
                     gap: '0.75rem',
-                    backgroundColor: 'rgba(7, 3, 18, 0.75)',
-                    padding: '1rem',
+                    backgroundColor: '#F8FAFC',
+                    padding: '1.1rem',
                     borderRadius: '12px',
-                    border: '1px solid rgba(216, 191, 216, 0.1)',
+                    border: '1px solid #E2E8F0',
                     marginBottom: '1.5rem',
                     textAlign: 'center',
                   }}
@@ -246,12 +277,12 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                         style={{
                           fontSize: '1.25rem',
                           fontWeight: 800,
-                          color: study.accent,
+                          color: '#7C3AED',
                         }}
                       >
                         {m.value}
                       </div>
-                      <div className="font-mono" style={{ fontSize: '0.68rem', color: '#D8BFD8', marginTop: '2px' }}>
+                      <div className="font-mono" style={{ fontSize: '0.7rem', color: '#64748B', marginTop: '2px', fontWeight: 500 }}>
                         {m.label}
                       </div>
                     </div>
@@ -274,12 +305,12 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                       key={tag}
                       className="font-mono"
                       style={{
-                        fontSize: '0.7rem',
-                        fontWeight: 500,
-                        color: '#D3D3FF',
-                        backgroundColor: 'rgba(148, 0, 211, 0.12)',
-                        border: '1px solid rgba(216, 191, 216, 0.15)',
-                        padding: '0.25rem 0.6rem',
+                        fontSize: '0.72rem',
+                        fontWeight: 600,
+                        color: '#7C3AED',
+                        backgroundColor: 'rgba(124, 58, 237, 0.08)',
+                        border: '1px solid rgba(124, 58, 237, 0.2)',
+                        padding: '0.3rem 0.65rem',
                         borderRadius: '6px',
                       }}
                     >
@@ -296,16 +327,17 @@ export default function PortfolioSection({ onOpenAuditModal }) {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '0.5rem',
-                    fontSize: '0.8125rem',
+                    fontSize: '0.82rem',
                     fontWeight: 700,
-                    color: study.accent,
+                    color: '#7C3AED',
                     background: 'transparent',
                     border: 'none',
                     cursor: 'pointer',
                     padding: 0,
+                    transition: 'color 0.2s ease',
                   }}
                 >
-                  <span>&gt; inspect_case_study</span>
+                  <span>Request Full Case Study</span>
                   <ArrowUpRight size={16} />
                 </button>
               </div>

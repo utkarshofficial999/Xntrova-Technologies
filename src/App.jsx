@@ -12,6 +12,7 @@ import ContactAuditSection from './components/ContactAuditSection';
 import FaqSection from './components/FaqSection';
 import Footer from './components/Footer';
 import QuickAuditModal from './components/QuickAuditModal';
+import AmbientCanvas3D from './components/AmbientCanvas3D';
 
 export default function App() {
   const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
@@ -50,13 +51,32 @@ export default function App() {
     }
   };
 
+  const handleClaimProjection = ({ strategy }) => {
+    const serviceMap = {
+      seo: 'SEO (Search Engine Optimisation)',
+      paid: 'PPC (Pay-Per-Click)',
+      cro: 'Web Development',
+      omnichannel: 'Performance Marketing',
+    };
+    if (serviceMap[strategy]) {
+      setSelectedService(serviceMap[strategy]);
+    }
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-[#070312] text-[#FAF8FF]">
+    <div className="min-h-screen bg-white text-[#0F172A] relative">
+      {/* Ambient Responsive Mesh Grid & Violet Radial Glow */}
+      <AmbientCanvas3D />
+
       {/* Sticky High-Tech Navigation */}
       <Navbar onOpenAuditModal={() => handleOpenAuditModal('')} />
 
-      <main>
-        {/* Hero with Purposeful 3D Visualization */}
+      <main style={{ position: 'relative', zIndex: 1 }}>
+        {/* Hero with SaaS Telemetry Dashboard */}
         <HeroSection
           onOpenAuditModal={() => handleOpenAuditModal('')}
           onQuickAuditSubmit={handleQuickAuditSubmit}
@@ -65,14 +85,14 @@ export default function App() {
         {/* Industry Accreditation & Review Platforms Marquee */}
         <ReviewPlatforms />
 
-        {/* Filterable Services with 3D Tilt Cards */}
+        {/* Filterable Services with Elevated SaaS Cards */}
         <ServicesSection onSelectServiceForAudit={handleSelectServiceForAudit} />
 
         {/* About Xntrova with 4-Pillar Flywheel & Live Telemetry */}
         <AboutSection />
 
-        {/* Why Choose Us - Bento Grid Architecture */}
-        <WhyChooseUs />
+        {/* Why Choose Us - Bento Grid Architecture & Interactive Growth ROI Simulator */}
+        <WhyChooseUs onClaimProjection={handleClaimProjection} />
 
         {/* 5-Stage Growth Execution Framework */}
         <ProcessSection />
